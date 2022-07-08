@@ -7,10 +7,10 @@
 	animation-delay: $delay;
 	animation-duration: 2s;
 	@media (max-width: 1200px) {
-		font-size: 2rem;
+		font-size: 4rem;
 	}
 	@media (min-width: 1200px) {
-		font-size: 3rem;
+		font-size: 6rem;
 	}
 }
 
@@ -21,31 +21,31 @@
 	animation-delay: $delay;
 	animation-duration: 2s;
 	@media (max-width: 1200px) {
-		font-size: 3rem;
+		font-size: 6rem;
 	}
 	@media (min-width: 1200px) {
-		font-size: 4rem;
+		font-size: 8rem;
 	}
 }
 
 .intro0 {
 	@include intro_theme(1s, introAnn);
-	font-size: 40px;
+	
 }
 
 .intro1 {
 	@include intro_theme(2s, introAnn);
-	font-size: 40px;
+	
 }
 
 .intro2 {
 	@include intro_theme1(5s, introAnn2);
-	font-size: 40px;
+	
 }
 
 .intro3 {
 	@include intro_theme1(6s, introAnn2);
-	font-size: 40px;
+	
 }
 
 @keyframes introAnn {
