@@ -30,22 +30,22 @@
 
 .intro0 {
 	@include intro_theme(1s, introAnn);
-	font-size: 20px;
+	font-size: 40px;
 }
 
 .intro1 {
 	@include intro_theme(2s, introAnn);
-	font-size: 20px;
+	font-size: 40px;
 }
 
 .intro2 {
 	@include intro_theme1(5s, introAnn2);
-	font-size: 20px;
+	font-size: 40px;
 }
 
 .intro3 {
 	@include intro_theme1(6s, introAnn2);
-	font-size: 20px;
+	font-size: 40px;
 }
 
 @keyframes introAnn {
