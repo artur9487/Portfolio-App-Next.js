@@ -1,0 +1,158 @@
+/** @format */
+
+@mixin techCardSlide_theme($delay) {
+	opacity: 0;
+	animation-name: example5;
+	animation-delay: $delay;
+	animation-duration: 4s;
+	animation-fill-mode: forwards;
+}
+
+@mixin shadows2_theme {
+	animation-name: shadowAnn;
+	animation-duration: 2s;
+	animation-delay: 4s;
+	animation-fill-mode: forwards;
+}
+
+.techCardSlide0 {
+	@include techCardSlide_theme(0s);
+	.shadows2 {
+		@include shadows2_theme;
+	}
+}
+
+.techCardSlide1 {
+	@include techCardSlide_theme(0.5s);
+	.shadows2 {
+		@include shadows2_theme;
+	}
+}
+
+.techCardSlide2 {
+	@include techCardSlide_theme(1s);
+	.shadows2 {
+		@include shadows2_theme;
+	}
+}
+
+.techCardSlide3 {
+	@include techCardSlide_theme(1.5s);
+	.shadows2 {
+		@include shadows2_theme;
+	}
+}
+
+.techCardSlide4 {
+	@include techCardSlide_theme(2s);
+	.shadows2 {
+		@include shadows2_theme;
+	}
+}
+
+@keyframes example5 {
+	from {
+		opacity: 0;
+		transform: translateY(-30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+
+.projectCard .projectCardMedia {
+	transition: 0.5s all linear;
+	transform: scale(1);
+	position: relative;
+}
+
+.projectCard:hover .projectCardMedia {
+	transition: 0.5s all linear;
+	transform: scale(1.1);
+	filter: brightness(80%);
+}
+
+.projectCardText {
+	opacity: 0;
+	transition: 0.5s all linear;
+}
+
+.projectCard:hover .projectCardText {
+	background-color: rgba(255, 255, 255, 0.7);
+	opacity: 1;
+	transition: 0.5s all linear;
+}
+
+.projectCard:hover {
+	transition: 0.5s linear all;
+	background-color: rgba(158, 158, 158, 0.4);
+}
+
+.dialogButton {
+	text-decoration: none;
+	position: relative;
+	padding: 0.7em 1.5em;
+	border: 0;
+	border-radius: 0.5em;
+	box-shadow: 3px 3px 15px rgb(144, 0, 255), -3px 0px 15px rgb(144, 0, 255);
+	cursor: pointer;
+	background: linear-gradient(90deg, rgb(78, 22, 78), rgb(148, 34, 148));
+	display: block;
+}
+
+.dialogButton:hover {
+	filter: brightness(1.5);
+}
+
+.dialogButton:active {
+	top: 2px;
+	left: 1px;
+	box-shadow: none;
+	box-shadow: 1px 1px 10px rgb(144, 0, 255), -1px 0px 10px rgb(144, 0, 255);
+}
+
+.pageButton2 {
+	width: 200px;
+	position: relative;
+	padding: 0.7em 1.5em;
+	border: 0;
+	border-radius: 0.5em;
+	box-shadow: 3px 3px 15px rgb(144, 0, 255), -3px 0px 15px rgb(144, 0, 255);
+	cursor: pointer;
+	background: linear-gradient(
+		90deg,
+		rgba(90, 0, 158, 0.5),
+		rgb(144, 0, 255, 0.5)
+	);
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.caroImg {
+	max-height: 700px;
+	margin: auto;
+	object-fit: contain;
+	max-width: 100%;
+}
+
+.caro {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+	border: 2px solid black;
+}
+
+@keyframes shadowAnn {
+	0% {
+		box-shadow: none;
+	}
+	100% {
+		box-shadow: 0px 10px 10px rgb(144, 0, 255);
+	}
+}

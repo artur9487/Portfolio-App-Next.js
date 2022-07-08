@@ -1,0 +1,35 @@
+/** @format */
+
+.sideBar {
+	transition: all 0.5s linear;
+	width: 100px;
+}
+
+.iconShake {
+	transition: all 0.5s linear;
+	color: white;
+	cursor: 'pointer';
+}
+
+.iconShake:hover {
+	color: black;
+	background-color: rgb(144, 0, 255);
+	animation-name: example6;
+	animation-duration: 0.5s;
+	animation-iteration-count: 2;
+}
+
+@keyframes example6 {
+	0% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(20deg);
+	}
+	50% {
+		transform: rotate(-20deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
