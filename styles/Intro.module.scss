@@ -35,14 +35,17 @@
 
 .intro1 {
 	@include intro_theme(2s, introAnn);
+	font-size: 20px;
 }
 
 .intro2 {
 	@include intro_theme1(5s, introAnn2);
+	font-size: 20px;
 }
 
 .intro3 {
 	@include intro_theme1(6s, introAnn2);
+	font-size: 20px;
 }
 
 @keyframes introAnn {
