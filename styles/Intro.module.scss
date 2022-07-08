@@ -7,10 +7,10 @@
 	animation-delay: $delay;
 	animation-duration: 2s;
 	@media (max-width: 1200px) {
-		font-size: 4rem;
+		font-size: 40px;
 	}
 	@media (min-width: 1200px) {
-		font-size: 6rem;
+		font-size: 60px;
 	}
 }
 
@@ -21,10 +21,10 @@
 	animation-delay: $delay;
 	animation-duration: 2s;
 	@media (max-width: 1200px) {
-		font-size: 6rem;
+		font-size: 60px;
 	}
 	@media (min-width: 1200px) {
-		font-size: 8rem;
+		font-size: 80px;
 	}
 }
 
