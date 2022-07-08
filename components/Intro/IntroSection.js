@@ -14,7 +14,8 @@ const TextTypography = ({ item }) => {
 		<Typography
 			sx={{
 				fontFamily: 'Alumni Sans Inline One',
-				color: item.col
+				color: item.col,
+				fontSize:40
 			}}
 			className={item.styl}>
 			{item.name}
