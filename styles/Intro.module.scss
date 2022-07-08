@@ -6,6 +6,7 @@
 	animation-name: $anim;
 	animation-delay: $delay;
 	animation-duration: 2s;
+	font-size: 60px;
 	@media (max-width: 1200px) {
 		font-size: 40px;
 	}
@@ -20,6 +21,7 @@
 	animation-name: $anim;
 	animation-delay: $delay;
 	animation-duration: 2s;
+	font-size: 60px;
 	@media (max-width: 1200px) {
 		font-size: 60px;
 	}
