@@ -6,13 +6,6 @@
 	animation-name: $anim;
 	animation-delay: $delay;
 	animation-duration: 2s;
-	font-size: 60px;
-	@media (max-width: 1200px) {
-		font-size: 40px;
-	}
-	@media (min-width: 1200px) {
-		font-size: 60px;
-	}
 }
 
 @mixin intro_theme1($delay, $anim) {
@@ -21,13 +14,6 @@
 	animation-name: $anim;
 	animation-delay: $delay;
 	animation-duration: 2s;
-	font-size: 60px;
-	@media (max-width: 1200px) {
-		font-size: 60px;
-	}
-	@media (min-width: 1200px) {
-		font-size: 80px;
-	}
 }
 
 .intro0 {
