@@ -1,0 +1,84 @@
+/** @format */
+
+.box_notVisi {
+	opacity: 0;
+	width: 30%;
+}
+
+.box_Visi {
+	background: linear-gradient(90deg, green, rgb(88, 201, 54));
+	width: 400px;
+	opacity: 1;
+	animation-name: boxAnn;
+	animation-duration: 4s;
+}
+
+.text_notVisi {
+	opacity: 0;
+}
+
+.text_Visi {
+	opacity: 0;
+	animation-name: textAnn;
+	animation-duration: 2s;
+	animation-delay: 1s;
+}
+
+@keyframes textAnn {
+	0% {
+		opacity: 0;
+	}
+	30% {
+		opacity: 1;
+	}
+
+	70% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes boxAnn {
+	0% {
+		height: 0px;
+	}
+	30% {
+		height: 100px;
+	}
+
+	70% {
+		height: 100px;
+	}
+	100% {
+		height: 0px;
+	}
+}
+
+.pageButton {
+	width: 200px;
+	position: relative;
+	padding: 0.7em 1.5em;
+	border: 0;
+	border-radius: 0.5em;
+	box-shadow: 3px 3px 15px rgb(144, 0, 255), -3px 0px 15px rgb(144, 0, 255);
+	cursor: pointer;
+	background: linear-gradient(
+		90deg,
+		rgba(90, 0, 158, 0.5),
+		rgb(144, 0, 255, 0.5)
+	);
+	display: block;
+}
+
+.pageButton:hover {
+	filter: brightness(1.1);
+}
+
+.pageButton:active {
+	top: 2px;
+	left: 1px;
+	box-shadow: none;
+	box-shadow: 1px 1px 10px rgb(144, 0, 255), -1px 0px 10px rgb(144, 0, 255);
+}

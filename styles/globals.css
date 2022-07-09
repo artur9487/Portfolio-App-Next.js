@@ -1,0 +1,97 @@
+/** @format */
+
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&family=Poppins:wght@200&display=swap');
+
+:root {
+	--card-width: 200px;
+	--card-height: 300px;
+	--card-transition-duration: 800ms;
+	--card-transition-easing: ease;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	color: black;
+	background: linear-gradient(215deg, rgb(39, 37, 43) 29.9%, black 80%);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	width: 100%;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+form {
+	width: 100%;
+	height: 100%;
+}
+
+.slide_body {
+	margin: auto;
+	max-width: '100%';
+}
+
+@keyframes scroll {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(calc(-450px * 7));
+	}
+}
+.slider {
+	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+	height: 200px;
+	margin: auto;
+	overflow: hidden;
+	position: relative;
+	max-width: 1200px;
+	border-radius: 10px;
+	border: 1px solid rgba(158, 158, 158);
+	background-color: rgba(78, 78, 78, 0.8);
+	padding: 30px;
+}
+.slider::before,
+.slider::after {
+	background: linear-gradient(
+		to right,
+		rgba(78, 78, 78) 0%,
+		rgba(255, 255, 255, 0) 100%
+	);
+	content: '';
+	height: 250px;
+	position: absolute;
+	width: 200px;
+	z-index: 2;
+}
+.slider::after {
+	right: 0;
+	top: 0;
+	transform: rotateZ(180deg);
+}
+.slider::before {
+	left: 0;
+	top: 0;
+}
+.slider .slide-track {
+	-webkit-animation: scroll 40s linear infinite;
+	animation: scroll 30s linear infinite;
+	display: flex;
+	width: calc(450px * 14);
+}
+.slider .slide {
+	height: 135px;
+	width: 450px;
+	margin-right: 50px;
+}

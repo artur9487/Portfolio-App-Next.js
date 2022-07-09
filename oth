@@ -1,0 +1,46 @@
+/**
+ * /*const myRefs = useRef([]);
+ *
+ * 	myRefs.current = techStack.map(
+ * 		(element, indx) => myRefs.current[indx] ?? createRef()
+ * 	);
+ *
+ * 	useEffect(() => {
+ * 		const THRESHOLD = -30;
+ *
+ * 		function handleHover(e, item) {
+ * 			const { clientX, currentTarget } = e;
+ * 			const { clientWidth, offsetLeft } = currentTarget;
+ *
+ * 			const horizontal = (clientX - offsetLeft) / clientWidth;
+ *
+ * 			const rotateX = (THRESHOLD / 2 - horizontal * THRESHOLD).toFixed(2);
+ *
+ * 			item.style.transform = `perspective(${clientWidth}px)   rotateY(${rotateX}deg) scale3d(1, 1, 1)`;
+ *
+ * 			item.style.boxShadow = `${-5 * rotateX}px 10px 20px rgb(144, 0, 255) `;
+ * 		}
+ *
+ * 		function resetStyles(e, item) {
+ * 			item.style.transform = `perspective(${e.currentTarget.clientWidth}px) rotateX(0deg)`;
+ *
+ * 			item.style.boxShadow = `0px 10px 10px rgb(144, 0, 255)`;
+ * 		}
+ *
+ * 		myRefs.current.map((item) => {
+ * 			if (isVisible) {
+ * 				setTimeout(() => {
+ * 					item.current.addEventListener('mousemove', (e) =>
+ * 						handleHover(e, item.current)
+ * 					);
+ * 					item.current.addEventListener('mouseleave', (e) =>
+ * 						resetStyles(e, item.current)
+ * 					);
+ * 					item.current.style.boxShadow = `0px 10px 10px rgb(144, 0, 255)`;
+ * 				}, 5999);
+ * 			}
+ * 		});
+ * 	}, [isVisible]);
+ *
+ * @format
+ */
