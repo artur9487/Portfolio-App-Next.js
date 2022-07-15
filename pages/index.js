@@ -52,7 +52,7 @@ const Home = ({ endResult }) => {
 				</Layout>
 				<Layout matches={matches} refe={ref2} title='My Tech Stack'>
 					<Slide slide={styles.slide_right}>
-						<SecondSection matches={matches} />
+						<SecondSection matches={matches} matches3={matches3} />
 					</Slide>
 				</Layout>
 				<Layout matches={matches} refe={ref3} title='My Projects'>

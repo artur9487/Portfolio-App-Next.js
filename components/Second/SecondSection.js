@@ -36,7 +36,7 @@ const styleStack = {
 
 const techArr = mainStack.tech.concat(sideStack.tech, styleStack.tech);
 
-const SecondSection = ({ matches }) => {
+const SecondSection = ({ matches, matches3 }) => {
 	const [isVisible, setVisible] = useState(false);
 
 	const boxi = (txt, num, mar, styli, shad, type) => {
@@ -52,7 +52,9 @@ const SecondSection = ({ matches }) => {
 		}
 
 		const typo = (
-			<Typography sx={{ lineHeight: '2', fontSize: 20 }}>{txt}</Typography>
+			<Typography sx={{ lineHeight: '2', fontSize: !matches ? 20 : 16 }}>
+				{txt}
+			</Typography>
 		);
 
 		let boxu;
@@ -73,7 +75,13 @@ const SecondSection = ({ matches }) => {
 					}}>
 					<Box
 						className={isVisible ? styli2 : null}
-						sx={{ width: '100%', height: '100%' }}>
+						sx={{
+							display: 'flex',
+							flexDirection: 'column',
+							justifyContent: 'center',
+							width: '100%',
+							height: '100%'
+						}}>
 						{typo}
 					</Box>
 				</Box>
@@ -96,7 +104,13 @@ const SecondSection = ({ matches }) => {
 					}}>
 					<Box
 						className={isVisible ? styli2 : null}
-						sx={{ width: '100%', height: '100%' }}>
+						sx={{
+							display: 'flex',
+							flexDirection: 'column',
+							justifyContent: 'center',
+							width: '100%',
+							height: '100%'
+						}}>
 						{typo}
 					</Box>
 				</Box>
@@ -118,7 +132,13 @@ const SecondSection = ({ matches }) => {
 					}}>
 					<Box
 						className={isVisible ? styli2 : null}
-						sx={{ width: '100%', height: '100%' }}>
+						sx={{
+							display: 'flex',
+							flexDirection: 'column',
+							justifyContent: 'center',
+							width: '100%',
+							height: '100%'
+						}}>
 						{typo}
 					</Box>
 				</Box>
@@ -151,9 +171,9 @@ const SecondSection = ({ matches }) => {
 					setVisible(isVisiblee);
 				}}>
 				<Box sx={{ height: !matches ? '90%' : '100vh', width: '100%', mt: 12 }}>
-					{/*d<Box
+					<Box
 						sx={{
-							width: 700,
+							width: !matches ? '50%' : '95%',
 							height: '50%',
 							margin: 'auto',
 							position: 'relative'
@@ -206,64 +226,183 @@ const SecondSection = ({ matches }) => {
 									'linear-gradient(125deg, rgb(90, 0, 158),rgb(144, 0, 255))'
 							}}
 						/>
-						<Grid
-							columnSpacing={2}
-							sx={{ width: '100%', height: '100%' }}
-							container>
-							{techArr.map((item, indx) => {
-								switch (indx) {
-									case 0:
-										return boxi(item, 12, 'auto', styles2.forth, 'up', 'first');
+						{matches3 ? (
+							<Grid
+								rowSpacing={1}
+								container
+								direction='row'
+								alignItems='center'
+								justifyContent='center'
+								sx={{ width: '100%', height: '100%' }}>
+								{techArr.map((item, indx) => {
+									let stylo = null;
+									switch (indx) {
+										case 0:
+											stylo = styles2.firstSmall;
+											break;
+										case 1:
+											stylo = styles2.firstSmall;
+											break;
+										case 2:
+											stylo = styles2.secondSmall;
+											break;
+										case 3:
+											stylo = styles2.secondSmall;
+											break;
+										case 4:
+											stylo = styles2.thirdSmall;
+											break;
+										case 5:
+											stylo = styles2.thirdSmall;
+											break;
+										case 6:
+											stylo = styles2.fifthSmall;
+											break;
+										case 7:
+											stylo = styles2.fifthSmall;
+											break;
+										case 8:
+											stylo = styles2.sixthSmall;
+											break;
+										case 9:
+											stylo = styles2.sixthSmall;
+											break;
 
-									case 1:
-										return boxi(item, 6, 'right', styles2.third2, 'right');
-									case 2:
-										return boxi(item, 6, 'left', styles2.third, 'left');
+										case 10:
+											stylo = styles2.seventhSmall;
+											break;
+										case 11:
+											stylo = styles2.seventhSmall;
+											break;
+										case 12:
+											stylo = styles2.eightSmall;
+											break;
 
-									case 3:
-										return boxi(item, 4, 'right', styles2.second2, 'right');
-									case 4:
-										return boxi(item, 4, 'auto', styles2.second);
-									case 5:
-										return boxi(item, 4, 'left', styles2.second, 'left');
+										case 13:
+											stylo = styles2.eightSmall;
+											break;
+										case 14:
+											stylo = styles2.nineSmall;
+											break;
+										case 15:
+											stylo = styles2.nineSmall;
+											break;
+										default:
+											break;
+									}
+									return (
+										<Grid
+											direction='column'
+											alignItems='center'
+											justifyContent='center'
+											container
+											className={styles2.styli2}
+											item
+											xs={6}
+											spacing={3}
+											sx={{
+												height: 50,
+												color: 'white',
+												textAlign: 'center',
+												width: '50%'
+											}}>
+											<Box
+												className={isVisible ? stylo : null}
+												sx={{
+													borderRadius: 2,
+													display: 'flex',
+													flexDirection: 'column',
+													justifyContent: 'center',
+													alignItems: 'center',
+													bgcolor: 'rgba(78, 78, 78)',
+													width: 100,
+													border: 2,
+													marginLeft: 0,
+													height: '100%'
+												}}>
+												<Box
+													sx={{
+														display: 'flex',
+														flexDirection: 'column',
+														justifyContent: 'center',
+														alignItems: 'center',
+														width: '100%',
+														height: '100%'
+													}}>
+													{item}
+												</Box>
+											</Box>
+										</Grid>
+									);
+								})}
+							</Grid>
+						) : (
+							<Grid
+								columnSpacing={2}
+								sx={{ width: '100%', height: '100%', border: 10 }}
+								container>
+								{techArr.map((item, indx) => {
+									switch (indx) {
+										case 0:
+											return boxi(
+												item,
+												12,
+												'auto',
+												styles2.forth,
+												'up',
+												'first'
+											);
 
-									case 6:
-										return boxi(item, 3, 'auto', styles2.first, 'right');
-									case 7:
-										return boxi(item, 3, 'auto', styles2.first);
-									case 8:
-										return boxi(item, 3, 'auto', styles2.first);
-									case 9:
-										return boxi(item, 3, 'auto', styles2.first, 'left');
+										case 1:
+											return boxi(item, 6, 'right', styles2.third2, 'right');
+										case 2:
+											return boxi(item, 6, 'left', styles2.third, 'left');
 
-									case 10:
-										return boxi(item, 4, 'right', styles2.second2, 'right');
-									case 11:
-										return boxi(item, 4, 'auto', styles2.second);
-									case 12:
-										return boxi(item, 4, 'left', styles2.second, 'left');
+										case 3:
+											return boxi(item, 4, 'right', styles2.second2, 'right');
+										case 4:
+											return boxi(item, 4, 'auto', styles2.second);
+										case 5:
+											return boxi(item, 4, 'left', styles2.second, 'left');
 
-									case 13:
-										return boxi(item, 6, 'right', styles2.third2, 'right');
-									case 14:
-										return boxi(item, 6, 'left', styles2.third, 'left');
+										case 6:
+											return boxi(item, 3, 'auto', styles2.first, 'right');
+										case 7:
+											return boxi(item, 3, 'auto', styles2.first);
+										case 8:
+											return boxi(item, 3, 'auto', styles2.first);
+										case 9:
+											return boxi(item, 3, 'auto', styles2.first, 'left');
 
-									case 15:
-										return boxi(
-											item,
-											12,
-											'auto',
-											styles2.forth,
-											'down',
-											'first'
-										);
+										case 10:
+											return boxi(item, 4, 'right', styles2.second2, 'right');
+										case 11:
+											return boxi(item, 4, 'auto', styles2.second);
+										case 12:
+											return boxi(item, 4, 'left', styles2.second, 'left');
 
-									default:
-										break;
-								}
-							})}
-						</Grid>
-					</Box>*/}
+										case 13:
+											return boxi(item, 6, 'right', styles2.third2, 'right');
+										case 14:
+											return boxi(item, 6, 'left', styles2.third, 'left');
+
+										case 15:
+											return boxi(
+												item,
+												12,
+												'auto',
+												styles2.forth,
+												'down',
+												'first'
+											);
+
+										default:
+											break;
+									}
+								})}
+							</Grid>
+						)}
+					</Box>
 					<Stack
 						direction='column'
 						justifyContent='center'

@@ -141,7 +141,7 @@ const FirstSection = ({ matches }) => {
 								rgba(144, 0, 255, 1),
 								rgba(144, 0, 255, 0.1)
 								)`,
-								width: !matches ? 400 : 300,
+								width: !matches ? 400 : 250,
 								height: !matches ? 500 : 400,
 								borderRadius: 10
 							}}>
@@ -151,7 +151,7 @@ const FirstSection = ({ matches }) => {
 									borderRadius: 10,
 									overflow: 'hidden',
 									transition: 'transform 0.5s linear',
-									width: !matches ? 400 : 300,
+									width: !matches ? 400 : 250,
 									height: !matches ? 500 : 400,
 									'&:hover': {
 										transform: 'rotate(0deg)'

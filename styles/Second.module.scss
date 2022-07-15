@@ -200,3 +200,35 @@
 .bracketsInv {
 	opacity: 0;
 }
+
+.firstSmall {
+	@include tech_right_theme(2s, tech_right_ann);
+}
+
+.secondSmall {
+	@include tech_right_theme(2.5s, tech_left_ann);
+}
+
+.thirdSmall {
+	@include tech_right_theme(3s, tech_right_ann);
+}
+
+.fifthSmall {
+	@include tech_right_theme(3.5s, tech_left_ann);
+}
+
+.sixthSmall {
+	@include tech_right_theme(4s, tech_right_ann);
+}
+
+.seventhSmall {
+	@include tech_right_theme(4.5s, tech_left_ann);
+}
+
+.eightSmall {
+	@include tech_right_theme(5s, tech_right_ann);
+}
+
+.nineSmall {
+	@include tech_right_theme(5.5s, tech_left_ann);
+}
