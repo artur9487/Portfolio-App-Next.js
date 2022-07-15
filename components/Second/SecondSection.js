@@ -292,6 +292,7 @@ const SecondSection = ({ matches, matches3 }) => {
 									}
 									return (
 										<Grid
+											key={indx}
 											direction='column'
 											alignItems='center'
 											justifyContent='center'
