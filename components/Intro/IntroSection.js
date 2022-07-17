@@ -9,48 +9,20 @@ import styles2 from '/styles/Intro.module.scss';
 import image from '../../public/jamala.png';
 import Image from 'next/image';
 
-const IntroSection = ({ matches2, refe, matches3 }) => {
+const IntroSection = ({ matches2, refe, matches3, matches }) => {
 	const upperCol = 'rgba(200, 200, 200, 1)';
 	const downCol = 'rgb(144, 0, 255)';
-	const [obj, setObj] = useState([
+	const obj = [
 		{ name: 'HELLO,', styl: styles2.intro0, col: upperCol },
 		{ name: 'I', styl: styles2.intro1, col: upperCol },
 		{ name: 'AM', styl: styles2.intro1, col: upperCol },
 		{ name: 'ARTUR', styl: styles2.intro1, col: upperCol }
-	]);
+	];
 	const [obj2, setObj2] = useState([
 		{ name: 'ASPIRING', styl: styles2.intro2, col: downCol },
 		{ name: 'REACT', styl: styles2.intro3, col: downCol },
 		{ name: 'DEVELOPER', styl: styles2.intro3, col: downCol }
 	]);
-
-	const TextTypography = ({ item }) => {
-		return (
-			<Typography
-				sx={{
-					fontFamily: 'Alumni Sans Inline One',
-					color: item.col,
-					fontSize: !matches3 ? 40 : 35
-				}}
-				className={item.styl}>
-				{item.name}
-			</Typography>
-		);
-	};
-
-	const TextTypography2 = ({ item }) => {
-		return (
-			<Typography
-				sx={{
-					fontFamily: 'Alumni Sans Inline One',
-					color: item.col,
-					fontSize: !matches3 ? 50 : 35
-				}}
-				className={item.styl}>
-				{item.name}
-			</Typography>
-		);
-	};
 
 	useEffect(() => {
 		if (matches2) {
@@ -88,6 +60,7 @@ const IntroSection = ({ matches2, refe, matches3 }) => {
 				<Box
 					className={styles2.introPage}
 					sx={{
+						borderColor: 'white',
 						width: '100vw',
 						height: '100vh',
 						position: 'relative',
@@ -182,12 +155,13 @@ const IntroSection = ({ matches2, refe, matches3 }) => {
 							p: 4,
 							background:
 								'linear-gradient(rgba(10, 0, 15, 0.85),rgba(5, 2, 8, 0.85))',
-							maxWidth: '60%',
+
+							width: !matches ? '40%' : !matches3 ? '60%' : '80%',
 							position: 'absolute',
 							top: '20%',
-							left: '30%'
+							left: !matches3 ? '30%' : '10%'
 						}}>
-						<Box sx={{ width: '60%', margin: 'auto' }}>
+						<Box sx={{ margin: 'auto' }}>
 							<Stack
 								className={styles.fade1200}
 								sx={{ width: '100%' }}
@@ -195,20 +169,40 @@ const IntroSection = ({ matches2, refe, matches3 }) => {
 								justifyContent='center'
 								spacing={5}>
 								{obj.map((item, indx) => {
-									return <TextTypography key={indx} item={item} />;
+									return (
+										<Typography
+											sx={{
+												fontFamily: 'Alumni Sans Inline One',
+												color: item.col,
+												fontSize: !matches3 ? 40 : 25
+											}}
+											className={item.styl}>
+											{item.name}
+										</Typography>
+									);
 								})}
 							</Stack>
 							<Box className={styles2.divider} />
 						</Box>
-						<Box>
+						<Box sx={{ margin: 'auto' }}>
 							<Stack
-								className={[styles.fade1200]}
+								className={styles.fade1200}
 								sx={{ width: '100%' }}
 								direction='row'
 								justifyContent='center'
 								spacing={5}>
 								{obj2.map((item, indx) => {
-									return <TextTypography2 key={indx} item={item} />;
+									return (
+										<Typography
+											sx={{
+												fontFamily: 'Alumni Sans Inline One',
+												color: item.col,
+												fontSize: !matches3 ? 50 : 32
+											}}
+											className={item.styl}>
+											{item.name}
+										</Typography>
+									);
 								})}
 							</Stack>
 							<Box className={styles2.divider2} />
@@ -219,12 +213,12 @@ const IntroSection = ({ matches2, refe, matches3 }) => {
 								spacing={10}
 								justifyContent='center'
 								sx={{
+									border: 2,
 									margin: 'auto',
 									position: 'relative',
 									width: !matches3 ? 250 : 170,
 									height: !matches3 ? 250 : 170,
 									borderRadius: '50%',
-									border: 5,
 									borderColor: 'rgb(144, 0, 255)',
 									overflow: 'hidden'
 								}}>

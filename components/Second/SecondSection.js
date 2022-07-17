@@ -6,7 +6,8 @@ import TechCard from '../Third/TechCard';
 import styles from '/styles/Home.module.scss';
 import VisibilitySensor from 'react-visibility-sensor';
 import styles2 from '../../styles/Second.module.scss';
-import classNames from 'classnames';
+import TechBig from './TechBig';
+import TechSmall from './TechSmall';
 
 const sideStack = {
 	tech: ['React Nav', 'Firebase', 'Git', 'GraphQl', 'Redux', 'Redux-Saga'],
@@ -36,130 +37,8 @@ const styleStack = {
 
 const techArr = mainStack.tech.concat(sideStack.tech, styleStack.tech);
 
-const SecondSection = ({ matches, matches3 }) => {
+const SecondSection = ({ matches, matches2, matches3 }) => {
 	const [isVisible, setVisible] = useState(false);
-
-	const boxi = (txt, num, mar, styli, shad, type) => {
-		let styli2;
-		if (shad === 'up') {
-			styli2 = styles2.up;
-		} else if (shad === 'down') {
-			styli2 = styles2.down;
-		} else if (shad === 'left') {
-			styli2 = styles2.left;
-		} else if (shad === 'right') {
-			styli2 = styles2.right;
-		}
-
-		const typo = (
-			<Typography sx={{ lineHeight: '2', fontSize: !matches ? 20 : 16 }}>
-				{txt}
-			</Typography>
-		);
-
-		let boxu;
-		if (mar === 'auto') {
-			boxu = (
-				<Box
-					className={isVisible ? styli : null}
-					sx={{
-						borderRadius: 2,
-						display: 'flex',
-						flexDirection: 'column',
-						justifyContent: 'center',
-						bgcolor: 'rgba(78, 78, 78)',
-						width: type === 'first' ? 170 : '100%',
-						border: 2,
-						margin: mar,
-						height: '100%'
-					}}>
-					<Box
-						className={isVisible ? styli2 : null}
-						sx={{
-							display: 'flex',
-							flexDirection: 'column',
-							justifyContent: 'center',
-							width: '100%',
-							height: '100%'
-						}}>
-						{typo}
-					</Box>
-				</Box>
-			);
-		} else if (mar === 'right') {
-			boxu = (
-				<Box
-					className={isVisible ? styli : null}
-					sx={{
-						borderRadius: 2,
-						display: 'flex',
-						flexDirection: 'column',
-						justifyContent: 'center',
-						bgcolor: 'rgba(78, 78, 78)',
-						width: 170,
-						border: 2,
-						marginLeft: '100%',
-						height: '100%',
-						transform: 'translateX(-100%)'
-					}}>
-					<Box
-						className={isVisible ? styli2 : null}
-						sx={{
-							display: 'flex',
-							flexDirection: 'column',
-							justifyContent: 'center',
-							width: '100%',
-							height: '100%'
-						}}>
-						{typo}
-					</Box>
-				</Box>
-			);
-		} else if (mar === 'left') {
-			boxu = (
-				<Box
-					className={isVisible ? styli : null}
-					sx={{
-						borderRadius: 2,
-						display: 'flex',
-						flexDirection: 'column',
-						justifyContent: 'center',
-						bgcolor: 'rgba(78, 78, 78)',
-						width: 170,
-						border: 2,
-						marginLeft: 0,
-						height: '100%'
-					}}>
-					<Box
-						className={isVisible ? styli2 : null}
-						sx={{
-							display: 'flex',
-							flexDirection: 'column',
-							justifyContent: 'center',
-							width: '100%',
-							height: '100%'
-						}}>
-						{typo}
-					</Box>
-				</Box>
-			);
-		}
-		return (
-			<Grid
-				className={styles2.styli2}
-				item
-				xs={num}
-				spacing={3}
-				sx={{
-					height: 50,
-					color: 'white',
-					display: 'block',
-					textAlign: 'center'
-				}}>
-				{boxu}
-			</Grid>
-		);
-	};
 
 	return (
 		<>
@@ -170,239 +49,102 @@ const SecondSection = ({ matches, matches3 }) => {
 				onChange={(isVisiblee) => {
 					setVisible(isVisiblee);
 				}}>
-				<Box sx={{ height: !matches ? '90%' : '100vh', width: '100%', mt: 12 }}>
+				<Box
+					sx={{
+						height: !matches ? '90%' : '100vh',
+						width: '100%',
+						mt: 12,
+						position: 'relative'
+					}}>
 					<Box
 						sx={{
-							width: !matches ? '50%' : '95%',
-							height: '50%',
+							width: !matches ? '50%' : matches3 ? '90%' : '70%',
+							height: !matches3 ? '50%' : '70%',
 							margin: 'auto',
 							position: 'relative'
 						}}>
 						<Box
-							className={isVisible ? styles2.brackets : styles2.bracketsInv}
+							className={isVisible ? styles2.brackets : styles.noVis}
 							sx={{
-								width: 90,
+								width: !matches3 ? 90 : 45,
 								position: 'absolute',
-								bottom: 0,
+								bottom: -10,
 								right: 0,
-								height: 10,
+								height: !matches3 ? 10 : 5,
 								background:
 									'linear-gradient(45deg, rgb(90, 0, 158),rgb(144, 0, 255))'
 							}}
 						/>
 						<Box
-							className={isVisible ? styles2.brackets : null}
+							className={isVisible ? styles2.brackets : styles.noVis}
 							sx={{
-								width: 10,
+								width: !matches3 ? 10 : 5,
 								position: 'absolute',
-								bottom: 0,
+								bottom: -10,
 								right: 0,
-								height: 90,
+								height: !matches3 ? 90 : 45,
 								background:
 									'linear-gradient(125deg, rgb(90, 0, 158),rgb(144, 0, 255))'
 							}}
 						/>
 						<Box
-							className={isVisible ? styles2.brackets : null}
+							className={isVisible ? styles2.brackets : styles.noVis}
 							sx={{
-								width: 60,
+								width: !matches3 ? 60 : 30,
 								position: 'absolute',
-								top: -15,
-								left: 0,
-								height: 10,
+								top: -30,
+								left: -15,
+								height: !matches3 ? 10 : 5,
 								background:
 									'linear-gradient(45deg, rgb(90, 0, 158),rgb(144, 0, 255))'
 							}}
 						/>
 						<Box
-							className={isVisible ? styles2.brackets : null}
+							className={isVisible ? styles2.brackets : styles.noVis}
 							sx={{
-								width: 10,
+								width: !matches3 ? 10 : 5,
 								position: 'absolute',
-								top: -5,
-								left: 0,
-								height: 60,
+								top: -30,
+								left: -15,
+								height: !matches3 ? 60 : 30,
 								background:
 									'linear-gradient(125deg, rgb(90, 0, 158),rgb(144, 0, 255))'
 							}}
 						/>
-						{matches3 ? (
-							<Grid
-								rowSpacing={1}
-								container
-								direction='row'
-								alignItems='center'
-								justifyContent='center'
-								sx={{ width: '100%', height: '100%' }}>
-								{techArr.map((item, indx) => {
-									let stylo = null;
-									switch (indx) {
-										case 0:
-											stylo = styles2.firstSmall;
-											break;
-										case 1:
-											stylo = styles2.firstSmall;
-											break;
-										case 2:
-											stylo = styles2.secondSmall;
-											break;
-										case 3:
-											stylo = styles2.secondSmall;
-											break;
-										case 4:
-											stylo = styles2.thirdSmall;
-											break;
-										case 5:
-											stylo = styles2.thirdSmall;
-											break;
-										case 6:
-											stylo = styles2.fifthSmall;
-											break;
-										case 7:
-											stylo = styles2.fifthSmall;
-											break;
-										case 8:
-											stylo = styles2.sixthSmall;
-											break;
-										case 9:
-											stylo = styles2.sixthSmall;
-											break;
-
-										case 10:
-											stylo = styles2.seventhSmall;
-											break;
-										case 11:
-											stylo = styles2.seventhSmall;
-											break;
-										case 12:
-											stylo = styles2.eightSmall;
-											break;
-
-										case 13:
-											stylo = styles2.eightSmall;
-											break;
-										case 14:
-											stylo = styles2.nineSmall;
-											break;
-										case 15:
-											stylo = styles2.nineSmall;
-											break;
-										default:
-											break;
-									}
-									return (
-										<Grid
-											key={indx}
-											direction='column'
-											alignItems='center'
-											justifyContent='center'
-											container
-											className={styles2.styli2}
-											item
-											xs={6}
-											spacing={3}
-											sx={{
-												height: 50,
-												color: 'white',
-												textAlign: 'center',
-												width: '50%'
-											}}>
-											<Box
-												className={isVisible ? stylo : null}
-												sx={{
-													borderRadius: 2,
-													display: 'flex',
-													flexDirection: 'column',
-													justifyContent: 'center',
-													alignItems: 'center',
-													bgcolor: 'rgba(78, 78, 78)',
-													width: 100,
-													border: 2,
-													marginLeft: 0,
-													height: '100%'
-												}}>
-												<Box
-													sx={{
-														display: 'flex',
-														flexDirection: 'column',
-														justifyContent: 'center',
-														alignItems: 'center',
-														width: '100%',
-														height: '100%'
-													}}>
-													{item}
-												</Box>
-											</Box>
-										</Grid>
-									);
-								})}
-							</Grid>
-						) : (
-							<Grid
-								columnSpacing={2}
-								sx={{ width: '100%', height: '100%', border: 10 }}
-								container>
-								{techArr.map((item, indx) => {
-									switch (indx) {
-										case 0:
-											return boxi(
-												item,
-												12,
-												'auto',
-												styles2.forth,
-												'up',
-												'first'
-											);
-
-										case 1:
-											return boxi(item, 6, 'right', styles2.third2, 'right');
-										case 2:
-											return boxi(item, 6, 'left', styles2.third, 'left');
-
-										case 3:
-											return boxi(item, 4, 'right', styles2.second2, 'right');
-										case 4:
-											return boxi(item, 4, 'auto', styles2.second);
-										case 5:
-											return boxi(item, 4, 'left', styles2.second, 'left');
-
-										case 6:
-											return boxi(item, 3, 'auto', styles2.first, 'right');
-										case 7:
-											return boxi(item, 3, 'auto', styles2.first);
-										case 8:
-											return boxi(item, 3, 'auto', styles2.first);
-										case 9:
-											return boxi(item, 3, 'auto', styles2.first, 'left');
-
-										case 10:
-											return boxi(item, 4, 'right', styles2.second2, 'right');
-										case 11:
-											return boxi(item, 4, 'auto', styles2.second);
-										case 12:
-											return boxi(item, 4, 'left', styles2.second, 'left');
-
-										case 13:
-											return boxi(item, 6, 'right', styles2.third2, 'right');
-										case 14:
-											return boxi(item, 6, 'left', styles2.third, 'left');
-
-										case 15:
-											return boxi(
-												item,
-												12,
-												'auto',
-												styles2.forth,
-												'down',
-												'first'
-											);
-
-										default:
-											break;
-									}
-								})}
-							</Grid>
-						)}
+						<Grid
+							rowSpacing={1}
+							container
+							direction='row'
+							alignItems='center'
+							justifyContent='center'
+							sx={{
+								left: 0,
+								top: 0,
+								width: '100%',
+								height: '100%',
+								opacity: !matches3 ? 0 : 1,
+								position: 'absolute'
+							}}>
+							<TechSmall techArr={techArr} isVisible={isVisible} />
+						</Grid>
+						<Grid
+							columnSpacing={2}
+							sx={{
+								width: '100%',
+								height: '100%',
+								opacity: matches3 ? 0 : 1,
+								left: 0,
+								top: 0,
+								position: 'absolute'
+							}}
+							container>
+							<TechBig
+								techArr={techArr}
+								matches={matches}
+								matches2={matches2}
+								isVisible={isVisible}
+							/>
+						</Grid>
 					</Box>
 					<Stack
 						direction='column'
@@ -411,7 +153,9 @@ const SecondSection = ({ matches, matches3 }) => {
 							height: '50%',
 							widht: '100%'
 						}}>
-						<Box sx={{ width: '100%' }} className='slide_body'>
+						<Box
+							sx={{ width: !matches3 ? '75%' : '90%' }}
+							className='slide_body'>
 							<Box className={[`slider`, styles2.shadowBox]}>
 								<Box className='slide-track'>
 									{mainStack.tech

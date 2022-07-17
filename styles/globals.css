@@ -15,12 +15,10 @@ body {
 	margin: 0;
 	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
 		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-	color: black;
-	background: linear-gradient(215deg, rgb(39, 37, 43) 29.9%, black 80%);
-	background-position: center;
+	background: rgb(5, 2, 8);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	width: 100%;
+	background-position: center;
 }
 
 a {
@@ -50,31 +48,31 @@ form {
 		transform: translateX(calc(-450px * 7));
 	}
 }
+
 .slider {
 	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
-	height: 200px;
 	margin: auto;
 	overflow: hidden;
 	position: relative;
 	max-width: 1200px;
 	border-radius: 10px;
-	border: 1px solid rgba(158, 158, 158);
-	background-color: rgba(78, 78, 78, 0.8);
+	border: 1px solid rgb(75, 71, 82);
+	background-color: rgba(39, 37, 43, 0.5);
 	padding: 30px;
 }
 .slider::before,
 .slider::after {
 	background: linear-gradient(
 		to right,
-		rgba(78, 78, 78) 0%,
+		rgb(144, 0, 255) 0%,
 		rgba(255, 255, 255, 0) 100%
 	);
 	content: '';
-	height: 250px;
 	position: absolute;
-	width: 200px;
+	width: 50px;
 	z-index: 2;
 }
+
 .slider::after {
 	right: 0;
 	top: 0;
@@ -91,7 +89,38 @@ form {
 	width: calc(450px * 14);
 }
 .slider .slide {
-	height: 135px;
 	width: 450px;
 	margin-right: 50px;
+}
+
+@media screen and (min-width: 600px) {
+	.slider {
+		height: 200px;
+	}
+	.slider::before,
+	.slider::after {
+		height: 250px;
+	}
+	.slider .slide {
+		height: 135px;
+	}
+	.slider .slide-track {
+		width: calc(450px * 14);
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.slider {
+		height: 150px;
+	}
+	.slider::before,
+	.slider::after {
+		height: 150px;
+	}
+	.slider .slide {
+		height: 100px;
+	}
+	.slider .slide-track {
+		width: calc(300px * 14);
+	}
 }

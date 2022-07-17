@@ -188,3 +188,14 @@
 		width: 17rem;
 	}
 }
+
+.mainLayout {
+	background: linear-gradient(215deg, rgb(39, 37, 43) 29.9%, black 80%);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+}
+
+.noVis {
+	opacity: 0;
+}

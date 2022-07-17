@@ -4,12 +4,12 @@ import { Stack } from '@mui/material';
 import { Box, Typography } from '@mui/material';
 import Image from 'next/image';
 import image from '../../public/971.jpg';
-import styles from '/styles/Home.module.scss';
 import VisibilitySensor from 'react-visibility-sensor';
 import { useState } from 'react';
 import styles2 from '/styles/First.module.scss';
+import styles from '/styles/Home.module.scss';
 
-const FirstSection = ({ matches }) => {
+const FirstSection = ({ matches, matches3 }) => {
 	const [isVisible, setVisible] = useState(false);
 	const obj = [
 		{
@@ -43,19 +43,19 @@ const FirstSection = ({ matches }) => {
 					justifyContent={!matches ? 'center' : 'space-evenly'}
 					spacing={3}
 					alignItems='center'
-					className={styles.fade1200}
+					className={isVisible ? styles.fade1200 : styles.noVis}
 					direction={!matches ? 'row' : 'column'}
 					sx={{ width: '100%', height: '90%', mt: matches ? 10 : 0 }}>
 					<Stack
 						sx={{
-							maxWidth: !matches ? '50%' : '100%'
+							maxWidth: matches || matches3 ? '100%' : '50%'
 						}}
 						alignItems='center'
 						justifyContent='center'
 						direction='row'>
 						<Stack
 							sx={{
-								width: '70%',
+								width: !matches3 ? '70%' : '100%',
 								p: 5,
 								position: 'relative',
 								background:
@@ -66,11 +66,11 @@ const FirstSection = ({ matches }) => {
 							<Box
 								className={isVisible ? styles2.brackets : null}
 								sx={{
-									width: 90,
+									width: !matches3 ? 90 : 45,
 									position: 'absolute',
 									bottom: 0,
 									right: 0,
-									height: 10,
+									height: !matches3 ? 10 : 5,
 									background:
 										'linear-gradient(45deg, rgb(90, 0, 158),rgb(144, 0, 255))'
 								}}
@@ -78,11 +78,11 @@ const FirstSection = ({ matches }) => {
 							<Box
 								className={isVisible ? styles2.brackets : null}
 								sx={{
-									width: 10,
+									width: !matches3 ? 10 : 5,
 									position: 'absolute',
 									bottom: 0,
 									right: 0,
-									height: 90,
+									height: !matches3 ? 90 : 45,
 									background:
 										'linear-gradient(125deg, rgb(90, 0, 158),rgb(144, 0, 255))'
 								}}
@@ -90,11 +90,11 @@ const FirstSection = ({ matches }) => {
 							<Box
 								className={isVisible ? styles2.brackets : null}
 								sx={{
-									width: 60,
+									width: !matches3 ? 60 : 30,
 									position: 'absolute',
 									top: -15,
 									left: 0,
-									height: 10,
+									height: !matches3 ? 10 : 5,
 									background:
 										'linear-gradient(45deg, rgb(90, 0, 158),rgb(144, 0, 255))'
 								}}
@@ -102,11 +102,11 @@ const FirstSection = ({ matches }) => {
 							<Box
 								className={isVisible ? styles2.brackets : null}
 								sx={{
-									width: 10,
+									width: !matches3 ? 10 : 5,
 									position: 'absolute',
-									top: -5,
+									top: -10,
 									left: 0,
-									height: 60,
+									height: !matches3 ? 60 : 30,
 									background:
 										'linear-gradient(125deg, rgb(90, 0, 158),rgb(144, 0, 255))'
 								}}
@@ -118,7 +118,7 @@ const FirstSection = ({ matches }) => {
 										align='justify'
 										className={isVisible ? item.styl : null}
 										sx={{
-											fontSize: 20,
+											fontSize: !matches ? 20 : 15,
 											lineHeight: 1.5,
 											fontFamily: 'Poppins'
 										}}>
@@ -141,8 +141,8 @@ const FirstSection = ({ matches }) => {
 								rgba(144, 0, 255, 1),
 								rgba(144, 0, 255, 0.1)
 								)`,
-								width: !matches ? 400 : 250,
-								height: !matches ? 500 : 400,
+								width: !matches ? 400 : !matches3 ? 250 : 200,
+								height: !matches ? 500 : !matches3 ? 400 : 250,
 								borderRadius: 10
 							}}>
 							<Box
@@ -151,8 +151,8 @@ const FirstSection = ({ matches }) => {
 									borderRadius: 10,
 									overflow: 'hidden',
 									transition: 'transform 0.5s linear',
-									width: !matches ? 400 : 250,
-									height: !matches ? 500 : 400,
+									width: !matches ? 400 : !matches3 ? 250 : 200,
+									height: !matches ? 500 : !matches3 ? 400 : 250,
 									'&:hover': {
 										transform: 'rotate(0deg)'
 									}

@@ -6,7 +6,7 @@ import VisibilitySensor from 'react-visibility-sensor';
 import { useState } from 'react';
 import Fade from './Fade';
 
-const Layout = ({ children, matches, refe, title }) => {
+const Layout = ({ children, matches, refe, title, matches3 }) => {
 	const [isVisible, setVisible] = useState(false);
 	const firstLetter = title.slice(0, 1);
 	const restLetters = title.slice(1);
@@ -17,7 +17,6 @@ const Layout = ({ children, matches, refe, title }) => {
 				sx={{
 					height: !matches ? '100vh' : '100%',
 					width: '100vw',
-
 					p: 5
 				}}>
 				<VisibilitySensor
@@ -33,7 +32,8 @@ const Layout = ({ children, matches, refe, title }) => {
 								pb: 0,
 								height: '10%',
 								width: '100%',
-								margin: 'auto'
+								margin: 'auto',
+								borderColor: 'white'
 							}}>
 							<Fade>
 								<Stack
@@ -47,7 +47,7 @@ const Layout = ({ children, matches, refe, title }) => {
 									}}>
 									<Typography
 										textAlign='center'
-										fontSize={140}
+										fontSize={!matches3 ? 140 : 70}
 										sx={{
 											fontFamily: 'Alumni Sans Inline One',
 											color: 'rgb(144, 0, 255)'
@@ -56,7 +56,7 @@ const Layout = ({ children, matches, refe, title }) => {
 									</Typography>
 									<Typography
 										textAlign='center'
-										variant='h1'
+										fontSize={!matches3 ? 100 : 50}
 										sx={{
 											fontFamily: 'Alumni Sans Inline One',
 											color: 'white'

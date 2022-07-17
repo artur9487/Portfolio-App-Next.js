@@ -11,7 +11,7 @@ const errorComp = (
 	</Typography>
 );
 
-const FourthSection = () => {
+const FourthSection = ({ matches3 }) => {
 	const [email, setEmail] = useState('');
 	const [name, setName] = useState('');
 	const [message, setMessage] = useState('');
@@ -95,12 +95,12 @@ const FourthSection = () => {
 							direction='column'
 							alignItems='center'
 							justifyContent='center'
-							sx={{ height: '50%', width: '70%' }}
+							sx={{ height: '50%', width: !matches3 ? '70%' : '100%' }}
 							spacing={4}>
 							<Typography
 								textAlign='center'
 								sx={{
-									fontSize: 32,
+									fontSize: !matches3 ? 42 : 22,
 									fontFamily: 'Alumni Sans Inline One',
 									color: 'white'
 								}}>
@@ -113,7 +113,7 @@ const FourthSection = () => {
 										<Typography
 											textAlign='center'
 											sx={{
-												fontSize: 30,
+												fontSize: !matches3 ? 30 : 25,
 												fontFamily: 'Alumni Sans Inline One',
 												color: 'white',
 												fontStyle: 'italic'
@@ -125,7 +125,7 @@ const FourthSection = () => {
 										<Typography
 											textAlign='center'
 											sx={{
-												fontSize: 30,
+												fontSize: !matches3 ? 30 : 25,
 												fontFamily: 'Alumni Sans Inline One',
 												color: 'white',
 												fontStyle: 'italic'
@@ -173,7 +173,7 @@ const FourthSection = () => {
 								<Typography
 									textAlign='center'
 									sx={{
-										fontSize: 30,
+										fontSize: !matches3 ? 30 : 25,
 										fontFamily: 'Alumni Sans Inline One',
 										color: 'white',
 										fontStyle: 'italic'
@@ -203,7 +203,7 @@ const FourthSection = () => {
 
 							<button type='submit' className={styles2.pageButton}>
 								<Typography
-									fontSize={30}
+									fontSize={!matches3 ? 30 : 25}
 									sx={{ color: 'white', fontFamily: 'Alumni Sans Inline One' }}>
 									Submit
 								</Typography>
@@ -214,7 +214,7 @@ const FourthSection = () => {
 										color: 'white',
 										fontFamily: 'Alumni Sans Inline One'
 									}}
-									fontSize={35}>
+									fontSize={!matches3 ? 35 : 27}>
 									Or call me: 607805490
 								</Typography>
 							</Box>
@@ -234,7 +234,10 @@ const FourthSection = () => {
 								justifyContent='center'
 								alignItems='center'>
 								<Typography
-									sx={{ fontSize: 30, fontFamily: 'Alumni Sans Inline One' }}
+									sx={{
+										fontSize: !matches3 ? 30 : 20,
+										fontFamily: 'Alumni Sans Inline One'
+									}}
 									textAlign='center'
 									className={textStyle}>
 									Message sent

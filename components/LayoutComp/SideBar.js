@@ -11,34 +11,36 @@ import styles from '/styles/Home.module.scss';
 import HomeIcon from '@mui/icons-material/Home';
 import styles2 from '/styles/SideBar.module.scss';
 
-const SideBar = ({ ref0, ref1, ref2, ref3, ref4 }) => {
+const SideBar = ({ ref0, ref1, ref2, ref3, ref4, matches3 }) => {
 	const handler = (refer) => {
 		refer.current.scrollIntoView({ behavior: 'smooth' });
 	};
 	return (
 		<>
 			<Box
-				className={styles2.sideBar}
 				sx={{
 					overflow: 'hidden',
 					border: 5,
 					zIndex: 999,
 					borderRadius: 10,
 					position: 'fixed',
-					top: '25%',
+					top: !matches3 ? '25%' : '85%',
 					left: 20,
-					height: '50%'
+					height: !matches3 ? '50%' : 80,
+					width: !matches3 ? 100 : '90vw'
 				}}>
 				<Box
-					className={styles2.sideBar}
 					sx={{
-						filter: 'blur(50px)',
+						filter: !matches3 ? 'blur(50px)' : 'blur(20px)',
 						zIndex: 999,
 						borderRadius: 10,
-						top: '25%',
+						top: !matches3 ? '25%' : '85%',
 						left: 20,
-						bgcolor: 'rgba(49, 49, 49, 0.9)',
-						height: '100%'
+						bgcolor: !matches3
+							? 'rgba(49, 49, 49, 0.9)'
+							: 'rgba(49, 49, 49, 1)',
+						height: !matches3 ? '100%' : 80,
+						width: !matches3 ? 100 : '100%'
 					}}
 				/>
 			</Box>
@@ -47,44 +49,45 @@ const SideBar = ({ ref0, ref1, ref2, ref3, ref4 }) => {
 				sx={{
 					zIndex: 9999,
 					position: 'fixed',
-					top: '25%',
-					left: 45,
-					height: '50%'
+					top: !matches3 ? '25%' : '85%',
+					left: !matches3 ? 45 : 20,
+					height: !matches3 ? '100%' : 80,
+					width: !matches3 ? 'auto' : '90vw'
 				}}>
 				<Fade>
 					<Stack
 						direction='column'
-						sx={{ height: '100%' }}
+						sx={{ height: !matches3 ? '50%' : '100%' }}
 						justifyContent='center'>
 						<Stack
-							direction='column'
-							sx={{ height: '75%' }}
-							justifyContent='space-between'
+							direction={!matches3 ? 'column' : 'row'}
+							sx={{ height: !matches3 ? '75%' : 40 }}
+							justifyContent={!matches3 ? 'space-between' : 'space-around'}
 							alignItems='center'>
 							<IconButton
 								className={styles2.iconShake}
 								onClick={() => handler(ref0)}>
-								<HomeIcon fontSize='large' />
+								<HomeIcon fontSize={!matches3 ? 'large' : 'medium'} />
 							</IconButton>
 							<IconButton
 								className={styles2.iconShake}
 								onClick={() => handler(ref1)}>
-								<AccountCircleIcon fontSize='large' />
+								<AccountCircleIcon fontSize={!matches3 ? 'large' : 'medium'} />
 							</IconButton>
 							<IconButton
 								className={styles2.iconShake}
 								onClick={() => handler(ref2)}>
-								<CodeIcon fontSize='large' />
+								<CodeIcon fontSize={!matches3 ? 'large' : 'medium'} />
 							</IconButton>
 							<IconButton
 								className={styles2.iconShake}
 								onClick={() => handler(ref3)}>
-								<WebIcon fontSize='large' />
+								<WebIcon fontSize={!matches3 ? 'large' : 'medium'} />
 							</IconButton>
 							<IconButton
 								className={styles2.iconShake}
 								onClick={() => handler(ref4)}>
-								<CallIcon fontSize='large' />
+								<CallIcon fontSize={!matches3 ? 'large' : 'medium'} />
 							</IconButton>
 						</Stack>
 					</Stack>

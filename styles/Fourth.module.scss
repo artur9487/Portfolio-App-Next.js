@@ -57,9 +57,7 @@
 }
 
 .pageButton {
-	width: 200px;
 	position: relative;
-	padding: 0.7em 1.5em;
 	border: 0;
 	border-radius: 0.5em;
 	box-shadow: 3px 3px 15px rgb(144, 0, 255), -3px 0px 15px rgb(144, 0, 255);
@@ -70,6 +68,20 @@
 		rgb(144, 0, 255, 0.5)
 	);
 	display: block;
+}
+
+@media screen and (min-width: 600px) {
+	.pageButton {
+		width: 200px;
+		padding: 0.7em 1.5em;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.pageButton {
+		width: 150px;
+		padding: 0.2em 0.8em;
+	}
 }
 
 .pageButton:hover {

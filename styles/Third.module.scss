@@ -1,6 +1,11 @@
 /** @format */
 
+.max {
+	width: '100%';
+}
+
 @mixin techCardSlide_theme($delay) {
+	width: 100%;
 	opacity: 0;
 	animation-name: example5;
 	animation-delay: $delay;
@@ -70,7 +75,7 @@
 .projectCard:hover .projectCardMedia {
 	transition: 0.5s all linear;
 	transform: scale(1.1);
-	filter: brightness(80%);
+	filter: brightness(90%);
 }
 
 .projectCardText {
@@ -92,13 +97,24 @@
 .dialogButton {
 	text-decoration: none;
 	position: relative;
-	padding: 0.7em 1.5em;
 	border: 0;
 	border-radius: 0.5em;
-	box-shadow: 3px 3px 15px rgb(144, 0, 255), -3px 0px 15px rgb(144, 0, 255);
+	box-shadow: 2px 2px 10px rgb(144, 0, 255), -3px 0px 15px rgb(144, 0, 255);
 	cursor: pointer;
 	background: linear-gradient(90deg, rgb(78, 22, 78), rgb(148, 34, 148));
 	display: block;
+}
+
+@media screen and (min-width: 600px) {
+	.dialogButton {
+		padding: 0.7em 1.5em;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.dialogButton {
+		padding: 0.5em 0.5em;
+	}
 }
 
 .dialogButton:hover {

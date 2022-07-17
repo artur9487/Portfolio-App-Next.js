@@ -10,6 +10,7 @@ const TechCardSlide = ({ children, indx }) => {
 	const [isVisible, setVisible] = useState(false);
 	return (
 		<VisibilitySensor
+			className={styles2.max}
 			active={isVisible ? false : true}
 			partialVisibility
 			onChange={(isVisiblee) => {

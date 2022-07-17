@@ -28,7 +28,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 	return <Slide direction='up' ref={ref} {...props} />;
 });
 
-const ProjectCard = ({ items, indx, matches }) => {
+const ProjectCard = ({ items, indx, matches, matches3 }) => {
 	const {
 		projLink,
 		repo,
@@ -64,17 +64,18 @@ const ProjectCard = ({ items, indx, matches }) => {
 				className={`${styles2.projectCard} ${styles2.shadows2}`}
 				ref={myRef}
 				sx={{
-					width: 320,
+					width: matches3 ? '100%' : 300,
 					height: 300,
-					bgcolor: 'rgba(158, 158, 158, 0.7)',
+					bgcolor: 'rgba(39, 37, 43, 0.5)',
 					borderRadius: 5,
 					p: 2,
 					border: 2,
-					borderColor: 'rgba(158, 158, 158)',
+					borderColor: 'rgb(75, 71, 82)',
 					cursor: 'pointer',
 					display: 'flex',
 					flexDirection: 'column',
-					alignItems: 'center'
+					alignItems: 'center',
+					margin: 'auto'
 				}}>
 				<CardMedia
 					className={styles2.projectCardMedia}
@@ -99,20 +100,19 @@ const ProjectCard = ({ items, indx, matches }) => {
 						<Typography
 							sx={{
 								fontFamily: 'Alumni Sans Inline One',
-								color: 'black'
+								color: 'rgb(216, 214, 219)'
 							}}
-							fontSize={35}
+							fontSize={!matches ? 35 : 30}
 							textAlign='center'>
 							{projectName}
 						</Typography>
 						<Typography
 							sx={{
 								fontFamily: 'Alumni Sans Inline One',
-								color: 'black',
-
+								color: 'rgb(216, 214, 219)',
 								mt: -2
 							}}
-							fontSize={25}
+							fontSize={!matches ? 25 : 20}
 							textAlign='center'>
 							{technology}
 						</Typography>
@@ -166,7 +166,7 @@ const ProjectCard = ({ items, indx, matches }) => {
 						<Stack
 							direction='column'
 							spacing={3}
-							sx={{ width: !matches ? '50%' : '100%', p: 4 }}>
+							sx={{ width: !matches ? '50%' : '100%', p: !matches3 ? 4 : 0 }}>
 							<Box>
 								<Stack
 									direction='row'
@@ -183,7 +183,7 @@ const ProjectCard = ({ items, indx, matches }) => {
 									</Typography>
 									<Typography
 										textAlign='center'
-										variant='h3'
+										fontSize={!matches3 ? 70 : 40}
 										sx={{
 											fontFamily: 'Alumni Sans Inline One',
 											color: 'white'
@@ -211,7 +211,7 @@ const ProjectCard = ({ items, indx, matches }) => {
 											color='secondary'
 											sx={{
 												m: 1,
-												//	bgcolor: 'rgb(144, 0, 255)',
+												fontSize: !matches3 ? 14 : 11,
 												background:
 													'linear-gradient(90deg, rgb(78, 22, 78), rgb(148, 34, 148));'
 											}}
@@ -221,7 +221,11 @@ const ProjectCard = ({ items, indx, matches }) => {
 								})}
 							</Box>
 							<Typography
-								sx={{ color: 'white', lineHeight: 1.8 }}
+								sx={{
+									color: 'white',
+									lineHeight: 1.8,
+									fontSize: !matches3 ? 16 : 13
+								}}
 								align='justify'>
 								{description}
 							</Typography>
@@ -234,7 +238,8 @@ const ProjectCard = ({ items, indx, matches }) => {
 									href={repo}
 									rel='noreferrer'
 									className={styles2.dialogButton}>
-									<Typography sx={{ color: 'white', fontSize: 15 }}>
+									<Typography
+										sx={{ color: 'white', fontSize: !matches3 ? 15 : 12 }}>
 										Show Code
 									</Typography>
 								</a>
@@ -244,13 +249,15 @@ const ProjectCard = ({ items, indx, matches }) => {
 										rel='noreferrer'
 										href={projLink}
 										className={styles2.dialogButton}>
-										<Typography sx={{ color: 'white', fontSize: 15 }}>
+										<Typography
+											sx={{ color: 'white', fontSize: !matches3 ? 15 : 12 }}>
 											Live Demo
 										</Typography>
 									</a>
 								)}
 								<button onClick={handleClose} className={styles2.dialogButton}>
-									<Typography sx={{ color: 'white', fontSize: 15 }}>
+									<Typography
+										sx={{ color: 'white', fontSize: !matches3 ? 15 : 12 }}>
 										Close Dialog
 									</Typography>
 								</button>

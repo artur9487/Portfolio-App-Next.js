@@ -2,7 +2,7 @@
 
 import { Stack, Typography } from '@mui/material';
 
-const FooterSection = () => {
+const FooterSection = (matches3) => {
 	return (
 		<Stack
 			alignItems='center'
@@ -14,8 +14,11 @@ const FooterSection = () => {
 				height: 70
 			}}>
 			<Typography
-				sx={{ color: 'white', fontFamily: 'Alumni Sans Inline One' }}
-				variant='h4'>
+				sx={{
+					color: 'white',
+					fontFamily: 'Alumni Sans Inline One',
+					fontSize: !matches3 ? 30 : 25
+				}}>
 				Copyright @2022
 			</Typography>
 		</Stack>
