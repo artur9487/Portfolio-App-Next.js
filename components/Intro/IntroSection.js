@@ -171,6 +171,7 @@ const IntroSection = ({ matches2, refe, matches3, matches }) => {
 								{obj.map((item, indx) => {
 									return (
 										<Typography
+											key={indx}
 											sx={{
 												fontFamily: 'Alumni Sans Inline One',
 												color: item.col,
@@ -194,6 +195,7 @@ const IntroSection = ({ matches2, refe, matches3, matches }) => {
 								{obj2.map((item, indx) => {
 									return (
 										<Typography
+											key={indx}
 											sx={{
 												fontFamily: 'Alumni Sans Inline One',
 												color: item.col,
