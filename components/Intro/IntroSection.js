@@ -224,7 +224,12 @@ const IntroSection = ({ matches2, refe, matches3, matches }) => {
 									borderColor: 'rgb(144, 0, 255)',
 									overflow: 'hidden'
 								}}>
-								<Image src={image} objectFit='cover' layout='fill' />
+								<Image
+									src={image}
+									objectFit='cover'
+									layout='fill'
+									alt='image'
+								/>
 							</Stack>
 						</Box>
 					</Stack>

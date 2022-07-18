@@ -8,7 +8,12 @@ const TechCard = ({ indx }) => {
 	return (
 		<Card className='slide' sx={{ p: 2 }}>
 			<CardMedia sx={{ width: '100%', height: '100%', position: 'relative' }}>
-				<Image layout='fill' objectFit='contain' src={`/img/${indx}.jpg`} />
+				<Image
+					layout='fill'
+					objectFit='contain'
+					src={`/img/${indx}.jpg`}
+					alt='image'
+				/>
 			</CardMedia>
 		</Card>
 	);

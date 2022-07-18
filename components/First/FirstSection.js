@@ -157,7 +157,7 @@ const FirstSection = ({ matches, matches3 }) => {
 										transform: 'rotate(0deg)'
 									}
 								}}>
-								<Image src={image} objectFit='cover' layout='fill' />
+								<Image src={image} objectFit='cover' layout='fill' alt='img' />
 							</Box>
 						</Box>
 					</Stack>

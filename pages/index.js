@@ -16,6 +16,7 @@ import { createTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import FooterSection from '../components/LayoutComp/FooterSection';
 import MainLayout from '../components/LayoutComp/MainLayout';
+import Head from 'next/head';
 
 const Home = ({ endResult }) => {
 	const matches = useMediaQuery('(max-width:1200px)');
@@ -43,6 +44,9 @@ const Home = ({ endResult }) => {
 
 	return (
 		<>
+			<Head>
+				<title>Portfolio App</title>
+			</Head>
 			<ThemeProvider theme={theme}>
 				<SideBar
 					ref0={ref0}

@@ -1,7 +1,6 @@
 /** @format */
 
 import {
-	Button,
 	Card,
 	CardContent,
 	CardMedia,
@@ -13,11 +12,9 @@ import {
 import Image from 'next/image';
 import React, { useRef, useState } from 'react';
 import TechCardSlide from './TechCardSlide';
-import styles from '/styles/Home.module.scss';
 import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import Slide from '@mui/material/Slide';
-import CustomButton from '../CustomComp/CustomButton';
 import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.css';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
@@ -152,12 +149,16 @@ const ProjectCard = ({ items, indx, matches, matches3 }) => {
 								}>
 								{obj.map((item, indx) => {
 									return (
-										<Carousel.Item key={indx}>
-											<img
-												className={`${styles2.caroImg} d-block `}
-												src={item.photo.url}
-												alt='slide'
-											/>
+										<Carousel.Item style={{ position: 'relative' }} key={indx}>
+											<Box sx={{ width: '100%', height: '100%' }}>
+												<Image
+													width={1000}
+													height={1000}
+													className={`${styles2.caroImg}`}
+													src={item.photo.url}
+													alt='slide'
+												/>
+											</Box>
 										</Carousel.Item>
 									);
 								})}
