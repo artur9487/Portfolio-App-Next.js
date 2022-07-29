@@ -67,26 +67,51 @@ const SideBar = ({ ref0, ref1, ref2, ref3, ref4, matches3 }) => {
 							justifyContent={!matches3 ? 'space-between' : 'space-around'}
 							alignItems='center'>
 							<IconButton
+								sx={{
+									'&:hover': {
+										backgroundColor: 'rgb(144, 0, 255)'
+									}
+								}}
 								className={styles2.iconShake}
 								onClick={() => handler(ref0)}>
 								<HomeIcon fontSize={!matches3 ? 'large' : 'medium'} />
 							</IconButton>
 							<IconButton
+								sx={{
+									'&:hover': {
+										backgroundColor: 'rgb(144, 0, 255)'
+									}
+								}}
 								className={styles2.iconShake}
 								onClick={() => handler(ref1)}>
 								<AccountCircleIcon fontSize={!matches3 ? 'large' : 'medium'} />
 							</IconButton>
 							<IconButton
+								sx={{
+									'&:hover': {
+										backgroundColor: 'rgb(144, 0, 255)'
+									}
+								}}
 								className={styles2.iconShake}
 								onClick={() => handler(ref2)}>
 								<CodeIcon fontSize={!matches3 ? 'large' : 'medium'} />
 							</IconButton>
 							<IconButton
+								sx={{
+									'&:hover': {
+										backgroundColor: 'rgb(144, 0, 255)'
+									}
+								}}
 								className={styles2.iconShake}
 								onClick={() => handler(ref3)}>
 								<WebIcon fontSize={!matches3 ? 'large' : 'medium'} />
 							</IconButton>
 							<IconButton
+								sx={{
+									'&:hover': {
+										backgroundColor: 'rgb(144, 0, 255)'
+									}
+								}}
 								className={styles2.iconShake}
 								onClick={() => handler(ref4)}>
 								<CallIcon fontSize={!matches3 ? 'large' : 'medium'} />
