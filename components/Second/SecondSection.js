@@ -50,6 +50,7 @@ const SecondSection = ({ matches, matches2, matches3 }) => {
 					setVisible(isVisiblee);
 				}}>
 				<Box
+					className={styles.fade600}
 					sx={{
 						height: !matches ? '90%' : '100vh',
 						width: '100%',
@@ -147,6 +148,7 @@ const SecondSection = ({ matches, matches2, matches3 }) => {
 						</Grid>
 					</Box>
 					<Stack
+						className={isVisible ? styles2.slideVis : styles.none}
 						direction='column'
 						justifyContent='center'
 						sx={{

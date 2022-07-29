@@ -4,7 +4,7 @@
 	opacity: 0;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 899px) {
 	.fade900 {
 		opacity: 0;
 		animation-name: example;
@@ -22,7 +22,7 @@
 	}
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 899px) {
 	.fade900 {
 		opacity: 0;
 		animation-name: example2;
@@ -44,7 +44,7 @@
 	opacity: 0;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1201px) {
 	.fade1200 {
 		opacity: 0;
 		animation-name: example8;
@@ -62,7 +62,7 @@
 	}
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1201px) {
 	.fade1200 {
 		opacity: 0;
 		animation-name: example9;
@@ -71,6 +71,46 @@
 	}
 
 	@keyframes example9 {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+}
+
+.fade600 {
+	opacity: 0;
+}
+
+@media screen and (max-width: 601px) {
+	.fade600 {
+		opacity: 0;
+		animation-name: fade600ann;
+		animation-duration: 4s;
+		animation-fill-mode: forwards;
+	}
+
+	@keyframes fade600ann {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+}
+
+@media screen and (min-width: 601px) {
+	.fade600 {
+		opacity: 0;
+		animation-name: fade600annb;
+		animation-duration: 4s;
+		animation-fill-mode: forwards;
+	}
+
+	@keyframes fade600annb {
 		from {
 			opacity: 0;
 		}
@@ -89,7 +129,7 @@
 .slide_left {
 	opacity: 0;
 	animation-name: example3;
-	animation-duration: 4s;
+	animation-duration: 2s;
 	animation-fill-mode: forwards;
 	.shadows {
 		@include shadow_theme;
@@ -113,7 +153,7 @@
 
 .slide_right {
 	animation-name: example4;
-	animation-duration: 4s;
+	animation-duration: 2s;
 	.shadows {
 		@include shadow_theme;
 	}
@@ -166,8 +206,21 @@
 		width: 0%;
 		animation-fill-mode: forwards;
 		animation-name: dividAnn;
-		animation-duration: 2s;
-		animation-delay: 4s;
+		animation-duration: 3s;
+		animation-delay: 5s;
+	}
+}
+
+.fade {
+	opacity: 1;
+	animation-name: fadeAnn;
+	animation-duration: 4s;
+	.divid3s {
+		width: 0%;
+		animation-fill-mode: forwards;
+		animation-name: dividAnn;
+		animation-duration: 3s;
+		animation-delay: 2s;
 	}
 }
 
@@ -198,4 +251,13 @@
 
 .noVis {
 	opacity: 0;
+}
+
+.Vis {
+	opacity: 1;
+}
+
+.mainBox {
+	overflow-y: hidden;
+	border: 10;
 }

@@ -2,6 +2,7 @@
 
 import { Box, Typography, Grid } from '@mui/material';
 import styles2 from '../../styles/Second.module.scss';
+import styles from '../../styles/Home.module.scss';
 
 const TechFragmBig = ({
 	item,
@@ -35,7 +36,7 @@ const TechFragmBig = ({
 	if (mar === 'auto') {
 		boxu = (
 			<Box
-				className={isVisible ? styli : null}
+				className={isVisible ? styli : styles.noVis}
 				sx={{
 					borderRadius: 3,
 					display: 'flex',
@@ -48,7 +49,7 @@ const TechFragmBig = ({
 					height: '100%'
 				}}>
 				<Box
-					className={isVisible ? styli2 : null}
+					className={isVisible ? styli2 : styles.noVis}
 					sx={{
 						borderRadius: 3,
 						display: 'flex',
@@ -64,7 +65,7 @@ const TechFragmBig = ({
 	} else if (mar === 'right') {
 		boxu = (
 			<Box
-				className={isVisible ? styli : null}
+				className={isVisible ? styli : styles.noVis}
 				sx={{
 					borderRadius: 3,
 					display: 'flex',
@@ -77,7 +78,7 @@ const TechFragmBig = ({
 					transform: 'translateX(-100%)'
 				}}>
 				<Box
-					className={isVisible ? styli2 : null}
+					className={isVisible ? styli2 : styles.noVis}
 					sx={{
 						borderRadius: 3,
 						display: 'flex',
@@ -93,7 +94,7 @@ const TechFragmBig = ({
 	} else if (mar === 'left') {
 		boxu = (
 			<Box
-				className={isVisible ? styli : null}
+				className={isVisible ? styli : styles.noVis}
 				sx={{
 					borderRadius: 3,
 					display: 'flex',
@@ -106,7 +107,7 @@ const TechFragmBig = ({
 					height: '100%'
 				}}>
 				<Box
-					className={isVisible ? styli2 : null}
+					className={isVisible ? styli2 : styles.noVis}
 					sx={{
 						borderRadius: 3,
 						display: 'flex',

@@ -71,7 +71,7 @@ const IntroSection = ({ matches2, refe, matches3, matches }) => {
 						id='tsparticles'
 						init={particlesInit}
 						loaded={particlesLoaded}
-						width='100%'
+						width='100vw'
 						height='100%'
 						options={{
 							fullScreen: false,
@@ -162,55 +162,69 @@ const IntroSection = ({ matches2, refe, matches3, matches }) => {
 							left: !matches3 ? '30%' : '10%'
 						}}>
 						<Box sx={{ margin: 'auto' }}>
-							<Stack
-								className={styles.fade1200}
-								sx={{ width: '100%' }}
-								direction='row'
-								justifyContent='center'
-								spacing={5}>
-								{obj.map((item, indx) => {
-									return (
-										<Typography
-											key={indx}
-											sx={{
-												fontFamily: 'Alumni Sans Inline One',
-												color: item.col,
-												fontSize: !matches3 ? 40 : 25
-											}}
-											className={item.styl}>
-											{item.name}
-										</Typography>
-									);
-								})}
-							</Stack>
-							<Box className={styles2.divider} />
+							<Box
+								sx={{ width: '100%', height: '100%' }}
+								className={styles.fade900}>
+								<Stack
+									className={styles.fade600}
+									sx={{ width: '100%' }}
+									direction='row'
+									justifyContent='center'
+									spacing={5}>
+									{obj.map((item, indx) => {
+										return (
+											<Typography
+												key={indx}
+												sx={{
+													fontFamily: 'Alumni Sans Inline One',
+													color: item.col,
+													fontSize: !matches3 ? 40 : 25
+												}}
+												className={item.styl}>
+												{item.name}
+											</Typography>
+										);
+									})}
+								</Stack>
+							</Box>
+
+							<Box sx={{ margin: 'auto' }} className={styles2.divider} />
 						</Box>
 						<Box sx={{ margin: 'auto' }}>
-							<Stack
-								className={styles.fade1200}
-								sx={{ width: '100%' }}
-								direction='row'
-								justifyContent='center'
-								spacing={5}>
-								{obj2.map((item, indx) => {
-									return (
-										<Typography
-											key={indx}
-											sx={{
-												fontFamily: 'Alumni Sans Inline One',
-												color: item.col,
-												fontSize: !matches3 ? 50 : 32
-											}}
-											className={item.styl}>
-											{item.name}
-										</Typography>
-									);
-								})}
-							</Stack>
-							<Box className={styles2.divider2} />
+							<Box
+								sx={{
+									maxWidth: 500,
+									height: '100%',
+									margin: 'auto'
+								}}
+								className={styles.fade900}>
+								<Stack
+									className={styles.fade600}
+									sx={{ width: '100%' }}
+									direction='row'
+									justifyContent='center'
+									spacing={5}>
+									{obj2.map((item, indx) => {
+										return (
+											<Typography
+												key={indx}
+												sx={{
+													fontFamily: 'Alumni Sans Inline One',
+													color: item.col,
+													fontSize: !matches3 ? 50 : 32
+												}}
+												className={item.styl}>
+												{item.name}
+											</Typography>
+										);
+									})}
+								</Stack>
+								<Box sx={{ margin: 'auto' }} className={styles2.divider2} />
+							</Box>
 						</Box>
 						<Box className={styles2.img}>
 							<Stack
+								className={styles.fade600}
 								direction='row'
 								spacing={10}
 								justifyContent='center'

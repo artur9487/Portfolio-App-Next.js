@@ -7,6 +7,7 @@ const ThirdSection = ({ result, matches, matches3 }) => {
 	return (
 		<>
 			<Stack
+				className={styles.fade600}
 				sx={{ width: '100%', margin: 'auto', height: '90%', mt: 2 }}
 				direction='row'
 				alignItems='center'

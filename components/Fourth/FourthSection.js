@@ -1,9 +1,11 @@
 /** @format */
 
-import { Box, Stack, TextField, Button, Typography } from '@mui/material';
+import { Box, Stack, TextField, Typography } from '@mui/material';
 import styles2 from '/styles/Fourth.module.scss';
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
+import styles from '/styles/Home.module.scss';
+import { makeStyles } from '@mui/styles';
 
 const errorComp = (
 	<Typography sx={{ fontFamily: 'Playfair Display', color: 'red' }}>
@@ -11,12 +13,19 @@ const errorComp = (
 	</Typography>
 );
 
-const FourthSection = ({ matches3 }) => {
+const useStyles = makeStyles(() => ({
+	noBorder: {
+		border: 'none'
+	}
+}));
+
+const FourthSection = ({ matches3, matches }) => {
 	const [email, setEmail] = useState('');
 	const [name, setName] = useState('');
 	const [message, setMessage] = useState('');
 	const [boxStyle, setBoxStyle] = useState(styles2.box_notVisi);
 	const [textStyle, setTextStyle] = useState(styles2.text_notVisi);
+	const classes = useStyles();
 
 	const form = useRef();
 
@@ -84,7 +93,9 @@ const FourthSection = ({ matches3 }) => {
 	};
 	return (
 		<>
-			<Stack sx={{ height: '90%' }}>
+			<Stack
+				className={styles.fade600}
+				sx={{ height: '90%', mt: matches ? 0 : 5 }}>
 				<form ref={form} onSubmit={sendEmail}>
 					<Stack
 						direction='column'
@@ -100,7 +111,7 @@ const FourthSection = ({ matches3 }) => {
 							<Typography
 								textAlign='center'
 								sx={{
-									fontSize: !matches3 ? 42 : 22,
+									fontSize: !matches3 ? 32 : 22,
 									fontFamily: 'Alumni Sans Inline One',
 									color: 'white'
 								}}>
@@ -141,27 +152,32 @@ const FourthSection = ({ matches3 }) => {
 										value={name}
 										onChange={(e) => setName(e.target.value)}
 										fullWidth
-										variant='outlined'
 										sx={{
 											bgcolor: 'rgba(78, 78, 78, 0.8)'
 										}}
 										type='text'
 										color='secondary'
-										inputProps={{ style: { fontSize: 20, color: 'white' } }}
+										label='.'
+										inputProps={{
+											style: { fontSize: 20, color: 'white' }
+										}}
 									/>
 									<TextField
+										className={classes.noBorder}
 										error={errorsy.email ? true : false}
 										name='email'
 										value={email}
 										onChange={(e) => setEmail(e.target.value)}
 										fullWidth
-										variant='outlined'
+										label='.'
 										sx={{
 											bgcolor: 'rgba(78, 78, 78, 0.8)'
 										}}
 										type='text'
 										color='secondary'
-										inputProps={{ style: { fontSize: 20, color: 'white' } }}
+										inputProps={{
+											style: { fontSize: 20, color: 'white' }
+										}}
 									/>
 								</Stack>
 								<Stack direction='row' sx={{ width: '100%' }} spacing={3}>
@@ -181,6 +197,7 @@ const FourthSection = ({ matches3 }) => {
 									Message
 								</Typography>
 								<TextField
+									label='.'
 									error={errorsy.message ? true : false}
 									name='message'
 									value={message}
@@ -192,7 +209,6 @@ const FourthSection = ({ matches3 }) => {
 									type='text'
 									color='secondary'
 									sx={{
-										fontSize: 30,
 										color: 'white',
 										bgcolor: 'rgba(78, 78, 78, 0.8)'
 									}}
@@ -214,7 +230,7 @@ const FourthSection = ({ matches3 }) => {
 										color: 'white',
 										fontFamily: 'Alumni Sans Inline One'
 									}}
-									fontSize={!matches3 ? 35 : 27}>
+									fontSize={!matches3 ? 32 : 27}>
 									Or call me: 607805490
 								</Typography>
 							</Box>

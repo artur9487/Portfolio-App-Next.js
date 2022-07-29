@@ -18,6 +18,7 @@ const SideBar = ({ ref0, ref1, ref2, ref3, ref4, matches3 }) => {
 	return (
 		<>
 			<Box
+				className={styles.fade600}
 				sx={{
 					overflow: 'hidden',
 					border: 5,
@@ -46,6 +47,7 @@ const SideBar = ({ ref0, ref1, ref2, ref3, ref4, matches3 }) => {
 			</Box>
 
 			<Box
+				className={styles.fade600}
 				sx={{
 					zIndex: 9999,
 					position: 'fixed',

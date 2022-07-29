@@ -15,10 +15,12 @@ body {
 	margin: 0;
 	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
 		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-	background: rgb(5, 2, 8);
+	/*background: rgb(5, 2, 8);*/
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
+	width: 100vw;
+	overflow-x: hidden;
 }
 
 a {

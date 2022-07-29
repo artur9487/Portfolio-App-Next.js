@@ -6,7 +6,7 @@ import VisibilitySensor from 'react-visibility-sensor';
 import { useState } from 'react';
 import Fade from './Fade';
 
-const Layout = ({ children, matches, refe, title, matches3 }) => {
+const Layout = ({ children, matches, refe, title, matches3, styl }) => {
 	const [isVisible, setVisible] = useState(false);
 	const firstLetter = title.slice(0, 1);
 	const restLetters = title.slice(1);
@@ -28,6 +28,7 @@ const Layout = ({ children, matches, refe, title, matches3 }) => {
 					}}>
 					<>
 						<Box
+							className={styles.fade600}
 							sx={{
 								pb: 0,
 								height: '10%',
@@ -66,7 +67,7 @@ const Layout = ({ children, matches, refe, title, matches3 }) => {
 								</Stack>
 
 								<Box
-									className={styles.divid}
+									className={styl}
 									sx={{
 										height: 5,
 										background:

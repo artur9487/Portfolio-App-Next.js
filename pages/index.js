@@ -17,6 +17,7 @@ import { ThemeProvider } from '@material-ui/styles';
 import FooterSection from '../components/LayoutComp/FooterSection';
 import MainLayout from '../components/LayoutComp/MainLayout';
 import Head from 'next/head';
+import { Box } from '@mui/material';
 
 const Home = ({ endResult }) => {
 	const matches = useMediaQuery('(max-width:1200px)');
@@ -48,65 +49,67 @@ const Home = ({ endResult }) => {
 				<title>Portfolio App</title>
 			</Head>
 			<ThemeProvider theme={theme}>
-				<SideBar
-					ref0={ref0}
-					ref1={ref1}
-					ref2={ref2}
-					ref3={ref3}
-					ref4={ref4}
-					matches3={matches3}
-				/>
-				<IntroSection
-					refe={ref0}
-					matches={matches}
-					matches2={matches2}
-					matches3={matches3}
-				/>
-				<MainLayout>
-					<Layout
-						matches={matches}
+				<Box className={styles.mainBox}>
+					<SideBar
+						ref0={ref0}
+						ref1={ref1}
+						ref2={ref2}
+						ref3={ref3}
+						ref4={ref4}
 						matches3={matches3}
-						refe={ref1}
-						title='About Me'>
-						<Slide slide={styles.slide_left}>
+					/>
+					<IntroSection
+						refe={ref0}
+						matches={matches}
+						matches2={matches2}
+						matches3={matches3}
+					/>
+					<MainLayout>
+						<Layout
+							styl={styles.divid}
+							matches={matches}
+							matches3={matches3}
+							refe={ref1}
+							title='About Me'>
 							<FirstSection matches={matches} matches3={matches3} />
-						</Slide>
-					</Layout>
-					<Layout
-						matches={matches}
-						refe={ref2}
-						matches3={matches3}
-						title='My Tech Stack'>
-						<Slide slide={styles.slide_right}>
+						</Layout>
+						<Layout
+							styl={styles.divid}
+							matches={matches}
+							refe={ref2}
+							matches3={matches3}
+							title='My Tech Stack'>
 							<SecondSection
 								matches={matches}
 								matches2={matches2}
 								matches3={matches3}
 							/>
-						</Slide>
-					</Layout>
-					<Layout
-						matches={matches}
-						matches3={matches3}
-						refe={ref3}
-						title='My Projects'>
-						<ThirdSection
-							result={endResult}
+						</Layout>
+						<Layout
+							styl={styles.divid}
 							matches={matches}
 							matches3={matches3}
-						/>
-					</Layout>
-					<Layout
-						matches={matches}
-						refe={ref4}
-						matches3={matches3}
-						title='Contact'>
-						<Slide slide={styles.slide_left}>
-							<FourthSection matches3={matches3} />
-						</Slide>
-					</Layout>
-					<FooterSection matches3={matches3} />
-				</MainLayout>
+							refe={ref3}
+							title='My Projects'>
+							<ThirdSection
+								result={endResult}
+								matches={matches}
+								matches3={matches3}
+							/>
+						</Layout>
+						<Layout
+							styl={styles.divid3s}
+							matches={matches}
+							refe={ref4}
+							matches3={matches3}
+							title='Contact'>
+							<Slide slide={styles.slide_left}>
+								<FourthSection matches3={matches3} matches={matches} />
+							</Slide>
+						</Layout>
+						<FooterSection matches3={matches3} />
+					</MainLayout>
+				</Box>
 			</ThemeProvider>
 		</>
 	);

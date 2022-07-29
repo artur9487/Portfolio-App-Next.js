@@ -11,13 +11,13 @@
 	color: transparent;
 }
 .text1 {
-	animation-delay: 4.5s;
+	animation-delay: 2.5s;
 }
 .text2 {
-	animation-delay: 5.5s;
+	animation-delay: 3.5s;
 }
 .text3 {
-	animation-delay: 6.5s;
+	animation-delay: 4.5s;
 }
 .text1 span,
 .text2 span,
@@ -32,13 +32,13 @@
 	animation-delay: 0.5s;
 }
 .text1 span {
-	animation-delay: 4s;
+	animation-delay: 2s;
 }
 .text2 span {
-	animation-delay: 5s;
+	animation-delay: 3s;
 }
 .text3 span {
-	animation-delay: 6s;
+	animation-delay: 4s;
 }
 
 @keyframes text_reveal_box {
@@ -65,5 +65,37 @@
 	.imgBox {
 		width: 300px;
 		height: 400px;
+	}
+}
+
+.brackets {
+	animation: brackets_reveal 3s ease;
+	opacity: 0;
+	animation-delay: 4s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes brackets_reveal {
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.imageVis {
+	animation: image_reveal 3s ease;
+	opacity: 0;
+	animation-delay: 4s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes image_reveal {
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
 	}
 }

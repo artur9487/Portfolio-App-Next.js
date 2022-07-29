@@ -13,15 +13,11 @@ const FirstSection = ({ matches, matches3 }) => {
 	const [isVisible, setVisible] = useState(false);
 	const obj = [
 		{
-			text: `Hi! I am Artur. I am learning frontend technologies for about 3
-	years. I am looking for my firs Job as React, React-native or
-	Next.js developer.`,
+			text: `Hi! I am Artur. I am learning frontend technologies for about 2 years. I am looking for my firs Job as React, React-native or Next.js developer.`,
 			styl: styles2.text1
 		},
 		{
-			text: `I took my entire knowledge from tutorials, documentations, or
-	developer articles. To strong my skills I made a few projects in
-	which I mostly cover my knowledge. `,
+			text: `I took my entire knowledge from tutorials, documentations, or developer articles. To strong my skills I made a few projects in which I mostly cover my knowledge. `,
 			styl: styles2.text2
 		},
 		{
@@ -47,6 +43,7 @@ const FirstSection = ({ matches, matches3 }) => {
 					direction={!matches ? 'row' : 'column'}
 					sx={{ width: '100%', height: '90%', mt: matches ? 10 : 0 }}>
 					<Stack
+						className={styles.fade600}
 						sx={{
 							maxWidth: matches || matches3 ? '100%' : '50%'
 						}}
@@ -64,7 +61,7 @@ const FirstSection = ({ matches, matches3 }) => {
 							direction='column'
 							spacing={2}>
 							<Box
-								className={isVisible ? styles2.brackets : null}
+								className={isVisible ? styles2.brackets : styles.none}
 								sx={{
 									width: !matches3 ? 90 : 45,
 									position: 'absolute',
@@ -76,7 +73,7 @@ const FirstSection = ({ matches, matches3 }) => {
 								}}
 							/>
 							<Box
-								className={isVisible ? styles2.brackets : null}
+								className={isVisible ? styles2.brackets : styles.none}
 								sx={{
 									width: !matches3 ? 10 : 5,
 									position: 'absolute',
@@ -88,7 +85,7 @@ const FirstSection = ({ matches, matches3 }) => {
 								}}
 							/>
 							<Box
-								className={isVisible ? styles2.brackets : null}
+								className={isVisible ? styles2.brackets : styles.none}
 								sx={{
 									width: !matches3 ? 60 : 30,
 									position: 'absolute',
@@ -100,7 +97,7 @@ const FirstSection = ({ matches, matches3 }) => {
 								}}
 							/>
 							<Box
-								className={isVisible ? styles2.brackets : null}
+								className={isVisible ? styles2.brackets : styles.none}
 								sx={{
 									width: !matches3 ? 10 : 5,
 									position: 'absolute',
@@ -118,7 +115,7 @@ const FirstSection = ({ matches, matches3 }) => {
 										align='justify'
 										className={isVisible ? item.styl : null}
 										sx={{
-											fontSize: !matches ? 20 : 15,
+											fontSize: !matches3 ? 20 : 15,
 											lineHeight: 1.5,
 											fontFamily: 'Poppins'
 										}}>
@@ -130,11 +127,13 @@ const FirstSection = ({ matches, matches3 }) => {
 						</Stack>
 					</Stack>
 					<Stack
+						className={styles.fade600}
 						sx={{ maxWidth: !matches ? '50%' : '100%' }}
 						alignItems='center'
 						justifyContent='center'
 						direction='row'>
 						<Box
+							className={isVisible ? styles2.imageVis : styles.none}
 							sx={{
 								background: `linear-gradient(
 								45deg,
