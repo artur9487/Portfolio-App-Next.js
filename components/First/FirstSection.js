@@ -17,7 +17,7 @@ const FirstSection = ({ matches, matches3 }) => {
 			styl: styles2.text1
 		},
 		{
-			text: `I took my entire knowledge from tutorials, documentations, or developer articles. To strong my skills I made a few projects in which I mostly cover my knowledge. `,
+			text: `I took my entire knowledge from tutorials, documentations and developer articles. To strong my skills I made a few projects in which I mostly cover my knowledge. `,
 			styl: styles2.text2
 		},
 		{

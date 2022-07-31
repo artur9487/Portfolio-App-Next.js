@@ -27,7 +27,14 @@ const TechFragmBig = ({
 	}
 
 	const typo = (
-		<Typography sx={{ lineHeight: '2', fontSize: !matches ? 20 : 16 }}>
+		<Typography
+			sx={{
+				lineHeight: '2',
+				fontSize: !matches ? 22 : 16,
+				fontFamily: 'Alumni Sans Inline One',
+				letterSpacing: 3,
+				color: 'rgb(216, 214, 219)'
+			}}>
 			{item}
 		</Typography>
 	);

@@ -1,5 +1,5 @@
 /** @format */
-import { Grid, Box } from '@mui/material';
+import { Grid, Box, Typography } from '@mui/material';
 import styles from '/styles/Home.module.scss';
 import styles2 from '../../styles/Second.module.scss';
 
@@ -120,7 +120,14 @@ const TechSmall = ({ techArr, isVisible }) => {
 							width: '100%',
 							height: '100%'
 						}}>
-						{item}
+						<Typography
+							sx={{
+								fontFamily: 'Alumni Sans Inline One',
+								letterSpacing: 2,
+								color: 'rgb(216, 214, 219)'
+							}}>
+							{item}
+						</Typography>
 					</Box>
 				</Box>
 			</Grid>

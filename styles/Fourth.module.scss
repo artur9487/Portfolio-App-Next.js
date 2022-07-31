@@ -94,3 +94,63 @@
 	box-shadow: none;
 	box-shadow: 1px 1px 10px rgb(144, 0, 255), -1px 0px 10px rgb(144, 0, 255);
 }
+
+@mixin techCardSlide_theme($slide) {
+	animation-delay: 2s;
+	opacity: 0;
+	animation-name: $slide;
+	animation-duration: 4s;
+	animation-fill-mode: forwards;
+}
+
+@mixin shadows_theme {
+	animation-name: shadowAnn;
+	animation-duration: 3s;
+	animation-delay: 6s;
+	animation-fill-mode: forwards;
+}
+
+.card0 {
+	@include techCardSlide_theme(slideAnn1);
+	.innerCard0 {
+		@include shadows_theme;
+	}
+}
+
+.card1 {
+	@include techCardSlide_theme(slideAnn);
+	.innerCard1 {
+		@include shadows_theme;
+	}
+}
+
+@keyframes shadowAnn {
+	0% {
+		box-shadow: none;
+	}
+	100% {
+		box-shadow: 0px 5px 10px rgb(144, 0, 255);
+	}
+}
+
+@keyframes slideAnn {
+	from {
+		opacity: 0;
+		transform: translateX(+30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+
+@keyframes slideAnn1 {
+	from {
+		opacity: 0;
+		transform: translateX(-30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}

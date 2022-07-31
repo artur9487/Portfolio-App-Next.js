@@ -78,6 +78,10 @@ const SideBar = ({ ref0, ref1, ref2, ref3, ref4, matches3 }) => {
 							</IconButton>
 							<IconButton
 								sx={{
+									transition: (theme) =>
+										theme.transitions.create('all', {
+											duration: theme.transitions.duration.longest
+										}),
 									'&:hover': {
 										backgroundColor: 'rgb(144, 0, 255)'
 									}

@@ -6,7 +6,6 @@ import SecondSection from '../components/Second/SecondSection';
 import ThirdSection from '../components/Third/ThirdSection';
 import { request, gql } from 'graphql-request';
 import FourthSection from '../components/Fourth/FourthSection';
-import Slide from '../components/LayoutComp/Slide';
 import SideBar from '../components/LayoutComp/SideBar';
 import { useRef } from 'react';
 import Layout from '../components/LayoutComp/Layout';
@@ -98,14 +97,16 @@ const Home = ({ endResult }) => {
 							/>
 						</Layout>
 						<Layout
-							styl={styles.divid3s}
+							styl={styles.divid}
 							matches={matches}
 							refe={ref4}
 							matches3={matches3}
 							title='Contact'>
-							<Slide slide={styles.slide_left}>
-								<FourthSection matches3={matches3} matches={matches} />
-							</Slide>
+							<FourthSection
+								matches3={matches3}
+								matches={matches}
+								matches2={matches2}
+							/>
 						</Layout>
 						<FooterSection matches3={matches3} />
 					</MainLayout>
