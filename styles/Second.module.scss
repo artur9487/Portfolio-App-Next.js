@@ -196,14 +196,14 @@
 }
 
 .brackets {
-	animation: brackets_reveal 3s ease;
+	animation: brackets_reveal 6s ease;
 	opacity: 0;
-	animation-delay: 3.5s;
+	animation-delay: 5s;
 	animation-fill-mode: forwards;
 }
 
 @keyframes brackets_reveal {
-	50% {
+	0% {
 		opacity: 0;
 	}
 	100% {
@@ -248,14 +248,14 @@
 }
 
 .slideVis {
-	animation: slide_reveal 4s ease;
+	animation: slide_reveal 6s ease;
 	opacity: 0;
-	animation-delay: 3.5s;
+	animation-delay: 5s;
 	animation-fill-mode: forwards;
 }
 
 @keyframes slide_reveal {
-	50% {
+	0% {
 		opacity: 0;
 	}
 	100% {

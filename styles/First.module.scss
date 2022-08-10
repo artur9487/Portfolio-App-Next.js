@@ -69,14 +69,14 @@
 }
 
 .brackets {
-	animation: brackets_reveal 3s ease;
+	animation: brackets_reveal 6s ease;
 	opacity: 0;
-	animation-delay: 4s;
+	animation-delay: 5s;
 	animation-fill-mode: forwards;
 }
 
 @keyframes brackets_reveal {
-	50% {
+	0% {
 		opacity: 0;
 	}
 	100% {
@@ -85,14 +85,14 @@
 }
 
 .imageVis {
-	animation: image_reveal 3s ease;
+	animation: image_reveal 6s ease;
 	opacity: 0;
-	animation-delay: 4s;
+	animation-delay: 5s;
 	animation-fill-mode: forwards;
 }
 
 @keyframes image_reveal {
-	50% {
+	0% {
 		opacity: 0;
 	}
 	100% {
