@@ -72,26 +72,14 @@
 	position: relative;
 }
 
-.projectCard:hover .projectCardMedia {
-	transition: 0.5s all linear;
-	transform: scale(1.1);
-	filter: brightness(90%);
-}
-
-.projectCardText {
-	opacity: 0;
-	transition: 0.5s all linear;
-}
-
-.projectCard:hover .projectCardText {
-	background-color: rgba(255, 255, 255, 0.7);
-	opacity: 1;
-	transition: 0.5s all linear;
-}
-
 .projectCard:hover {
-	transition: 0.5s linear all;
-	background-color: rgba(158, 158, 158, 0.4);
+	transition: 0.5s all linear;
+	transform: translateY(-15px);
+	filter: brightness(200%);
+}
+
+.projectCard:hover .projectCardMedia {
+	filter: brightness(50%);
 }
 
 .dialogButton {
@@ -126,26 +114,6 @@
 	left: 1px;
 	box-shadow: none;
 	box-shadow: 1px 1px 10px rgb(144, 0, 255), -1px 0px 10px rgb(144, 0, 255);
-}
-
-.pageButton2 {
-	width: 200px;
-	position: relative;
-	padding: 0.7em 1.5em;
-	border: 0;
-	border-radius: 0.5em;
-	box-shadow: 3px 3px 15px rgb(144, 0, 255), -3px 0px 15px rgb(144, 0, 255);
-	cursor: pointer;
-	background: linear-gradient(
-		90deg,
-		rgba(90, 0, 158, 0.5),
-		rgb(144, 0, 255, 0.5)
-	);
-	display: block;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
 }
 
 .caroImg {

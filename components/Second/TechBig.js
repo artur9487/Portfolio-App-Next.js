@@ -213,7 +213,6 @@ const TechBig = ({ techArr, matches, matches2, isVisible }) => {
 						num={4}
 						mar='auto'
 						styli={styles2.second}
-						shad='left'
 						type='none'
 						matches={matches}
 						matches2={matches2}
@@ -368,7 +367,7 @@ const TechBig = ({ techArr, matches, matches2, isVisible }) => {
 						num={12}
 						mar='auto'
 						styli={styles2.forth}
-						shad='left'
+						shad='down'
 						type='first'
 						matches={matches}
 						matches2={matches2}

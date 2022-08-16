@@ -46,10 +46,6 @@ const ProjectCard = ({ items, indx, matches, matches3 }) => {
 
 	const obj = [{ photo: photo0 }, { photo: photo1 }, { photo: photo2 }];
 
-	const handleClickOpen = () => {
-		setOpen(true);
-	};
-
 	const handleClose = () => {
 		setOpen(false);
 	};
@@ -82,15 +78,6 @@ const ProjectCard = ({ items, indx, matches, matches3 }) => {
 						position: 'relative'
 					}}>
 					<Image src={photo0.url} layout='fill' objectFit='contain' />
-					<button
-						className={`${styles2.pageButton2} ${styles2.projectCardText}`}>
-						<Typography
-							fontSize={25}
-							fontWeight={10}
-							sx={{ color: 'black', fontFamily: 'Alumni Sans Inline One' }}>
-							Show Details
-						</Typography>
-					</button>
 				</CardMedia>
 				<CardContent sx={{ height: '30%', width: '100%' }}>
 					<Stack sx={{ width: '100%' }} direction='column'>

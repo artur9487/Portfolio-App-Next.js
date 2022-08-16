@@ -1,6 +1,5 @@
 /** @format */
 
-import styles from '/styles/Home.module.scss';
 import { Typography } from '@mui/material';
 import styles2 from '/styles/Third.module.scss';
 

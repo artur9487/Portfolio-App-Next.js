@@ -11,8 +11,6 @@ import { useRef } from 'react';
 import Layout from '../components/LayoutComp/Layout';
 import IntroSection from '../components/Intro/IntroSection';
 import { useMediaQuery } from '@mui/material';
-import { createTheme } from '@material-ui/core/styles';
-import { ThemeProvider } from '@material-ui/styles';
 import FooterSection from '../components/LayoutComp/FooterSection';
 import MainLayout from '../components/LayoutComp/MainLayout';
 import Head from 'next/head';
@@ -28,90 +26,75 @@ const Home = ({ endResult }) => {
 	const ref3 = useRef(null);
 	const ref4 = useRef(null);
 
-	const theme = createTheme({
-		typography: {
-			fontFamily: [
-				'Nunito',
-				'Roboto',
-				'"Helvetica Neue"',
-				'Arial',
-				'sans-serif',
-				'Alumni Sans Inline One',
-				'Poppins'
-			].join(',')
-		}
-	});
-
 	return (
 		<>
 			<Head>
 				<title>Portfolio App</title>
 			</Head>
-			<ThemeProvider theme={theme}>
-				<Box className={styles.mainBox}>
-					<SideBar
-						ref0={ref0}
-						ref1={ref1}
-						ref2={ref2}
-						ref3={ref3}
-						ref4={ref4}
-						matches3={matches3}
-					/>
-					<IntroSection
-						refe={ref0}
+
+			<Box className={styles.mainBox}>
+				<SideBar
+					ref0={ref0}
+					ref1={ref1}
+					ref2={ref2}
+					ref3={ref3}
+					ref4={ref4}
+					matches3={matches3}
+				/>
+				<IntroSection
+					refe={ref0}
+					matches={matches}
+					matches2={matches2}
+					matches3={matches3}
+				/>
+				<MainLayout>
+					<Layout
+						styl={styles.divider}
 						matches={matches}
-						matches2={matches2}
 						matches3={matches3}
-					/>
-					<MainLayout>
-						<Layout
-							styl={styles.divid}
+						refe={ref1}
+						title='About Me'>
+						<FirstSection matches={matches} matches3={matches3} />
+					</Layout>
+					<Layout
+						styl={styles.divider}
+						matches={matches}
+						refe={ref2}
+						matches3={matches3}
+						title='My Tech Stack'>
+						<SecondSection
+							matches={matches}
+							matches2={matches2}
+							matches3={matches3}
+						/>
+					</Layout>
+					<Layout
+						styl={styles.divider}
+						matches={matches}
+						matches3={matches3}
+						refe={ref3}
+						title='My Projects'>
+						<ThirdSection
+							result={endResult}
 							matches={matches}
 							matches3={matches3}
-							refe={ref1}
-							title='About Me'>
-							<FirstSection matches={matches} matches3={matches3} />
-						</Layout>
-						<Layout
-							styl={styles.divid}
-							matches={matches}
-							refe={ref2}
+						/>
+					</Layout>
+					<Layout
+						styl={styles.divider}
+						matches={matches}
+						refe={ref4}
+						matches3={matches3}
+						title='Contact'>
+						<FourthSection
 							matches3={matches3}
-							title='My Tech Stack'>
-							<SecondSection
-								matches={matches}
-								matches2={matches2}
-								matches3={matches3}
-							/>
-						</Layout>
-						<Layout
-							styl={styles.divid}
 							matches={matches}
-							matches3={matches3}
-							refe={ref3}
-							title='My Projects'>
-							<ThirdSection
-								result={endResult}
-								matches={matches}
-								matches3={matches3}
-							/>
-						</Layout>
-						<Layout
-							styl={styles.divid}
-							matches={matches}
-							refe={ref4}
-							matches3={matches3}
-							title='Contact'>
-							<FourthSection
-								matches3={matches3}
-								matches={matches}
-								matches2={matches2}
-							/>
-						</Layout>
-						<FooterSection matches3={matches3} />
-					</MainLayout>
-				</Box>
-			</ThemeProvider>
+							matches2={matches2}
+						/>
+					</Layout>
+					<FooterSection matches3={matches3} />
+				</MainLayout>
+			</Box>
 		</>
 	);
 };
