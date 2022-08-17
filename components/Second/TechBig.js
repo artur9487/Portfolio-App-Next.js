@@ -51,7 +51,6 @@ const TechFragmBig = ({
 					justifyContent: 'center',
 					bgcolor: 'rgb(39, 37, 43, 0.5)',
 					width: type === 'first' ? (!matches2 ? 170 : 100) : '100%',
-
 					margin: mar,
 					height: '100%'
 				}}>
@@ -135,7 +134,7 @@ const TechFragmBig = ({
 			xs={num}
 			spacing={3}
 			sx={{
-				height: 50,
+				height: 45,
 				color: 'white',
 				display: 'block',
 				textAlign: 'center'
