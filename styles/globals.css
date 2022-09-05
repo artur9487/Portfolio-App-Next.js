@@ -1,6 +1,6 @@
 /** @format */
 
-@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&family=Poppins:wght@200&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&family=Poppins:wght@200&display=swap');*/
 
 :root {
 	--card-width: 200px;
@@ -13,7 +13,6 @@ html,
 body {
 	padding: 0;
 	margin: 0;
-	font-family: 'Alumni Sans Inline One', cursive;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
@@ -24,11 +23,18 @@ body {
 a {
 	color: inherit;
 	text-decoration: none;
-	font-family: 'Alumni Sans Inline One', cursive;
 }
 
 * {
 	box-sizing: border-box;
+	/*font-family: 'Alumni Sans Inline One';*/
+}
+
+@font-face {
+	font-family: AlumniSansInlineOne;
+	src: url('/fonts/AlumniSans-Regular.ttf');
+	format: ('ttf');
+	font-display: swap;
 }
 
 form {

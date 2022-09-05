@@ -11,9 +11,16 @@ import styles from '/styles/Home.module.scss';
 import HomeIcon from '@mui/icons-material/Home';
 import styles2 from '/styles/SideBar.module.scss';
 
-const SideBar = ({ ref0, ref1, ref2, ref3, ref4, matches3 }) => {
-	const handler = (refer) => {
-		refer.current.scrollIntoView({ behavior: 'smooth' });
+const SideBar = ({
+	introSectionRef,
+	firstSectionRef,
+	secondSectionRef,
+	thirdSectionRef,
+	fourthSectionRef,
+	maxWidth600
+}) => {
+	const handler = (reference) => {
+		reference.current.scrollIntoView({ behavior: 'smooth' });
 	};
 	return (
 		<>
@@ -25,23 +32,23 @@ const SideBar = ({ ref0, ref1, ref2, ref3, ref4, matches3 }) => {
 					zIndex: 999,
 					borderRadius: 10,
 					position: 'fixed',
-					top: !matches3 ? '25%' : '85%',
+					top: !maxWidth600 ? '25%' : '85%',
 					left: 20,
-					height: !matches3 ? '50%' : 80,
-					width: !matches3 ? 100 : '90vw'
+					height: !maxWidth600 ? '50%' : 80,
+					width: !maxWidth600 ? 100 : '90vw'
 				}}>
 				<Box
 					sx={{
-						filter: !matches3 ? 'blur(50px)' : 'blur(20px)',
+						filter: !maxWidth600 ? 'blur(50px)' : 'blur(20px)',
 						zIndex: 999,
 						borderRadius: 10,
-						top: !matches3 ? '25%' : '85%',
+						top: !maxWidth600 ? '25%' : '85%',
 						left: 20,
-						bgcolor: !matches3
+						bgcolor: !maxWidth600
 							? 'rgba(49, 49, 49, 0.9)'
 							: 'rgba(49, 49, 49, 1)',
-						height: !matches3 ? '100%' : 80,
-						width: !matches3 ? 100 : '100%'
+						height: !maxWidth600 ? '100%' : 80,
+						width: !maxWidth600 ? 100 : '100%'
 					}}
 				/>
 			</Box>
@@ -51,20 +58,20 @@ const SideBar = ({ ref0, ref1, ref2, ref3, ref4, matches3 }) => {
 				sx={{
 					zIndex: 9999,
 					position: 'fixed',
-					top: !matches3 ? '25%' : '85%',
-					left: !matches3 ? 45 : 20,
-					height: !matches3 ? '100%' : 80,
-					width: !matches3 ? 'auto' : '90vw'
+					top: !maxWidth600 ? '25%' : '85%',
+					left: !maxWidth600 ? 45 : 20,
+					height: !maxWidth600 ? '100%' : 80,
+					width: !maxWidth600 ? 'auto' : '90vw'
 				}}>
 				<Fade>
 					<Stack
 						direction='column'
-						sx={{ height: !matches3 ? '50%' : '100%' }}
+						sx={{ height: !maxWidth600 ? '50%' : '100%' }}
 						justifyContent='center'>
 						<Stack
-							direction={!matches3 ? 'column' : 'row'}
-							sx={{ height: !matches3 ? '75%' : 40 }}
-							justifyContent={!matches3 ? 'space-between' : 'space-around'}
+							direction={!maxWidth600 ? 'column' : 'row'}
+							sx={{ height: !maxWidth600 ? '75%' : 40 }}
+							justifyContent={!maxWidth600 ? 'space-between' : 'space-around'}
 							alignItems='center'>
 							<IconButton
 								sx={{
@@ -73,8 +80,8 @@ const SideBar = ({ ref0, ref1, ref2, ref3, ref4, matches3 }) => {
 									}
 								}}
 								className={styles2.iconShake}
-								onClick={() => handler(ref0)}>
-								<HomeIcon fontSize={!matches3 ? 'large' : 'medium'} />
+								onClick={() => handler(introSectionRef)}>
+								<HomeIcon fontSize={!maxWidth600 ? 'large' : 'medium'} />
 							</IconButton>
 							<IconButton
 								sx={{
@@ -87,8 +94,10 @@ const SideBar = ({ ref0, ref1, ref2, ref3, ref4, matches3 }) => {
 									}
 								}}
 								className={styles2.iconShake}
-								onClick={() => handler(ref1)}>
-								<AccountCircleIcon fontSize={!matches3 ? 'large' : 'medium'} />
+								onClick={() => handler(firstSectionRef)}>
+								<AccountCircleIcon
+									fontSize={!maxWidth600 ? 'large' : 'medium'}
+								/>
 							</IconButton>
 							<IconButton
 								sx={{
@@ -97,8 +106,8 @@ const SideBar = ({ ref0, ref1, ref2, ref3, ref4, matches3 }) => {
 									}
 								}}
 								className={styles2.iconShake}
-								onClick={() => handler(ref2)}>
-								<CodeIcon fontSize={!matches3 ? 'large' : 'medium'} />
+								onClick={() => handler(secondSectionRef)}>
+								<CodeIcon fontSize={!maxWidth600 ? 'large' : 'medium'} />
 							</IconButton>
 							<IconButton
 								sx={{
@@ -107,8 +116,8 @@ const SideBar = ({ ref0, ref1, ref2, ref3, ref4, matches3 }) => {
 									}
 								}}
 								className={styles2.iconShake}
-								onClick={() => handler(ref3)}>
-								<WebIcon fontSize={!matches3 ? 'large' : 'medium'} />
+								onClick={() => handler(thirdSectionRef)}>
+								<WebIcon fontSize={!maxWidth600 ? 'large' : 'medium'} />
 							</IconButton>
 							<IconButton
 								sx={{
@@ -117,8 +126,8 @@ const SideBar = ({ ref0, ref1, ref2, ref3, ref4, matches3 }) => {
 									}
 								}}
 								className={styles2.iconShake}
-								onClick={() => handler(ref4)}>
-								<CallIcon fontSize={!matches3 ? 'large' : 'medium'} />
+								onClick={() => handler(fourthSectionRef)}>
+								<CallIcon fontSize={!maxWidth600 ? 'large' : 'medium'} />
 							</IconButton>
 						</Stack>
 					</Stack>

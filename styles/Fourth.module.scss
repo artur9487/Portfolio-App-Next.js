@@ -104,7 +104,7 @@
 }
 
 @mixin shadows_theme {
-	animation-name: shadowAnn;
+	animation-name: shadowAnimation;
 	animation-duration: 3s;
 	animation-delay: 5s;
 	animation-fill-mode: forwards;
@@ -118,13 +118,13 @@
 }
 
 .card1 {
-	@include techCardSlide_theme(slideAnn);
+	@include techCardSlide_theme(slideAnimation);
 	.innerCard1 {
 		@include shadows_theme;
 	}
 }
 
-@keyframes shadowAnn {
+@keyframes shadowAnimation {
 	0% {
 		box-shadow: none;
 	}
@@ -133,7 +133,7 @@
 	}
 }
 
-@keyframes slideAnn {
+@keyframes slideAnimation {
 	from {
 		opacity: 0;
 		transform: translateX(+30px);

@@ -15,7 +15,7 @@ const errorComp = (
 	</Typography>
 );
 
-const FourthSection = ({ matches3, matches, matches2 }) => {
+const FourthSection = ({ maxWidth600, maxWidth1200, maxWidth900 }) => {
 	const [isVisible, setVisible] = useState(false);
 	const [email, setEmail] = useState('');
 	const [name, setName] = useState('');
@@ -68,8 +68,8 @@ const FourthSection = ({ matches3, matches, matches2 }) => {
 				process.env.cont3
 			)
 			.then(
-				(result) => {
-					console.log(result.text);
+				(placeData) => {
+					console.log(placeData.text);
 				},
 				(error) => {
 					console.log(error.text);
@@ -90,29 +90,29 @@ const FourthSection = ({ matches3, matches, matches2 }) => {
 	return (
 		<>
 			<VisibilitySensor
-				className={styles.visi}
+				className={styles.visibilityStyle}
 				active={isVisible ? false : true}
 				partialVisibility
-				onChange={(isVisiblee) => {
-					setVisible(isVisiblee);
+				onChange={(isVisibleProp) => {
+					setVisible(isVisibleProp);
 				}}>
 				<Stack
 					className={styles.fade1200}
 					sx={{
 						height: '90%',
-						py: !matches ? 0 : 5,
-						px: !matches ? 5 : !matches3 ? 11 : 0
+						py: !maxWidth1200 ? 0 : 5,
+						px: !maxWidth1200 ? 5 : !maxWidth600 ? 11 : 0
 					}}>
 					<form ref={form} onSubmit={sendEmail}>
 						<Stack
-							direction={!matches ? 'row' : 'column'}
+							direction={!maxWidth1200 ? 'row' : 'column'}
 							justifyContent='center'
 							alignItems='center'
 							spacing={5}
 							sx={{ position: 'relative', height: '100%' }}>
 							<FirstPart
-								matches2={matches2}
-								matches3={matches3}
+								maxWidth900={maxWidth900}
+								maxWidth600={maxWidth600}
 								isVisible={isVisible}
 							/>
 							<SecondPart
@@ -123,8 +123,8 @@ const FourthSection = ({ matches3, matches, matches2 }) => {
 								setEmail={setEmail}
 								message={message}
 								setMessage={setMessage}
-								matches2={matches2}
-								matches3={matches3}
+								maxWidth900={maxWidth900}
+								maxWidth600={maxWidth600}
 								isVisible={isVisible}
 								errorComp={errorComp}
 							/>
@@ -144,7 +144,7 @@ const FourthSection = ({ matches3, matches, matches2 }) => {
 									alignItems='center'>
 									<Typography
 										sx={{
-											fontSize: !matches3 ? 30 : 20,
+											fontSize: !maxWidth600 ? 30 : 20,
 											fontFamily: 'Alumni Sans Inline One'
 										}}
 										textAlign='center'

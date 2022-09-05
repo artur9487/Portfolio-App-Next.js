@@ -1,39 +1,39 @@
 /** @format */
 @import './Second.module.scss';
 
-@mixin intro_theme($delay, $anim) {
+@mixin intro_theme($delay, $animation) {
 	opacity: 0;
 	animation-fill-mode: forwards;
-	animation-name: $anim;
+	animation-name: $animation;
 	animation-delay: $delay;
 	animation-duration: 2s;
 }
 
-@mixin intro_theme1($delay, $anim) {
+@mixin intro_theme1($delay, $animation) {
 	opacity: 0;
 	animation-fill-mode: forwards;
-	animation-name: $anim;
+	animation-name: $animation;
 	animation-delay: $delay;
 	animation-duration: 2s;
 }
 
 .intro0 {
-	@include intro_theme(1s, introAnn);
+	@include intro_theme(1s, introAnimation);
 }
 
 .intro1 {
-	@include intro_theme(2s, introAnn);
+	@include intro_theme(2s, introAnimation);
 }
 
 .intro2 {
-	@include intro_theme1(5s, introAnn2);
+	@include intro_theme1(5s, introAnimation2);
 }
 
 .intro3 {
-	@include intro_theme1(6s, introAnn2);
+	@include intro_theme1(6s, introAnimation2);
 }
 
-@keyframes introAnn {
+@keyframes introAnimation {
 	from {
 		opacity: 0;
 		transform: translateY(+20px);
@@ -45,7 +45,7 @@
 	}
 }
 
-@keyframes introAnn2 {
+@keyframes introAnimation2 {
 	from {
 		opacity: 0;
 		transform: translateY(+20px);
@@ -65,33 +65,10 @@
 	right: 0;
 }
 
-.pageButton {
-	width: 200px;
-	position: relative;
-	padding: 0.7em 1.5em;
-	border: 0;
-	border-radius: 0.5em;
-	box-shadow: 3px 3px 15px rgb(144, 0, 255), -3px 0px 15px rgb(144, 0, 255);
-	cursor: pointer;
-	background: linear-gradient(90deg, rgb(90, 0, 158), rgb(144, 0, 255));
-	display: block;
-}
-
-.pageButton:hover {
-	filter: brightness(1.1);
-}
-
-.pageButton:active {
-	top: 2px;
-	left: 1px;
-	box-shadow: none;
-	box-shadow: 1px 1px 10px rgb(144, 0, 255), -1px 0px 10px rgb(144, 0, 255);
-}
-
-@mixin divider_theme($anim, $color, $delay) {
+@mixin divider_theme($animation, $color, $delay) {
 	width: 0%;
 	height: 3px;
-	animation-name: $anim;
+	animation-name: $animation;
 	animation-duration: 4s;
 	background-color: $color;
 	animation-fill-mode: forwards;
@@ -99,10 +76,10 @@
 }
 
 .divider {
-	@include divider_theme(dividerAnn, gray, 0s);
+	@include divider_theme(dividerAnimation, gray, 0s);
 }
 
-@keyframes dividerAnn {
+@keyframes dividerAnimation {
 	0% {
 		width: 0%;
 	}
@@ -117,10 +94,10 @@
 	}
 }
 .divider2 {
-	@include divider_theme(dividerAnn2, rgb(144, 0, 255), 4s);
+	@include divider_theme(dividerAnimation2, rgb(144, 0, 255), 4s);
 }
 
-@keyframes dividerAnn2 {
+@keyframes dividerAnimation2 {
 	0% {
 		width: 0%;
 	}
@@ -135,16 +112,7 @@
 	}
 }
 
-@keyframes shadowAnn {
-	0% {
-		box-shadow: none;
-	}
-	100% {
-		box-shadow: 0px 10px 10px rgb(144, 0, 255);
-	}
-}
-
-@keyframes shadowAnn {
+@keyframes shadowAnimation {
 	0% {
 		box-shadow: none;
 	}
@@ -154,14 +122,14 @@
 }
 
 .img {
-	animation-name: slideAnn;
+	animation-name: slideAnimation;
 	animation-duration: 4s;
 	animation-fill-mode: forwards;
 	animation-delay: 8s;
 	opacity: 0;
 }
 
-@keyframes slideAnn {
+@keyframes slideAnimation {
 	from {
 		opacity: 0;
 		transform: translateY(30px);

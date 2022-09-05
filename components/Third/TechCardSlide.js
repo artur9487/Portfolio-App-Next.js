@@ -13,8 +13,8 @@ const TechCardSlide = ({ children, indx }) => {
 			className={styles2.max}
 			active={isVisible ? false : true}
 			partialVisibility
-			onChange={(isVisiblee) => {
-				setVisible(isVisiblee);
+			onChange={(isVisibleProp) => {
+				setVisible(isVisibleProp);
 			}}>
 			<>
 				<Box

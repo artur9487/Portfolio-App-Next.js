@@ -121,7 +121,7 @@
 }
 
 @mixin shadow_theme {
-	animation-name: shadowAnn;
+	animation-name: shadowAnimation;
 	animation-duration: 2s;
 	animation-delay: 4s;
 }
@@ -173,7 +173,7 @@
 	}
 }
 
-@keyframes shadowAnn {
+@keyframes shadowAnimation {
 	0% {
 		box-shadow: none;
 	}
@@ -193,7 +193,7 @@
 	opacity: 0;
 }
 
-.visi {
+.visibilityStyle {
 	height: 100%;
 	width: 100%;
 }
@@ -249,7 +249,7 @@
 	background-position: center;
 }
 
-.noVis {
+.noVisibility {
 	opacity: 0;
 }
 

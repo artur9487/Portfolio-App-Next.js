@@ -14,7 +14,7 @@
 }
 
 @mixin shadows2_theme {
-	animation-name: shadowAnn;
+	animation-name: shadowAnimation;
 	animation-duration: 2s;
 	animation-delay: 5s;
 	animation-fill-mode: forwards;
@@ -132,7 +132,7 @@
 	border: 2px solid black;
 }
 
-@keyframes shadowAnn {
+@keyframes shadowAnimation {
 	0% {
 		box-shadow: none;
 	}

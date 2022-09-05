@@ -9,11 +9,11 @@ const Fade = ({ children }) => {
 	const [isVisible, setVisible] = useState(false);
 	return (
 		<VisibilitySensor
-			className={styles.visi}
+			className={styles.visibilityStyle}
 			active={isVisible ? false : true}
 			partialVisibility
-			onChange={(isVisiblee) => {
-				setVisible(isVisiblee);
+			onChange={(isVisibleProp) => {
+				setVisible(isVisibleProp);
 			}}>
 			<>
 				<Box

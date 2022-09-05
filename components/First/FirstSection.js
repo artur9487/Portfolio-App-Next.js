@@ -8,51 +8,41 @@ import VisibilitySensor from 'react-visibility-sensor';
 import { useState } from 'react';
 import styles2 from '/styles/First.module.scss';
 import styles from '/styles/Home.module.scss';
+import BracketsComponent from '../CustomComponents/BracketsComponent';
+import BracketsComponent2 from '../CustomComponents/BracketsComponent2';
+import { text } from './SectionArrays';
+import { bracketsCoordinates1 } from './SectionArrays';
+import { bracketsCoordinates2 } from './SectionArrays';
 
-const FirstSection = ({ matches, matches3 }) => {
+const FirstSection = ({ maxWidth1200, maxWidth600 }) => {
 	const [isVisible, setVisible] = useState(false);
-	const obj = [
-		{
-			text: `Hi! I am Artur. I am learning frontend technologies for about 2 years. I am looking for my firs Job as React, React-native or Next.js developer.`,
-			styl: styles2.text1
-		},
-		{
-			text: `I took my entire knowledge from tutorials, documentations and developer articles. To strong my skills I made a few projects in which I mostly cover my knowledge. `,
-			styl: styles2.text2
-		},
-		{
-			text: `I hope for the the oppurtunity to take the first steps and
-	grow in the fronted software industry.`,
-			styl: styles2.text3
-		}
-	];
 
 	return (
 		<>
 			<VisibilitySensor
 				active={isVisible ? false : true}
 				partialVisibility
-				onChange={(isVisiblee) => {
-					setVisible(isVisiblee);
+				onChange={(isVisibleProp) => {
+					setVisible(isVisibleProp);
 				}}>
 				<Stack
-					justifyContent={!matches ? 'center' : 'space-evenly'}
+					justifyContent={!maxWidth1200 ? 'center' : 'space-evenly'}
 					spacing={3}
 					alignItems='center'
-					className={isVisible ? styles.fade1200 : styles.noVis}
-					direction={!matches ? 'row' : 'column'}
-					sx={{ width: '100%', height: '90%', mt: matches ? 10 : 0 }}>
+					className={isVisible ? styles.fade1200 : styles.noVisibility}
+					direction={!maxWidth1200 ? 'row' : 'column'}
+					sx={{ width: '100%', height: '90%', mt: maxWidth1200 ? 10 : 0 }}>
 					<Stack
 						className={styles.fade600}
 						sx={{
-							maxWidth: matches || matches3 ? '100%' : '50%'
+							maxWidth: maxWidth1200 || maxWidth600 ? '100%' : '50%'
 						}}
 						alignItems='center'
 						justifyContent='center'
 						direction='row'>
 						<Stack
 							sx={{
-								width: !matches3 ? '70%' : '100%',
+								width: !maxWidth600 ? '70%' : '100%',
 								p: 5,
 								position: 'relative',
 								background:
@@ -60,62 +50,46 @@ const FirstSection = ({ matches, matches3 }) => {
 							}}
 							direction='column'
 							spacing={2}>
-							<Box
-								className={isVisible ? styles2.brackets : styles.none}
-								sx={{
-									width: !matches3 ? 90 : 45,
-									position: 'absolute',
-									bottom: 0,
-									right: 0,
-									height: !matches3 ? 10 : 5,
-									background:
-										'linear-gradient(45deg, rgb(90, 0, 158),rgb(144, 0, 255))'
-								}}
-							/>
-							<Box
-								className={isVisible ? styles2.brackets : styles.none}
-								sx={{
-									width: !matches3 ? 10 : 5,
-									position: 'absolute',
-									bottom: 0,
-									right: 0,
-									height: !matches3 ? 90 : 45,
-									background:
-										'linear-gradient(125deg, rgb(90, 0, 158),rgb(144, 0, 255))'
-								}}
-							/>
-							<Box
-								className={isVisible ? styles2.brackets : styles.none}
-								sx={{
-									width: !matches3 ? 60 : 30,
-									position: 'absolute',
-									top: -15,
-									left: 0,
-									height: !matches3 ? 10 : 5,
-									background:
-										'linear-gradient(45deg, rgb(90, 0, 158),rgb(144, 0, 255))'
-								}}
-							/>
-							<Box
-								className={isVisible ? styles2.brackets : styles.none}
-								sx={{
-									width: !matches3 ? 10 : 5,
-									position: 'absolute',
-									top: -10,
-									left: 0,
-									height: !matches3 ? 60 : 30,
-									background:
-										'linear-gradient(125deg, rgb(90, 0, 158),rgb(144, 0, 255))'
-								}}
-							/>
-							{obj.map((item, indx) => {
+							{bracketsCoordinates1.map((item, indx) => {
+								return (
+									<BracketsComponent
+										key={indx}
+										isVisible={isVisible}
+										ifNot600_width_Value={item.ifNot600_width_Value}
+										if600_width_Value={item.if600_width_Value}
+										ifNot600_height_Value={item.ifNot600_height_Value}
+										if600_height_Value={item.if600_height_Value}
+										bottom_Value={item.bottom_Value}
+										right_Value={item.right_Value}
+										gradient={item.gradient}
+										maxWidth600={maxWidth600}
+									/>
+								);
+							})}
+							{bracketsCoordinates2.map((item, indx) => {
+								return (
+									<BracketsComponent2
+										key={indx}
+										isVisible={isVisible}
+										ifNot600_width_Value={item.ifNot600_width_Value}
+										if600_width_Value={item.if600_width_Value}
+										ifNot600_height_Value={item.ifNot600_height_Value}
+										if600_height_Value={item.if600_height_Value}
+										top_Value={item.top_Value}
+										left_Value={item.left_Value}
+										gradient={item.gradient}
+										maxWidth600={maxWidth600}
+									/>
+								);
+							})}
+							{text.map((item, indx) => {
 								return (
 									<Typography
 										key={indx}
 										align='justify'
-										className={isVisible ? item.styl : null}
+										className={isVisible ? item.style : null}
 										sx={{
-											fontSize: !matches3 ? 20 : 15,
+											fontSize: !maxWidth600 ? 20 : 15,
 											lineHeight: 1.5,
 											fontFamily: 'Poppins'
 										}}>
@@ -128,20 +102,20 @@ const FirstSection = ({ matches, matches3 }) => {
 					</Stack>
 					<Stack
 						className={styles.fade600}
-						sx={{ maxWidth: !matches ? '50%' : '100%' }}
+						sx={{ maxWidth: !maxWidth1200 ? '50%' : '100%' }}
 						alignItems='center'
 						justifyContent='center'
 						direction='row'>
 						<Box
-							className={isVisible ? styles2.imageVis : styles.none}
+							className={isVisible ? styles2.imageStyle : styles.none}
 							sx={{
 								background: `linear-gradient(
 								45deg,
 								rgba(144, 0, 255, 1),
 								rgba(144, 0, 255, 0.1)
 								)`,
-								width: !matches ? 400 : !matches3 ? 250 : 200,
-								height: !matches ? 500 : !matches3 ? 400 : 250,
+								width: !maxWidth1200 ? 400 : !maxWidth600 ? 250 : 200,
+								height: !maxWidth1200 ? 500 : !maxWidth600 ? 400 : 250,
 								borderRadius: 10
 							}}>
 							<Box
@@ -150,8 +124,8 @@ const FirstSection = ({ matches, matches3 }) => {
 									borderRadius: 10,
 									overflow: 'hidden',
 									transition: 'transform 0.5s linear',
-									width: !matches ? 400 : !matches3 ? 250 : 200,
-									height: !matches ? 500 : !matches3 ? 400 : 250,
+									width: !maxWidth1200 ? 400 : !maxWidth600 ? 250 : 200,
+									height: !maxWidth1200 ? 500 : !maxWidth600 ? 400 : 250,
 									'&:hover': {
 										transform: 'rotate(0deg)'
 									}

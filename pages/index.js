@@ -16,15 +16,15 @@ import MainLayout from '../components/LayoutComp/MainLayout';
 import Head from 'next/head';
 import { Box } from '@mui/material';
 
-const Home = ({ endResult }) => {
-	const matches = useMediaQuery('(max-width:1200px)');
-	const matches2 = useMediaQuery('(max-width:900px)');
-	const matches3 = useMediaQuery('(max-width:600px)');
-	const ref0 = useRef(null);
-	const ref1 = useRef(null);
-	const ref2 = useRef(null);
-	const ref3 = useRef(null);
-	const ref4 = useRef(null);
+const Home = ({ placeData }) => {
+	const maxWidth1200 = useMediaQuery('(max-width:1200px)');
+	const maxWidth900 = useMediaQuery('(max-width:900px)');
+	const maxWidth600 = useMediaQuery('(max-width:600px)');
+	const introSectionRef = useRef(null);
+	const firstSectionRef = useRef(null);
+	const secondSectionRef = useRef(null);
+	const thirdSectionRef = useRef(null);
+	const fourthSectionRef = useRef(null);
 
 	return (
 		<>
@@ -34,65 +34,68 @@ const Home = ({ endResult }) => {
 
 			<Box className={styles.mainBox}>
 				<SideBar
-					ref0={ref0}
-					ref1={ref1}
-					ref2={ref2}
-					ref3={ref3}
-					ref4={ref4}
-					matches3={matches3}
+					introSectionRef={introSectionRef}
+					firstSectionRef={firstSectionRef}
+					secondSectionRef={secondSectionRef}
+					thirdSectionRef={thirdSectionRef}
+					fourthSectionRef={fourthSectionRef}
+					maxWidth600={maxWidth600}
 				/>
 				<IntroSection
-					refe={ref0}
-					matches={matches}
-					matches2={matches2}
-					matches3={matches3}
+					reference={introSectionRef}
+					maxWidth1200={maxWidth1200}
+					maxWidth900={maxWidth900}
+					maxWidth600={maxWidth600}
 				/>
 				<MainLayout>
 					<Layout
-						styl={styles.divider}
-						matches={matches}
-						matches3={matches3}
-						refe={ref1}
+						style={styles.divider}
+						maxWidth1200={maxWidth1200}
+						maxWidth600={maxWidth600}
+						reference={firstSectionRef}
 						title='About Me'>
-						<FirstSection matches={matches} matches3={matches3} />
+						<FirstSection
+							maxWidth1200={maxWidth1200}
+							maxWidth600={maxWidth600}
+						/>
 					</Layout>
 					<Layout
-						styl={styles.divider}
-						matches={matches}
-						refe={ref2}
-						matches3={matches3}
+						style={styles.divider}
+						maxWidth1200={maxWidth1200}
+						reference={secondSectionRef}
+						maxWidth600={maxWidth600}
 						title='My Tech Stack'>
 						<SecondSection
-							matches={matches}
-							matches2={matches2}
-							matches3={matches3}
+							maxWidth1200={maxWidth1200}
+							maxWidth900={maxWidth900}
+							maxWidth600={maxWidth600}
 						/>
 					</Layout>
 					<Layout
-						styl={styles.divider}
-						matches={matches}
-						matches3={matches3}
-						refe={ref3}
+						style={styles.divider}
+						maxWidth1200={maxWidth1200}
+						maxWidth600={maxWidth600}
+						reference={thirdSectionRef}
 						title='My Projects'>
 						<ThirdSection
-							result={endResult}
-							matches={matches}
-							matches3={matches3}
+							placeData={placeData}
+							maxWidth1200={maxWidth1200}
+							maxWidth600={maxWidth600}
 						/>
 					</Layout>
 					<Layout
-						styl={styles.divider}
-						matches={matches}
-						refe={ref4}
-						matches3={matches3}
+						style={styles.divider}
+						maxWidth1200={maxWidth1200}
+						reference={fourthSectionRef}
+						maxWidth600={maxWidth600}
 						title='Contact'>
 						<FourthSection
-							matches3={matches3}
-							matches={matches}
-							matches2={matches2}
+							maxWidth600={maxWidth600}
+							maxWidth1200={maxWidth1200}
+							maxWidth900={maxWidth900}
 						/>
 					</Layout>
-					<FooterSection matches3={matches3} />
+					<FooterSection maxWidth600={maxWidth600} />
 				</MainLayout>
 			</Box>
 		</>
@@ -100,7 +103,7 @@ const Home = ({ endResult }) => {
 };
 
 export async function getServerSideProps() {
-	const API2 = `https://api-eu-central-1.graphcms.com/v2/${process.env.API}/master`;
+	const URL = `https://api-eu-central-1.graphcms.com/v2/${process.env.API}/master`;
 	const query = gql`
 		query MyQuery {
 			projectssConnection {
@@ -128,11 +131,11 @@ export async function getServerSideProps() {
 		}
 	`;
 
-	const result = await request(API2, query);
-	const endResult = result.projectssConnection.edges;
+	const result = await request(URL, query);
+	const placeData = result.projectssConnection.edges;
 
 	return {
-		props: { endResult }
+		props: { placeData }
 	};
 }
 export default Home;

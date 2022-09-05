@@ -57,10 +57,6 @@
 	}
 }
 
-.imydz:hover {
-	transform: rotate(0deg);
-}
-
 @media screen and (max-width: 1200px) {
 	.imgBox {
 		width: 300px;
@@ -84,7 +80,7 @@
 	}
 }
 
-.imageVis {
+.imageStyle {
 	animation: image_reveal 6s ease;
 	opacity: 0;
 	animation-delay: 5s;

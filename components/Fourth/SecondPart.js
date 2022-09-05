@@ -5,8 +5,8 @@ import { Stack, Box, Typography, TextField } from '@mui/material';
 import EmailIcon from '@mui/icons-material/Email';
 
 const SecondPart = ({
-	matches3,
-	matches2,
+	maxWidth600,
+	maxWidth900,
 	isVisible,
 	errorsy,
 	setName,
@@ -21,12 +21,12 @@ const SecondPart = ({
 		<Box
 			sx={{
 				height: '70%',
-				maxWidth: matches3 ? 375 : matches2 ? 475 : 650,
+				maxWidth: maxWidth600 ? 375 : maxWidth900 ? 475 : 650,
 				minWidth: 250
 			}}
-			className={isVisible ? styles2.card1 : styles.noVis}>
+			className={isVisible ? styles2.card1 : styles.noVisibility}>
 			<Stack
-				className={isVisible ? styles2.innerCard1 : styles.noVis}
+				className={isVisible ? styles2.innerCard1 : styles.noVisibility}
 				direction='column'
 				alignItems='center'
 				justifyContent='center'
@@ -43,8 +43,8 @@ const SecondPart = ({
 					<Typography
 						textAlign='flex-start'
 						sx={{
-							fontSize: !matches3 ? 30 : 22,
-							fontFamily: 'Alumni Sans Inline One',
+							fontSize: !maxWidth600 ? 30 : 22,
+
 							color: 'rgb(216, 214, 219)'
 						}}>
 						Or text me:
@@ -56,8 +56,8 @@ const SecondPart = ({
 							<Typography
 								textAlign='center'
 								sx={{
-									fontSize: !matches3 ? 30 : 20,
-									fontFamily: 'Alumni Sans Inline One',
+									fontSize: !maxWidth600 ? 30 : 20,
+
 									color: 'rgb(216, 214, 219)',
 									fontStyle: 'italic'
 								}}>
@@ -68,8 +68,8 @@ const SecondPart = ({
 							<Typography
 								textAlign='center'
 								sx={{
-									fontSize: !matches3 ? 30 : 20,
-									fontFamily: 'Alumni Sans Inline One',
+									fontSize: !maxWidth600 ? 30 : 20,
+
 									color: 'rgb(216, 214, 219)',
 									fontStyle: 'italic'
 								}}>
@@ -124,8 +124,8 @@ const SecondPart = ({
 					<Typography
 						textAlign='center'
 						sx={{
-							fontSize: !matches3 ? 30 : 20,
-							fontFamily: 'Alumni Sans Inline One',
+							fontSize: !maxWidth600 ? 30 : 20,
+
 							color: 'rgb(216, 214, 219)',
 							fontStyle: 'italic'
 						}}>
@@ -155,7 +155,7 @@ const SecondPart = ({
 
 				<button type='submit' className={styles2.pageButton}>
 					<Typography
-						fontSize={!matches3 ? 30 : 20}
+						fontSize={!maxWidth600 ? 30 : 20}
 						sx={{
 							color: 'white',
 							fontFamily: 'Alumni Sans Inline One'

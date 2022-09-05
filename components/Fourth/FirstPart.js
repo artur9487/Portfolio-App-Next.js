@@ -4,19 +4,19 @@ import styles2 from '/styles/Fourth.module.scss';
 import styles from '/styles/Home.module.scss';
 import { Stack, Box, Typography } from '@mui/material';
 
-const FirstPart = ({ matches3, matches2, isVisible }) => {
+const FirstPart = ({ maxWidth600, maxWidth900, isVisible }) => {
 	return (
 		<Stack
 			justifyContent='flex-start'
 			direction='column'
 			spacing={4}
 			sx={{ height: '50%' }}>
-			<Box className={isVisible ? styles2.card0 : styles.noVis}>
+			<Box className={isVisible ? styles2.card0 : styles.noVisibility}>
 				<Stack
-					className={isVisible ? styles2.innerCard0 : styles.noVis}
+					className={isVisible ? styles2.innerCard0 : styles.noVisibility}
 					sx={{
 						bgcolor: 'rgba(39, 37, 43, 0.5)',
-						p: !matches3 ? 5 : 3,
+						p: !maxWidth600 ? 5 : 3,
 						borderRadius: 6,
 						border: 2,
 						borderColor: 'rgb(75, 71, 82)'
@@ -24,8 +24,8 @@ const FirstPart = ({ matches3, matches2, isVisible }) => {
 					<Typography
 						textAlign='flex-start'
 						sx={{
-							fontSize: matches3 ? 24 : matches2 ? 30 : 40,
-							fontFamily: 'Alumni Sans Inline One',
+							fontSize: maxWidth600 ? 24 : maxWidth900 ? 30 : 40,
+
 							color: 'rgb(216, 214, 219)'
 						}}>
 						Would love to be a part of your company!
@@ -33,23 +33,23 @@ const FirstPart = ({ matches3, matches2, isVisible }) => {
 					<Typography
 						textAlign='flex-start'
 						sx={{
-							fontSize: matches3 ? 20 : matches2 ? 26 : 33,
-							fontFamily: 'Alumni Sans Inline One',
+							fontSize: maxWidth600 ? 20 : maxWidth900 ? 26 : 33,
+
 							color: 'rgb(216, 214, 219)'
 						}}>
 						If you think that too:
 					</Typography>
 				</Stack>
 			</Box>
-			<Box className={isVisible ? styles2.card0 : styles.noVis}>
+			<Box className={isVisible ? styles2.card0 : styles.noVisibility}>
 				<Stack
-					className={isVisible ? styles2.innerCard0 : styles.noVis}
+					className={isVisible ? styles2.innerCard0 : styles.noVisibility}
 					spacing={4}
 					direction='row'
 					alignItems='center'
 					sx={{
 						bgcolor: 'rgba(39, 37, 43, 0.5)',
-						p: !matches3 ? 5 : 2,
+						p: !maxWidth600 ? 5 : 2,
 						borderRadius: 6,
 						border: 2,
 						borderColor: 'rgb(75, 71, 82)'
@@ -59,8 +59,8 @@ const FirstPart = ({ matches3, matches2, isVisible }) => {
 						<Typography
 							textAlign='flex-start'
 							sx={{
-								fontSize: matches3 ? 20 : matches2 ? 26 : 33,
-								fontFamily: 'Alumni Sans Inline One',
+								fontSize: maxWidth600 ? 20 : maxWidth900 ? 26 : 33,
+
 								color: 'rgb(216, 214, 219)'
 							}}>
 							Call me:
@@ -70,8 +70,8 @@ const FirstPart = ({ matches3, matches2, isVisible }) => {
 						textAlign='flex-start'
 						sx={{
 							ml: 30,
-							fontSize: matches3 ? 20 : matches2 ? 26 : 33,
-							fontFamily: 'Alumni Sans Inline One',
+							fontSize: maxWidth600 ? 20 : maxWidth900 ? 26 : 33,
+
 							color: 'rgb(216, 214, 219)'
 						}}>
 						**********

@@ -25,7 +25,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 	return <Slide direction='up' ref={ref} {...props} />;
 });
 
-const ProjectCard = ({ items, indx, matches, matches3 }) => {
+const ProjectCard = ({ items, indx, maxWidth1200, maxWidth600 }) => {
 	const {
 		projLink,
 		repo,
@@ -57,7 +57,7 @@ const ProjectCard = ({ items, indx, matches, matches3 }) => {
 				className={`${styles2.projectCard} ${styles2.shadows2}`}
 				ref={myRef}
 				sx={{
-					width: matches3 ? '100%' : 300,
+					width: maxWidth600 ? '100%' : 300,
 					height: 300,
 					bgcolor: 'rgba(39, 37, 43, 0.5)',
 					borderRadius: 5,
@@ -83,20 +83,18 @@ const ProjectCard = ({ items, indx, matches, matches3 }) => {
 					<Stack sx={{ width: '100%' }} direction='column'>
 						<Typography
 							sx={{
-								fontFamily: 'Alumni Sans Inline One',
 								color: 'rgb(216, 214, 219)'
 							}}
-							fontSize={!matches ? 35 : 30}
+							fontSize={!maxWidth1200 ? 35 : 30}
 							textAlign='center'>
 							{projectName}
 						</Typography>
 						<Typography
 							sx={{
-								fontFamily: 'Alumni Sans Inline One',
 								color: 'rgb(216, 214, 219)',
 								mt: -2
 							}}
-							fontSize={!matches ? 25 : 20}
+							fontSize={!maxWidth1200 ? 25 : 20}
 							textAlign='center'>
 							{technology}
 						</Typography>
@@ -122,11 +120,14 @@ const ProjectCard = ({ items, indx, matches, matches3 }) => {
 				aria-describedby='alert-dialog-slide-description'
 				maxWidth='xl'>
 				<DialogContent>
-					<Stack direction={!matches ? 'row' : 'column'}>
+					<Stack direction={!maxWidth1200 ? 'row' : 'column'}>
 						<Stack
 							direction='column '
 							justifyContent='center'
-							sx={{ width: !matches ? '50%' : '100%', position: 'relative' }}>
+							sx={{
+								width: !maxWidth1200 ? '50%' : '100%',
+								position: 'relative'
+							}}>
 							<Carousel
 								prevIcon={
 									<ArrowBackIosNewIcon sx={{ color: 'violet', fontSize: 60 }} />
@@ -154,7 +155,10 @@ const ProjectCard = ({ items, indx, matches, matches3 }) => {
 						<Stack
 							direction='column'
 							spacing={3}
-							sx={{ width: !matches ? '50%' : '100%', p: !matches3 ? 4 : 0 }}>
+							sx={{
+								width: !maxWidth1200 ? '50%' : '100%',
+								p: !maxWidth600 ? 4 : 0
+							}}>
 							<Box>
 								<Stack
 									direction='row'
@@ -164,16 +168,14 @@ const ProjectCard = ({ items, indx, matches, matches3 }) => {
 										textAlign='center'
 										fontSize={70}
 										sx={{
-											fontFamily: 'Alumni Sans Inline One',
 											color: 'rgb(148, 34, 148);'
 										}}>
 										{firstLetter}
 									</Typography>
 									<Typography
 										textAlign='center'
-										fontSize={!matches3 ? 70 : 40}
+										fontSize={!maxWidth600 ? 70 : 40}
 										sx={{
-											fontFamily: 'Alumni Sans Inline One',
 											color: 'white'
 										}}>
 										{restLetters}
@@ -199,7 +201,7 @@ const ProjectCard = ({ items, indx, matches, matches3 }) => {
 											color='secondary'
 											sx={{
 												m: 1,
-												fontSize: !matches3 ? 14 : 11,
+												fontSize: !maxWidth600 ? 14 : 11,
 												background:
 													'linear-gradient(90deg, rgb(78, 22, 78), rgb(148, 34, 148));'
 											}}
@@ -212,7 +214,7 @@ const ProjectCard = ({ items, indx, matches, matches3 }) => {
 								sx={{
 									color: 'white',
 									lineHeight: 1.8,
-									fontSize: !matches3 ? 16 : 13
+									fontSize: !maxWidth600 ? 16 : 13
 								}}
 								align='justify'>
 								{description}
@@ -227,7 +229,7 @@ const ProjectCard = ({ items, indx, matches, matches3 }) => {
 									rel='noreferrer'
 									className={styles2.dialogButton}>
 									<Typography
-										sx={{ color: 'white', fontSize: !matches3 ? 15 : 12 }}>
+										sx={{ color: 'white', fontSize: !maxWidth600 ? 15 : 12 }}>
 										Show Code
 									</Typography>
 								</a>
@@ -238,14 +240,14 @@ const ProjectCard = ({ items, indx, matches, matches3 }) => {
 										href={projLink}
 										className={styles2.dialogButton}>
 										<Typography
-											sx={{ color: 'white', fontSize: !matches3 ? 15 : 12 }}>
+											sx={{ color: 'white', fontSize: !maxWidth600 ? 15 : 12 }}>
 											Live Demo
 										</Typography>
 									</a>
 								)}
 								<button onClick={handleClose} className={styles2.dialogButton}>
 									<Typography
-										sx={{ color: 'white', fontSize: !matches3 ? 15 : 12 }}>
+										sx={{ color: 'white', fontSize: !maxWidth600 ? 15 : 12 }}>
 										Close Dialog
 									</Typography>
 								</button>

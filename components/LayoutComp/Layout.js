@@ -6,25 +6,32 @@ import VisibilitySensor from 'react-visibility-sensor';
 import { useState } from 'react';
 import Fade from './Fade';
 
-const Layout = ({ children, matches, refe, title, matches3, styl }) => {
+const Layout = ({
+	children,
+	maxWidth1200,
+	reference,
+	title,
+	maxWidth600,
+	style
+}) => {
 	const [isVisible, setVisible] = useState(false);
 	const firstLetter = title.slice(0, 1);
 	const restLetters = title.slice(1);
 	return (
-		<section className={styles.visi}>
+		<section className={styles.visibilityStyle}>
 			<Box
-				ref={refe}
+				ref={reference}
 				sx={{
-					height: !matches ? '100vh' : '100%',
+					height: !maxWidth1200 ? '100vh' : '100%',
 					width: '100vw',
 					p: 5
 				}}>
 				<VisibilitySensor
-					className={styles.visi}
+					className={styles.visibilityStyle}
 					active={isVisible ? false : true}
 					partialVisibility
-					onChange={(isVisiblee) => {
-						setVisible(isVisiblee);
+					onChange={(isVisibleProp) => {
+						setVisible(isVisibleProp);
 					}}>
 					<>
 						<Box
@@ -44,22 +51,20 @@ const Layout = ({ children, matches, refe, title, matches3, styl }) => {
 									sx={{
 										width: '100%',
 										height: '100%',
-										mb: !matches ? 4 : -3
+										mb: !maxWidth1200 ? 4 : -3
 									}}>
 									<Typography
 										textAlign='center'
-										fontSize={!matches3 ? 140 : 70}
+										fontSize={!maxWidth600 ? 140 : 70}
 										sx={{
-											fontFamily: 'Alumni Sans Inline One',
 											color: 'rgb(144, 0, 255)'
 										}}>
 										{firstLetter}
 									</Typography>
 									<Typography
 										textAlign='center'
-										fontSize={!matches3 ? 100 : 50}
+										fontSize={!maxWidth600 ? 100 : 50}
 										sx={{
-											fontFamily: 'Alumni Sans Inline One',
 											color: 'white'
 										}}>
 										{restLetters}
@@ -67,7 +72,7 @@ const Layout = ({ children, matches, refe, title, matches3, styl }) => {
 								</Stack>
 
 								<Box
-									className={styl}
+									className={style}
 									sx={{
 										height: 5,
 										background:

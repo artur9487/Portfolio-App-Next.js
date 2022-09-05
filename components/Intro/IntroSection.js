@@ -9,42 +9,47 @@ import styles2 from '/styles/Intro.module.scss';
 import image from '../../public/jamala.png';
 import Image from 'next/image';
 
-const IntroSection = ({ matches2, refe, matches3, matches }) => {
-	const upperCol = 'rgba(200, 200, 200, 1)';
-	const downCol = 'rgb(144, 0, 255)';
-	const obj = [
-		{ name: 'HELLO,', styl: styles2.intro0, col: upperCol },
-		{ name: 'I', styl: styles2.intro1, col: upperCol },
-		{ name: 'AM', styl: styles2.intro1, col: upperCol },
-		{ name: 'ARTUR', styl: styles2.intro1, col: upperCol }
+const IntroSection = ({
+	maxWidth900,
+	reference,
+	maxWidth600,
+	maxWidth1200
+}) => {
+	const topBoxColor = 'rgba(200, 200, 200, 1)';
+	const bottomBoxColor = 'rgb(144, 0, 255)';
+	const topText = [
+		{ name: 'HELLO,', style: styles2.intro0, color: topBoxColor },
+		{ name: 'I', style: styles2.intro1, color: topBoxColor },
+		{ name: 'AM', style: styles2.intro1, color: topBoxColor },
+		{ name: 'ARTUR', style: styles2.intro1, color: topBoxColor }
 	];
-	const [obj2, setObj2] = useState([
-		{ name: 'ASPIRING', styl: styles2.intro2, col: downCol },
-		{ name: 'REACT', styl: styles2.intro3, col: downCol },
-		{ name: 'DEVELOPER', styl: styles2.intro3, col: downCol }
+	const [bottomText, setBottomText] = useState([
+		{ name: 'ASPIRING', style: styles2.intro2, color: bottomBoxColor },
+		{ name: 'REACT', style: styles2.intro3, color: bottomBoxColor },
+		{ name: 'DEVELOPER', style: styles2.intro3, color: bottomBoxColor }
 	]);
 
 	useEffect(() => {
-		if (matches2) {
-			const newObj2 = obj2.map((item) => {
+		if (maxWidth900) {
+			const dev = bottomText.map((item) => {
 				if (item.name === 'DEVELOPER') {
 					return { ...item, name: 'DEV' };
 				} else {
 					return item;
 				}
 			});
-			setObj2(newObj2);
+			setBottomText(dev);
 		} else {
-			const newObj2 = obj2.map((item) => {
+			const dev = bottomText.map((item) => {
 				if (item.name === 'DEV') {
 					return { ...item, name: 'DEVELOPER' };
 				} else {
 					return item;
 				}
 			});
-			setObj2(newObj2);
+			setBottomText(dev);
 		}
-	}, [matches2]);
+	}, [maxWidth900]);
 
 	const particlesInit = async (main) => {
 		await loadFull(main);
@@ -56,7 +61,7 @@ const IntroSection = ({ matches2, refe, matches3, matches }) => {
 
 	return (
 		<>
-			<section ref={refe}>
+			<section ref={reference}>
 				<Box
 					className={styles2.introPage}
 					sx={{
@@ -156,10 +161,10 @@ const IntroSection = ({ matches2, refe, matches3, matches }) => {
 							background:
 								'linear-gradient(rgba(10, 0, 15, 0.85),rgba(5, 2, 8, 0.85))',
 
-							width: !matches ? '40%' : !matches3 ? '60%' : '80%',
+							width: !maxWidth1200 ? '50%' : !maxWidth600 ? '60%' : '80%',
 							position: 'absolute',
 							top: '20%',
-							left: !matches3 ? '30%' : '10%'
+							left: !maxWidth600 ? '30%' : '10%'
 						}}>
 						<Box sx={{ margin: 'auto' }}>
 							<Box
@@ -171,16 +176,15 @@ const IntroSection = ({ matches2, refe, matches3, matches }) => {
 									direction='row'
 									justifyContent='center'
 									spacing={5}>
-									{obj.map((item, indx) => {
+									{topText.map((item, indx) => {
 										return (
 											<Typography
 												key={indx}
 												sx={{
-													fontFamily: 'Alumni Sans Inline One',
-													color: item.col,
-													fontSize: !matches3 ? 40 : 25
+													color: item.color,
+													fontSize: !maxWidth600 ? 40 : 25
 												}}
-												className={item.styl}>
+												className={item.style}>
 												{item.name}
 											</Typography>
 										);
@@ -193,6 +197,7 @@ const IntroSection = ({ matches2, refe, matches3, matches }) => {
 						<Box sx={{ margin: 'auto' }}>
 							<Box
 								sx={{
+									width: '100%',
 									maxWidth: 500,
 									height: '100%',
 									margin: 'auto'
@@ -204,16 +209,15 @@ const IntroSection = ({ matches2, refe, matches3, matches }) => {
 									direction='row'
 									justifyContent='center'
 									spacing={5}>
-									{obj2.map((item, indx) => {
+									{bottomText.map((item, indx) => {
 										return (
 											<Typography
 												key={indx}
 												sx={{
-													fontFamily: 'Alumni Sans Inline One',
-													color: item.col,
-													fontSize: !matches3 ? 50 : 32
+													color: item.color,
+													fontSize: !maxWidth600 ? 50 : 32
 												}}
-												className={item.styl}>
+												className={item.style}>
 												{item.name}
 											</Typography>
 										);
@@ -232,8 +236,8 @@ const IntroSection = ({ matches2, refe, matches3, matches }) => {
 									border: 2,
 									margin: 'auto',
 									position: 'relative',
-									width: !matches3 ? 250 : 170,
-									height: !matches3 ? 250 : 170,
+									width: !maxWidth600 ? 250 : 170,
+									height: !maxWidth600 ? 250 : 170,
 									borderRadius: '50%',
 									borderColor: 'rgb(144, 0, 255)',
 									overflow: 'hidden'

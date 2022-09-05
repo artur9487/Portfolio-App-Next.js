@@ -2,7 +2,7 @@
 
 import { Stack, Typography } from '@mui/material';
 
-const FooterSection = (matches3) => {
+const FooterSection = (maxWidth600) => {
 	return (
 		<Stack
 			alignItems='center'
@@ -16,8 +16,8 @@ const FooterSection = (matches3) => {
 			<Typography
 				sx={{
 					color: 'white',
-					fontFamily: 'Alumni Sans Inline One',
-					fontSize: !matches3 ? 30 : 25
+
+					fontSize: !maxWidth600 ? 30 : 25
 				}}>
 				Copyright @2022
 			</Typography>

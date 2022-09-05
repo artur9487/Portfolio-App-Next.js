@@ -3,7 +3,7 @@ import ProjectCard from './ProjectCard';
 import { Stack, Box, Grid } from '@mui/material';
 import styles from '/styles/Home.module.scss';
 
-const ThirdSection = ({ result, matches, matches3 }) => {
+const ThirdSection = ({ placeData, maxWidth1200, maxWidth600 }) => {
 	return (
 		<>
 			<Stack
@@ -17,12 +17,12 @@ const ThirdSection = ({ result, matches, matches3 }) => {
 						className={styles.fade900}
 						sx={{ margin: 'auto', width: '80%', height: '100%' }}
 						rowSpacing={4}
-						columnSpacing={matches3 ? 0 : 4}
+						columnSpacing={maxWidth600 ? 0 : 4}
 						container
 						direction='row'
 						justifyContent='center'
 						alignItems='center'>
-						{result.map((items, indx) => {
+						{placeData.map((items, indx) => {
 							return (
 								<Grid
 									sx={{ width: '100%' }}
@@ -36,11 +36,11 @@ const ThirdSection = ({ result, matches, matches3 }) => {
 									lg={4}
 									md={6}>
 									<ProjectCard
-										matches3={matches3}
+										maxWidth600={maxWidth600}
 										key={items.id}
 										items={items}
 										indx={indx}
-										matches={matches}
+										maxWidth1200={maxWidth1200}
 									/>
 								</Grid>
 							);

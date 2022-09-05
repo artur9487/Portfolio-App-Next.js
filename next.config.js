@@ -8,7 +8,6 @@ const nextConfig = {
 };
 
 module.exports = {
-	env: {},
 	nextConfig,
 	images: {
 		domains: ['media.graphcms.com', 'media.graphassets.com']

@@ -9,16 +9,16 @@ const Slide = ({ children, slide }) => {
 	const [isVisible, setVisible] = useState(false);
 	return (
 		<VisibilitySensor
-			className='visi'
+			className='visibilityStyle'
 			active={isVisible ? false : true}
 			partialVisibility
-			onChange={(isVisiblee) => {
-				setVisible(isVisiblee);
+			onChange={(isVisibleProp) => {
+				setVisible(isVisibleProp);
 			}}>
 			<>
 				<Box
 					sx={{ width: '100%', height: '100%' }}
-					className={isVisible ? slide : styles.noVis}>
+					className={isVisible ? slide : styles.noVisibility}>
 					{children}
 				</Box>
 			</>

@@ -1,84 +1,46 @@
 /** @format */
 
-.brackets {
-	animation: brackets_reveal 2s ease;
+@mixin tech_right_theme($delayVariable, $animationVariable) {
 	opacity: 0;
-	animation-delay: 6s;
-	animation-fill-mode: forwards;
-}
-
-@keyframes brackets_reveal {
-	50% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-
-.blu {
-	opacity: 0;
-	animation-name: blu_Ann;
-	animation-delay: 1s;
-	animation-duration: 3s;
-	animation-fill-mode: forwards;
-}
-
-@keyframes blu_Ann {
-	0% {
-		opacity: 0;
-	}
-	0% {
-		opacity: 1;
-		filter: blur(10px);
-	}
-	100% {
-		opacity: 1;
-		filter: blur(0px);
-	}
-}
-
-@mixin tech_right_theme($del, $ann) {
-	opacity: 0;
-	animation-name: $ann;
+	animation-name: $animationVariable;
 	animation-duration: 0.5s;
 	animation-fill-mode: forwards;
-	animation-delay: $del;
+	animation-delay: $delayVariable;
 }
 
-@mixin tech_left_theme($del, $ann) {
+@mixin tech_left_theme($delayVariable, $animationVariable) {
 	opacity: 0;
-	animation-name: $ann;
+	animation-name: $animationVariable;
 	animation-duration: 0.5s;
 	animation-fill-mode: forwards;
-	animation-delay: $del;
+	animation-delay: $delayVariable;
 }
 
-.first {
-	@include tech_right_theme(2s, tech_right_ann);
+.firstBig {
+	@include tech_right_theme(2s, right_animation);
 }
 
-.second {
-	@include tech_left_theme(2.5s, tech_left_ann);
+.secondBig {
+	@include tech_left_theme(2.5s, left_animation);
 }
 
-.second2 {
-	@include tech_left_theme(2.5s, tech_left_ann2);
+.second2Big {
+	@include tech_left_theme(2.5s, left_animation2);
 }
 
-.third {
-	@include tech_right_theme(3s, tech_right_ann);
+.thirdBig {
+	@include tech_right_theme(3s, right_animation);
 }
 
-.third2 {
-	@include tech_right_theme(3s, tech_right_ann2);
+.thirdBig2 {
+	@include tech_right_theme(3s, right_animation2);
 }
 
-.forth {
-	@include tech_left_theme(3.5s, tech_left_ann);
+.fourthBig {
+	@include tech_left_theme(3.5s, left_animation);
 }
 
-@keyframes tech_left_ann {
+@keyframes left_animation {
 	0% {
 		transform: translateX(-20px);
 	}
@@ -88,7 +50,7 @@
 	}
 }
 
-@keyframes tech_left_ann2 {
+@keyframes left_animation2 {
 	0% {
 		transform: translateX(-110%);
 	}
@@ -98,7 +60,7 @@
 	}
 }
 
-@keyframes tech_right_ann {
+@keyframes right_animation {
 	0% {
 		transform: translateX(20px);
 	}
@@ -108,7 +70,7 @@
 	}
 }
 
-@keyframes tech_right_ann2 {
+@keyframes right_animation2 {
 	0% {
 		transform: translateX(-150px);
 	}
@@ -126,22 +88,26 @@
 }
 
 .up {
-	@include box_shad_theme(up_ann);
+	@include box_shad_theme(up_animation);
 }
 
 .down {
-	@include box_shad_theme(down_ann);
+	@include box_shad_theme(down_animation);
 }
 
 .right {
-	@include box_shad_theme(right_ann);
+	@include box_shad_theme(right_animation);
 }
 
 .left {
-	@include box_shad_theme(left_ann);
+	@include box_shad_theme(left_animation);
 }
 
-@keyframes up_ann {
+.noShadow {
+	box-shadow: none;
+}
+
+@keyframes up_animation {
 	0% {
 		box-shadow: none;
 	}
@@ -151,7 +117,7 @@
 	}
 }
 
-@keyframes down_ann {
+@keyframes down_animation {
 	0% {
 		box-shadow: none;
 	}
@@ -161,7 +127,7 @@
 	}
 }
 
-@keyframes left_ann {
+@keyframes left_animation {
 	0% {
 		box-shadow: none;
 	}
@@ -170,7 +136,7 @@
 	}
 }
 
-@keyframes right_ann {
+@keyframes right_animation {
 	0% {
 		box-shadow: none;
 	}
@@ -180,13 +146,13 @@
 }
 
 .shadowBox {
-	animation-name: shadowAnn;
+	animation-name: shadowAnimation;
 	animation-delay: 6s;
 	animation-duration: 2s;
 	animation-fill-mode: forwards;
 }
 
-@keyframes shadowAnn {
+@keyframes shadowAnimation {
 	0% {
 		box-shadow: none;
 	}
@@ -216,38 +182,38 @@
 }
 
 .firstSmall {
-	@include tech_right_theme(2s, tech_right_ann);
+	@include tech_right_theme(2s, right_animation);
 }
 
 .secondSmall {
-	@include tech_right_theme(2s, tech_left_ann);
+	@include tech_right_theme(2s, left_animation);
 }
 
 .thirdSmall {
-	@include tech_right_theme(2.5s, tech_right_ann);
+	@include tech_right_theme(2.5s, right_animation);
+}
+
+.fourthSmall {
+	@include tech_right_theme(2.5s, left_animation);
 }
 
 .fifthSmall {
-	@include tech_right_theme(2.5s, tech_left_ann);
+	@include tech_right_theme(3s, right_animation);
 }
 
 .sixthSmall {
-	@include tech_right_theme(3s, tech_right_ann);
+	@include tech_right_theme(3s, left_animation);
 }
 
 .seventhSmall {
-	@include tech_right_theme(3s, tech_left_ann);
+	@include tech_right_theme(3.5s, right_animation);
 }
 
-.eightSmall {
-	@include tech_right_theme(3.5s, tech_right_ann);
+.eighthSmall {
+	@include tech_right_theme(3.5s, left_animation);
 }
 
-.nineSmall {
-	@include tech_right_theme(3.5s, tech_left_ann);
-}
-
-.slideVis {
+.slideVisibility {
 	animation: slide_reveal 6s ease;
 	opacity: 0;
 	animation-delay: 5s;
