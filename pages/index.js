@@ -16,7 +16,7 @@ import MainLayout from '../components/LayoutComp/MainLayout';
 import Head from 'next/head';
 import { Box } from '@mui/material';
 
-const Home = ({ placeData }) => {
+const Home = ({ projectData }) => {
 	const maxWidth1200 = useMediaQuery('(max-width:1200px)');
 	const maxWidth900 = useMediaQuery('(max-width:900px)');
 	const maxWidth600 = useMediaQuery('(max-width:600px)');
@@ -78,7 +78,7 @@ const Home = ({ placeData }) => {
 						reference={thirdSectionRef}
 						title='My Projects'>
 						<ThirdSection
-							placeData={placeData}
+							projectData={projectData}
 							maxWidth1200={maxWidth1200}
 							maxWidth600={maxWidth600}
 						/>
@@ -132,10 +132,10 @@ export async function getServerSideProps() {
 	`;
 
 	const result = await request(URL, query);
-	const placeData = result.projectssConnection.edges;
+	const projectData = result.projectssConnection.edges;
 
 	return {
-		props: { placeData }
+		props: { projectData }
 	};
 }
 export default Home;

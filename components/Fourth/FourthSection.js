@@ -1,6 +1,6 @@
 /** @format */
 
-import { Box, Stack, TextField, Typography } from '@mui/material';
+import { Box, Stack, Typography } from '@mui/material';
 import styles2 from '/styles/Fourth.module.scss';
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
@@ -68,8 +68,8 @@ const FourthSection = ({ maxWidth600, maxWidth1200, maxWidth900 }) => {
 				process.env.cont3
 			)
 			.then(
-				(placeData) => {
-					console.log(placeData.text);
+				(projectData) => {
+					console.log(projectData.text);
 				},
 				(error) => {
 					console.log(error.text);

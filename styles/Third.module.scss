@@ -1,13 +1,9 @@
 /** @format */
 
-.max {
-	width: '100%';
-}
-
 @mixin techCardSlide_theme($delay) {
 	width: 100%;
 	opacity: 0;
-	animation-name: example5;
+	animation-name: slideAnimation;
 	animation-delay: $delay;
 	animation-duration: 4s;
 	animation-fill-mode: forwards;
@@ -55,7 +51,7 @@
 	}
 }
 
-@keyframes example5 {
+@keyframes slideAnimation {
 	from {
 		opacity: 0;
 		transform: translateY(-30px);
@@ -121,15 +117,6 @@
 	margin: auto;
 	object-fit: contain;
 	max-width: 100%;
-}
-
-.caro {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	margin: auto;
-	border: 2px solid black;
 }
 
 @keyframes shadowAnimation {

@@ -17,40 +17,40 @@
 }
 
 .firstBig {
-	@include tech_right_theme(2s, right_animation);
+	@include tech_right_theme(2s, right_push);
 }
 
 .secondBig {
-	@include tech_left_theme(2.5s, left_animation);
+	@include tech_left_theme(2.5s, left_push);
 }
 
 .second2Big {
-	@include tech_left_theme(2.5s, left_animation2);
+	@include tech_left_theme(2.5s, left_push2);
 }
 
 .thirdBig {
-	@include tech_right_theme(3s, right_animation);
+	@include tech_right_theme(3s, right_push);
 }
 
-.thirdBig2 {
-	@include tech_right_theme(3s, right_animation2);
+.third2Big {
+	@include tech_right_theme(3s, right_push2);
 }
 
 .fourthBig {
-	@include tech_left_theme(3.5s, left_animation);
+	@include tech_left_theme(3.5s, left_push);
 }
 
-@keyframes left_animation {
+@keyframes left_push {
 	0% {
 		transform: translateX(-20px);
 	}
 	100% {
 		opacity: 1;
-		transform: translateX(0);
+		transform: translateX(0px);
 	}
 }
 
-@keyframes left_animation2 {
+@keyframes left_push2 {
 	0% {
 		transform: translateX(-110%);
 	}
@@ -60,17 +60,17 @@
 	}
 }
 
-@keyframes right_animation {
+@keyframes right_push {
 	0% {
 		transform: translateX(20px);
 	}
 	100% {
 		opacity: 1;
-		transform: translateX(0);
+		transform: translateX(0px);
 	}
 }
 
-@keyframes right_animation2 {
+@keyframes right_push2 {
 	0% {
 		transform: translateX(-150px);
 	}
@@ -88,26 +88,26 @@
 }
 
 .up {
-	@include box_shad_theme(up_animation);
+	@include box_shad_theme(up_shadow);
 }
 
 .down {
-	@include box_shad_theme(down_animation);
+	@include box_shad_theme(down_shadow);
 }
 
 .right {
-	@include box_shad_theme(right_animation);
+	@include box_shad_theme(right_shadow);
 }
 
 .left {
-	@include box_shad_theme(left_animation);
+	@include box_shad_theme(left_shadow);
 }
 
 .noShadow {
 	box-shadow: none;
 }
 
-@keyframes up_animation {
+@keyframes up_shadow {
 	0% {
 		box-shadow: none;
 	}
@@ -117,7 +117,7 @@
 	}
 }
 
-@keyframes down_animation {
+@keyframes down_shadow {
 	0% {
 		box-shadow: none;
 	}
@@ -127,7 +127,7 @@
 	}
 }
 
-@keyframes left_animation {
+@keyframes left_shadow {
 	0% {
 		box-shadow: none;
 	}
@@ -136,7 +136,7 @@
 	}
 }
 
-@keyframes right_animation {
+@keyframes right_shadow {
 	0% {
 		box-shadow: none;
 	}
@@ -182,35 +182,35 @@
 }
 
 .firstSmall {
-	@include tech_right_theme(2s, right_animation);
+	@include tech_right_theme(2s, right_push);
 }
 
 .secondSmall {
-	@include tech_right_theme(2s, left_animation);
+	@include tech_right_theme(2s, left_push);
 }
 
 .thirdSmall {
-	@include tech_right_theme(2.5s, right_animation);
+	@include tech_right_theme(2.5s, right_push);
 }
 
 .fourthSmall {
-	@include tech_right_theme(2.5s, left_animation);
+	@include tech_right_theme(2.5s, left_push);
 }
 
 .fifthSmall {
-	@include tech_right_theme(3s, right_animation);
+	@include tech_right_theme(3s, right_push);
 }
 
 .sixthSmall {
-	@include tech_right_theme(3s, left_animation);
+	@include tech_right_theme(3s, left_push);
 }
 
 .seventhSmall {
-	@include tech_right_theme(3.5s, right_animation);
+	@include tech_right_theme(3.5s, right_push);
 }
 
 .eighthSmall {
-	@include tech_right_theme(3.5s, left_animation);
+	@include tech_right_theme(3.5s, left_push);
 }
 
 .slideVisibility {

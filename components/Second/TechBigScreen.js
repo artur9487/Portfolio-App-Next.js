@@ -16,6 +16,7 @@ const TechnologyFragmentComponent = ({
 	isVisible
 }) => {
 	const backgroundColor = 'rgb(39, 37, 43, 0.5)';
+	console.log(shadowPosition);
 
 	const typographyObj = (
 		<Typography
@@ -148,7 +149,6 @@ const TechBigScreen = ({
 				shadowPosition,
 				type
 			} = item;
-			console.log(indx);
 			return (
 				<TechnologyFragmentComponent
 					item={technology[indx]}

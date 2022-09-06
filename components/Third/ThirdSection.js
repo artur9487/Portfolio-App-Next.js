@@ -3,7 +3,7 @@ import ProjectCard from './ProjectCard';
 import { Stack, Box, Grid } from '@mui/material';
 import styles from '/styles/Home.module.scss';
 
-const ThirdSection = ({ placeData, maxWidth1200, maxWidth600 }) => {
+const ThirdSection = ({ projectData, maxWidth1200, maxWidth600 }) => {
 	return (
 		<>
 			<Stack
@@ -22,7 +22,7 @@ const ThirdSection = ({ placeData, maxWidth1200, maxWidth600 }) => {
 						direction='row'
 						justifyContent='center'
 						alignItems='center'>
-						{placeData.map((items, indx) => {
+						{projectData.map((items, indx) => {
 							return (
 								<Grid
 									sx={{ width: '100%' }}
@@ -38,7 +38,7 @@ const ThirdSection = ({ placeData, maxWidth1200, maxWidth600 }) => {
 									<ProjectCard
 										maxWidth600={maxWidth600}
 										key={items.id}
-										items={items}
+										singleProject={items}
 										indx={indx}
 										maxWidth1200={maxWidth1200}
 									/>
