@@ -1,6 +1,7 @@
 /** @format */
 
-import FirstSection from '../components/First/FirstSection';
+// @ts-ignore
+import FirstSection from '../components/First/FirstSection.tsx';
 import styles from '/styles/Home.module.scss';
 import SecondSection from '../components/Second/SecondSection';
 import ThirdSection from '../components/Third/ThirdSection';
@@ -9,17 +10,21 @@ import FourthSection from '../components/Fourth/FourthSection';
 import SideBar from '../components/LayoutComp/SideBar';
 import { useRef } from 'react';
 import Layout from '../components/LayoutComp/Layout';
-import IntroSection from '../components/Intro/IntroSection';
+import IntroSection from '../components/Intro/IntroSection.js';
 import { useMediaQuery } from '@mui/material';
 import FooterSection from '../components/LayoutComp/FooterSection';
 import MainLayout from '../components/LayoutComp/MainLayout';
 import Head from 'next/head';
 import { Box } from '@mui/material';
 
-const Home = ({ projectData }) => {
-	const maxWidth1200 = useMediaQuery('(max-width:1200px)');
-	const maxWidth900 = useMediaQuery('(max-width:900px)');
-	const maxWidth600 = useMediaQuery('(max-width:600px)');
+interface Props {
+	projectData: object;
+}
+
+const Home: React.FC<Props> = ({ projectData }) => {
+	const maxWidth1200 = useMediaQuery<string>('(max-width:1200px)');
+	const maxWidth900 = useMediaQuery<string>('(max-width:900px)');
+	const maxWidth600 = useMediaQuery<string>('(max-width:600px)');
 	const introSectionRef = useRef(null);
 	const firstSectionRef = useRef(null);
 	const secondSectionRef = useRef(null);
@@ -28,9 +33,9 @@ const Home = ({ projectData }) => {
 
 	return (
 		<>
-			<Head>
+			{/*<Head>
 				<title>Portfolio App</title>
-			</Head>
+	</Head>*/}
 
 			<Box className={styles.mainBox}>
 				<SideBar
