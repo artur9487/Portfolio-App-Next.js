@@ -1,8 +1,10 @@
 /** @format */
 
-import { Box, Typography, Grid } from '@mui/material';
+import { Box, Typography, Grid, BoxTypeMap } from '@mui/material';
 import styles from '../../styles/Home.module.scss';
 import { techBigScreenParams } from './SectionArrays';
+import React from 'react';
+import { technologies_schema } from '../../interfaceGlobalSchemas';
 
 const TechnologyFragmentComponent = ({
 	item,
@@ -16,9 +18,8 @@ const TechnologyFragmentComponent = ({
 	isVisible
 }) => {
 	const backgroundColor = 'rgb(39, 37, 43, 0.5)';
-	console.log(shadowPosition);
 
-	const typographyObj = (
+	const typographyObj: JSX.Element = (
 		<Typography
 			sx={{
 				lineHeight: '2',
@@ -30,7 +31,7 @@ const TechnologyFragmentComponent = ({
 		</Typography>
 	);
 
-	let technologyFragnent;
+	let technologyFragnent: JSX.Element;
 	if (marginPosition === 'auto') {
 		technologyFragnent = (
 			<Box
@@ -134,36 +135,38 @@ const TechnologyFragmentComponent = ({
 	);
 };
 
-const TechBigScreen = ({
+const TechBigScreen: React.FC<technologies_schema> = ({
 	technology,
 	maxWidth1200,
 	maxWidth900,
 	isVisible
 }) => {
-	{
-		return techBigScreenParams.map((item, indx) => {
-			const {
-				gridColumns,
-				marginPosition,
-				positionReveal,
-				shadowPosition,
-				type
-			} = item;
-			return (
-				<TechnologyFragmentComponent
-					item={technology[indx]}
-					gridColumns={gridColumns}
-					marginPosition={marginPosition}
-					positionReveal={positionReveal}
-					shadowPosition={shadowPosition}
-					type={type}
-					maxWidth1200={maxWidth1200}
-					maxWidth900={maxWidth900}
-					isVisible={isVisible}
-				/>
-			);
-		});
-	}
+	return (
+		<>
+			{techBigScreenParams.map((item, indx) => {
+				const {
+					gridColumns,
+					marginPosition,
+					positionReveal,
+					shadowPosition,
+					type
+				} = item;
+				return (
+					<TechnologyFragmentComponent
+						item={technology[indx]}
+						gridColumns={gridColumns}
+						marginPosition={marginPosition}
+						positionReveal={positionReveal}
+						shadowPosition={shadowPosition}
+						type={type}
+						maxWidth1200={maxWidth1200}
+						maxWidth900={maxWidth900}
+						isVisible={isVisible}
+					/>
+				);
+			})}
+		</>
+	);
 };
 
 export default TechBigScreen;

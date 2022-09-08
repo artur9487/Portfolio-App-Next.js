@@ -1,7 +1,9 @@
 /** @format */
 import styles2 from '../../styles/Second.module.scss';
+import { bracketsCoordinates1_schema } from '../../interfaceGlobalSchemas';
+import { bracketsCoordinates2_schema } from '../../interfaceGlobalSchemas';
 
-export const technology = [
+export const technology: string[] = [
 	'HTML',
 	'Javascript',
 	'Next.js',
@@ -20,7 +22,7 @@ export const technology = [
 	'Material UI'
 ];
 
-export const bracketsCoordinates1 = [
+export const bracketsCoordinates1: bracketsCoordinates1_schema[] = [
 	{
 		ifNot600_width_Value: 90,
 		if600_width_Value: 45,
@@ -41,7 +43,7 @@ export const bracketsCoordinates1 = [
 	}
 ];
 
-export const bracketsCoordinates2 = [
+export const bracketsCoordinates2: bracketsCoordinates2_schema[] = [
 	{
 		ifNot600_width_Value: 60,
 		if600_width_Value: 30,
@@ -62,7 +64,15 @@ export const bracketsCoordinates2 = [
 	}
 ];
 
-export const techBigScreenParams = [
+interface techBigScreenParams_schema {
+	gridColumns: number;
+	marginPosition: string;
+	positionReveal: string;
+	shadowPosition: string;
+	type: string;
+}
+
+export const techBigScreenParams: techBigScreenParams_schema[] = [
 	{
 		gridColumns: 12,
 		marginPosition: 'auto',
@@ -178,7 +188,12 @@ export const techBigScreenParams = [
 	}
 ];
 
-export const techSmallScreenParams = [
+interface techSmallScreenParams_schema {
+	positionReveal: string;
+	shadowPosition: string;
+}
+
+export const techSmallScreenParams: techSmallScreenParams_schema[] = [
 	{ positionReveal: styles2.firstSmall, shadowPosition: styles2.up },
 	{ positionReveal: styles2.firstSmall, shadowPosition: styles2.up },
 	{ positionReveal: styles2.secondSmall, shadowPosition: styles2.right },

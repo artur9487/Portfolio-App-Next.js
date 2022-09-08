@@ -13,9 +13,20 @@ import BracketsComponent2 from '../CustomComponents/BracketsComponent2';
 import { technology } from './SectionArrays';
 import { bracketsCoordinates1 } from './SectionArrays';
 import { bracketsCoordinates2 } from './SectionArrays';
+import React from 'react';
 
-const SecondSection = ({ maxWidth1200, maxWidth900, maxWidth600 }) => {
-	const [isVisible, setVisible] = useState(false);
+/*interface Props {
+	maxWidth1200: boolean;
+	maxWidth900: boolean;
+	maxWidth600: boolean;
+}*/
+
+const SecondSection /*: React.FC<Props>*/ = ({
+	maxWidth1200,
+	maxWidth900,
+	maxWidth600
+}) => {
+	const [isVisible, setVisible] = useState(false); /*< boolean >*/
 
 	return (
 		<>

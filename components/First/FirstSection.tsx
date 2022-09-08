@@ -13,9 +13,15 @@ import BracketsComponent2 from '../CustomComponents/BracketsComponent2';
 import { text } from './SectionArrays';
 import { bracketsCoordinates1 } from './SectionArrays';
 import { bracketsCoordinates2 } from './SectionArrays';
+import React from 'react';
 
-const FirstSection = ({ maxWidth1200, maxWidth600 }) => {
-	const [isVisible, setVisible] = useState(false);
+interface Props {
+	maxWidth1200: boolean;
+	maxWidth600: boolean;
+}
+
+const FirstSection: React.FC<Props> = ({ maxWidth1200, maxWidth600 }) => {
+	const [isVisible, setVisible] = useState<boolean>(false);
 
 	return (
 		<>
@@ -87,7 +93,7 @@ const FirstSection = ({ maxWidth1200, maxWidth600 }) => {
 									<Typography
 										key={indx}
 										align='justify'
-										className={isVisible ? item.style : null}
+										className={isVisible ? item.style : styles.none}
 										sx={{
 											fontSize: !maxWidth600 ? 20 : 15,
 											lineHeight: 1.5,
