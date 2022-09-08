@@ -1,6 +1,6 @@
 /** @format */
 
-import { Box, Typography, Grid, BoxTypeMap } from '@mui/material';
+import { Box, Typography, Grid } from '@mui/material';
 import styles from '../../styles/Home.module.scss';
 import { techBigScreenParams } from './SectionArrays';
 import React from 'react';
@@ -153,6 +153,7 @@ const TechBigScreen: React.FC<technologies_schema> = ({
 				} = item;
 				return (
 					<TechnologyFragmentComponent
+						key={indx}
 						item={technology[indx]}
 						gridColumns={gridColumns}
 						marginPosition={marginPosition}
