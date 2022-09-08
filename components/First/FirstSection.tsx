@@ -3,7 +3,7 @@
 import { Stack } from '@mui/material';
 import { Box, Typography } from '@mui/material';
 import Image from 'next/image';
-//import image from '../../public/971.jpg';
+import image from '../../public/971.jpg';
 import VisibilitySensor from 'react-visibility-sensor';
 import { useState } from 'react';
 import styles2 from '/styles/First.module.scss';
@@ -136,7 +136,7 @@ const FirstSection: React.FC<Props> = ({ maxWidth1200, maxWidth600 }) => {
 										transform: 'rotate(0deg)'
 									}
 								}}>
-								{/*<Image src={image} objectFit='cover' layout='fill' alt='img' />*/}
+								<Image src={image} objectFit='cover' layout='fill' alt='img' />
 							</Box>
 						</Box>
 					</Stack>

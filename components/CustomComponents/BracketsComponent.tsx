@@ -2,15 +2,17 @@
 import { Box } from '@mui/material';
 import styles2 from '/styles/First.module.scss';
 import styles from '/styles/Home.module.scss';
+import { bracketsCoordinates1_schema } from '../../interfaceGlobalSchemas';
+import React from 'react';
 
-const BracketsComponent2 = ({
+const BracketsComponent: React.FC<bracketsCoordinates1_schema> = ({
 	isVisible,
 	ifNot600_width_Value,
 	if600_width_Value,
 	ifNot600_height_Value,
 	if600_height_Value,
-	top_Value,
-	left_Value,
+	bottom_Value,
+	right_Value,
 	gradient,
 	maxWidth600
 }) => {
@@ -20,8 +22,8 @@ const BracketsComponent2 = ({
 			sx={{
 				width: !maxWidth600 ? ifNot600_width_Value : if600_width_Value,
 				position: 'absolute',
-				top: top_Value,
-				left: left_Value,
+				bottom: bottom_Value,
+				right: right_Value,
 				height: !maxWidth600 ? ifNot600_height_Value : if600_height_Value,
 				background: gradient
 			}}
@@ -29,4 +31,4 @@ const BracketsComponent2 = ({
 	);
 };
 
-export default BracketsComponent2;
+export default BracketsComponent;

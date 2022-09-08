@@ -1,7 +1,14 @@
 /** @format */
 import styles2 from '/styles/First.module.scss';
+import { bracketsCoordinates1_schema } from '../../interfaceGlobalSchemas';
+import { bracketsCoordinates2_schema } from '../../interfaceGlobalSchemas';
 
-export const text = [
+interface text_schema {
+	text: string;
+	style: string;
+}
+
+export const text: text_schema[] = [
 	{
 		text: `Hi! I am Artur. I am learning frontend technologies for about 2 years. I am looking for my firs Job as React, React-native or Next.js developer.`,
 		style: styles2.text1
@@ -17,7 +24,7 @@ grow in the fronted software industry.`,
 	}
 ];
 
-export const bracketsCoordinates1 = [
+export const bracketsCoordinates1: bracketsCoordinates1_schema[] = [
 	{
 		ifNot600_width_Value: 90,
 		if600_width_Value: 45,
@@ -37,7 +44,8 @@ export const bracketsCoordinates1 = [
 		gradient: 'linear-gradient(125deg, rgb(90, 0, 158),rgb(144, 0, 255))'
 	}
 ];
-export const bracketsCoordinates2 = [
+
+export const bracketsCoordinates2: bracketsCoordinates2_schema[] = [
 	{
 		ifNot600_width_Value: 60,
 		if600_width_Value: 30,
