@@ -4,18 +4,10 @@ import { Box, Typography, Stack, BoxTypeMap } from '@mui/material';
 import styles from '/styles/Home.module.scss';
 import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
-import {
-	DetailedHTMLProps,
-	HTMLAttributes,
-	LegacyRef,
-	MutableRefObject,
-	useEffect,
-	useState
-} from 'react';
+import { useEffect, useState } from 'react';
 import styles2 from '/styles/Intro.module.scss';
 import image from '../../public/jamala.png';
 import Image from 'next/image';
-import { OverridableComponent } from '@mui/material/OverridableComponent';
 
 interface intersection_schema {
 	maxWidth900: boolean;

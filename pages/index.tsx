@@ -9,7 +9,7 @@ import FourthSection from '../components/Fourth/FourthSection';
 import SideBar from '../components/LayoutComp/SideBar';
 import { LegacyRef, MutableRefObject, useRef } from 'react';
 import Layout from '../components/LayoutComp/Layout';
-import IntroSection from '../components/Intro/IntroSection.js';
+import IntroSection from '../components/Intro/IntroSection';
 import { BoxTypeMap, useMediaQuery } from '@mui/material';
 import FooterSection from '../components/LayoutComp/FooterSection';
 import MainLayout from '../components/LayoutComp/MainLayout';
