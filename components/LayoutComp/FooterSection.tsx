@@ -2,7 +2,11 @@
 
 import { Stack, Typography } from '@mui/material';
 
-const FooterSection = (maxWidth600) => {
+interface footerSection_schema {
+	maxWidth600: boolean;
+}
+
+const FooterSection: React.FC<footerSection_schema> = ({ maxWidth600 }) => {
 	return (
 		<Stack
 			alignItems='center'
@@ -16,7 +20,6 @@ const FooterSection = (maxWidth600) => {
 			<Typography
 				sx={{
 					color: 'white',
-
 					fontSize: !maxWidth600 ? 30 : 25
 				}}>
 				Copyright @2022

@@ -6,8 +6,14 @@ import { Box } from '@mui/system';
 import styles from '/styles/Home.module.scss';
 import styles2 from '/styles/Third.module.scss';
 
-const TechCardSlide = ({ children, indx }) => {
-	const [isVisible, setVisible] = useState(false);
+interface techCardSlide_schema {
+	children: JSX.Element;
+	indx: number;
+}
+
+const TechCardSlide: React.FC<techCardSlide_schema> = ({ children, indx }) => {
+	const [isVisible, setVisible] = useState<boolean>(false);
+
 	return (
 		<VisibilitySensor
 			active={isVisible ? false : true}

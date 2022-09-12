@@ -15,13 +15,13 @@ import { bracketsCoordinates1 } from './SectionArrays';
 import { bracketsCoordinates2 } from './SectionArrays';
 import React from 'react';
 
-/*interface Props {
+interface Props {
 	maxWidth1200: boolean;
 	maxWidth900: boolean;
 	maxWidth600: boolean;
-}*/
+}
 
-const SecondSection /*: React.FC<Props>*/ = ({
+const SecondSection: React.FC<Props> = ({
 	maxWidth1200,
 	maxWidth900,
 	maxWidth600
@@ -31,7 +31,6 @@ const SecondSection /*: React.FC<Props>*/ = ({
 	return (
 		<>
 			<VisibilitySensor
-				className={styles.visibilityStyle}
 				active={isVisible ? false : true}
 				partialVisibility
 				onChange={(isVisibleProp) => {
@@ -130,13 +129,13 @@ const SecondSection /*: React.FC<Props>*/ = ({
 						<Box
 							sx={{ width: !maxWidth600 ? '75%' : '90%' }}
 							className='slide_body'>
-							<Box className={[`slider`, styles2.shadowBox]}>
+							<Box className={`${styles2.shadowBox} slider`}>
 								<Box className='slide-track'>
 									{technology.map((item, indx) => {
-										return <TechCard key={indx} techName={item} indx={indx} />;
+										return <TechCard key={indx} indx={indx} />;
 									})}
 									{technology.map((item, indx) => {
-										return <TechCard key={indx} techName={item} indx={indx} />;
+										return <TechCard key={indx} indx={indx} />;
 									})}
 								</Box>
 							</Box>

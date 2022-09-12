@@ -2,8 +2,13 @@
 import ProjectCard from './ProjectCard';
 import { Stack, Box, Grid } from '@mui/material';
 import styles from '/styles/Home.module.scss';
+import { projectPros_schema } from '../../interfaceGlobalSchemas';
 
-const ThirdSection = ({ projectData, maxWidth1200, maxWidth600 }) => {
+const ThirdSection: React.FC<projectPros_schema> = ({
+	projectData,
+	maxWidth1200,
+	maxWidth600
+}) => {
 	return (
 		<>
 			<Stack
@@ -37,7 +42,7 @@ const ThirdSection = ({ projectData, maxWidth1200, maxWidth600 }) => {
 									md={6}>
 									<ProjectCard
 										maxWidth600={maxWidth600}
-										key={items.id}
+										key={indx}
 										singleProject={items}
 										indx={indx}
 										maxWidth1200={maxWidth1200}

@@ -10111,6 +10111,11 @@ react-gallery-carousel@^0.2.9:
   resolved "https://registry.npmjs.org/react-gallery-carousel/-/react-gallery-carousel-0.2.9.tgz"
   integrity sha512-UQ2WPyGWC72DtzbHJfQ91gQ2h7RIehd1q/aNnDP4F7iFjqUGUho8mojCWAsz7xLqGCVK9W+QDkqDMtoklLzxJA==
 
+react-hook-form@^7.34.2:
+  version "7.34.2"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.34.2.tgz#9ac6d1a309a7c4aaa369d1269357a70e9e9bf4de"
+  integrity sha512-1lYWbEqr0GW7HHUjMScXMidGvV0BE2RJV3ap2BL7G0EJirkqpccTaawbsvBO8GZaB3JjCeFBEbnEWI1P8ZoLRQ==
+
 react-image-gallery@^1.2.7:
   version "1.2.7"
   resolved "https://registry.npmjs.org/react-image-gallery/-/react-image-gallery-1.2.7.tgz"

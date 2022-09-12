@@ -4,26 +4,29 @@ import VisibilitySensor from 'react-visibility-sensor';
 import { useState } from 'react';
 import { Box } from '@mui/system';
 import styles from '/styles/Home.module.scss';
+import React from 'react';
 
-const Fade = ({ children }) => {
+interface slide_schema {
+	children: JSX.Element;
+	slide: string;
+}
+
+const Slide: React.FC<slide_schema> = ({ children, slide }) => {
 	const [isVisible, setVisible] = useState(false);
 	return (
 		<VisibilitySensor
-			className={styles.visibilityStyle}
 			active={isVisible ? false : true}
 			partialVisibility
 			onChange={(isVisibleProp) => {
 				setVisible(isVisibleProp);
 			}}>
-			<>
-				<Box
-					sx={{ width: '100%', height: '100%' }}
-					className={isVisible ? styles.fade : styles.none}>
-					{children}
-				</Box>
-			</>
+			<Box
+				sx={{ width: '100%', height: '100%' }}
+				className={isVisible ? slide : styles.noVisibility}>
+				{children}
+			</Box>
 		</VisibilitySensor>
 	);
 };
 
-export default Fade;
+export default Slide;

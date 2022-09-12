@@ -2,24 +2,37 @@
 
 import { Card, CardContent, CardMedia, Typography, Stack } from '@mui/material';
 import Image from 'next/image';
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import TechCardSlide from './TechCardSlide';
 import 'bootstrap/dist/css/bootstrap.css';
 import styles2 from '/styles/Third.module.scss';
 import ProjectDialog from './ProjectDialog';
+import { singleProject_schema } from '../../interfaceGlobalSchemas';
 
-const ProjectCard = ({ singleProject, indx, maxWidth1200, maxWidth600 }) => {
+interface projectCard_schema extends singleProject_schema {
+	indx: number;
+	maxWidth1200: boolean;
+	maxWidth600: boolean;
+}
+
+const ProjectCard: React.FC<projectCard_schema> = ({
+	singleProject,
+	indx,
+	maxWidth1200,
+	maxWidth600
+}) => {
 	const { projectName, photo0, technology } = singleProject.node;
-	const [open, setOpen] = useState(false);
+	const [open, setOpen] = useState<boolean>(false);
 
-	const myRef = useRef(null);
+	const handleClose: () => void = () => {
+		setOpen(false);
+	};
 
 	return (
 		<TechCardSlide indx={indx}>
 			<Card
 				onClick={() => setOpen(true)}
 				className={`${styles2.projectCard} ${styles2.shadows2}`}
-				ref={myRef}
 				sx={{
 					width: maxWidth600 ? '100%' : 300,
 					height: 300,
@@ -64,14 +77,15 @@ const ProjectCard = ({ singleProject, indx, maxWidth1200, maxWidth600 }) => {
 						</Typography>
 					</Stack>
 				</CardContent>
+				<ProjectDialog
+					singleProject={singleProject}
+					maxWidth1200={maxWidth1200}
+					maxWidth600={maxWidth600}
+					open={open}
+					setOpen={setOpen}
+					handleClose={handleClose}
+				/>
 			</Card>
-			<ProjectDialog
-				singleProject={singleProject}
-				maxWidth1200={maxWidth1200}
-				maxWidth600={maxWidth600}
-				open={open}
-				setOpen={setOpen}
-			/>
 		</TechCardSlide>
 	);
 };

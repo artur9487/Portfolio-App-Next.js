@@ -29,3 +29,39 @@ export interface technologies_schema {
 	maxWidth900?: boolean;
 	isVisible: boolean;
 }
+
+export interface projectPros_schema {
+	projectData: {
+		node: {
+			description: string;
+			id: string;
+			photo0: { url: string };
+			photo1: { url: string };
+			photo2: { url: string };
+			projLink: string;
+			projectName: string;
+			repo: string;
+			stack: string;
+			technology: string;
+		};
+	}[];
+	maxWidth1200?: boolean;
+	maxWidth600?: boolean;
+}
+
+export interface singleProject_schema {
+	singleProject: {
+		node: {
+			description: string;
+			id: string;
+			photo0: { url: string };
+			photo1: { url: string };
+			photo2: { url: string };
+			projLink: string;
+			projectName: string;
+			repo: string;
+			stack: string;
+			technology: string;
+		};
+	};
+}

@@ -1,6 +1,6 @@
 /** @format */
 
-import { Box, Stack } from '@mui/material';
+import { Box, BoxTypeMap, Stack } from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import CodeIcon from '@mui/icons-material/Code';
 import WebIcon from '@mui/icons-material/Web';
@@ -10,8 +10,27 @@ import Fade from './Fade';
 import styles from '/styles/Home.module.scss';
 import HomeIcon from '@mui/icons-material/Home';
 import styles2 from '/styles/SideBar.module.scss';
+import { OverridableComponent } from '@mui/material/OverridableComponent';
+import { LegacyRef, MutableRefObject } from 'react';
 
-const SideBar = ({
+interface sideBar_schema {
+	introSectionRef: MutableRefObject<MutableRefObject<LegacyRef<HTMLElement>>>;
+	firstSectionRef: MutableRefObject<
+		MutableRefObject<OverridableComponent<BoxTypeMap<{}, 'div'>>>
+	>;
+	secondSectionRef: MutableRefObject<
+		MutableRefObject<OverridableComponent<BoxTypeMap<{}, 'div'>>>
+	>;
+	thirdSectionRef: MutableRefObject<
+		MutableRefObject<OverridableComponent<BoxTypeMap<{}, 'div'>>>
+	>;
+	fourthSectionRef: MutableRefObject<
+		MutableRefObject<OverridableComponent<BoxTypeMap<{}, 'div'>>>
+	>;
+	maxWidth600: Boolean;
+}
+
+const SideBar: React.FC<sideBar_schema> = ({
 	introSectionRef,
 	firstSectionRef,
 	secondSectionRef,
@@ -19,7 +38,7 @@ const SideBar = ({
 	fourthSectionRef,
 	maxWidth600
 }) => {
-	const handler = (reference) => {
+	const handler = (reference): void => {
 		reference.current.scrollIntoView({ behavior: 'smooth' });
 	};
 	return (
@@ -85,10 +104,6 @@ const SideBar = ({
 							</IconButton>
 							<IconButton
 								sx={{
-									transition: (theme) =>
-										theme.transitions.create('all', {
-											duration: theme.transitions.duration.longest
-										}),
 									'&:hover': {
 										backgroundColor: 'rgb(144, 0, 255)'
 									}

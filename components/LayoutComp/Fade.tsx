@@ -5,11 +5,14 @@ import { useState } from 'react';
 import { Box } from '@mui/system';
 import styles from '/styles/Home.module.scss';
 
-const Slide = ({ children, slide }) => {
+interface fade_schema {
+	children: JSX.Element;
+}
+
+const Fade: React.FC<fade_schema> = ({ children }) => {
 	const [isVisible, setVisible] = useState(false);
 	return (
 		<VisibilitySensor
-			className='visibilityStyle'
 			active={isVisible ? false : true}
 			partialVisibility
 			onChange={(isVisibleProp) => {
@@ -18,7 +21,7 @@ const Slide = ({ children, slide }) => {
 			<>
 				<Box
 					sx={{ width: '100%', height: '100%' }}
-					className={isVisible ? slide : styles.noVisibility}>
+					className={isVisible ? styles.fade : styles.none}>
 					{children}
 				</Box>
 			</>
@@ -26,4 +29,4 @@ const Slide = ({ children, slide }) => {
 	);
 };
 
-export default Slide;
+export default Fade;

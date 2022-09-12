@@ -7,7 +7,7 @@ import ThirdSection from '../components/Third/ThirdSection';
 import { request, gql } from 'graphql-request';
 import FourthSection from '../components/Fourth/FourthSection';
 import SideBar from '../components/LayoutComp/SideBar';
-import { useRef } from 'react';
+import { LegacyRef, MutableRefObject, useRef } from 'react';
 import Layout from '../components/LayoutComp/Layout';
 import IntroSection from '../components/Intro/IntroSection.js';
 import { BoxTypeMap, useMediaQuery } from '@mui/material';
@@ -17,50 +17,30 @@ import Head from 'next/head';
 import { Box } from '@mui/material';
 import React from 'react';
 import { OverridableComponent } from '@mui/material/OverridableComponent';
+import { projectPros_schema } from '../interfaceGlobalSchemas';
 
-interface Props {
-	projectData: {
-		node: {
-			description: string;
-			id: string;
-			photo0: { url: string };
-			photo1: { url: string };
-			photo2: { url: string };
-			projLink: string;
-			projectName: string;
-			repo: string;
-			stack: string;
-			technology: string;
-		};
-	};
-}
-
-const Home: React.FC<Props> = ({ projectData }) => {
+const Home: React.FC<projectPros_schema> = ({ projectData }) => {
 	const maxWidth1200 = useMediaQuery<string>('(max-width:1200px)');
 	const maxWidth900 = useMediaQuery<string>('(max-width:900px)');
 	const maxWidth600 = useMediaQuery<string>('(max-width:600px)');
-	const introSectionRef = useRef<null | OverridableComponent<
-		BoxTypeMap<{}, 'div'>
+	const introSectionRef = useRef<null | MutableRefObject<
+		LegacyRef<HTMLElement>
 	>>(null);
-	const firstSectionRef = useRef<null | OverridableComponent<
-		BoxTypeMap<{}, 'div'>
+	const firstSectionRef = useRef<null | MutableRefObject<
+		OverridableComponent<BoxTypeMap<{}, 'div'>>
 	>>(null);
-	const secondSectionRef = useRef<null | OverridableComponent<
-		BoxTypeMap<{}, 'div'>
+	const secondSectionRef = useRef<null | MutableRefObject<
+		OverridableComponent<BoxTypeMap<{}, 'div'>>
 	>>(null);
-	const thirdSectionRef = useRef<null | OverridableComponent<
-		BoxTypeMap<{}, 'div'>
+	const thirdSectionRef = useRef<null | MutableRefObject<
+		OverridableComponent<BoxTypeMap<{}, 'div'>>
 	>>(null);
-	const fourthSectionRef = useRef<null | OverridableComponent<
-		BoxTypeMap<{}, 'div'>
+	const fourthSectionRef = useRef<null | MutableRefObject<
+		OverridableComponent<BoxTypeMap<{}, 'div'>>
 	>>(null);
 
 	return (
 		<>
-			<Head>
-				<title>Portfolio App</title>
-			</Head>
-
 			<Box className={styles.mainBox}>
 				<SideBar
 					introSectionRef={introSectionRef}

@@ -1,22 +1,37 @@
 /** @format */
 
-import { Box, Typography, Stack } from '@mui/material';
+import { Box, Typography, Stack, BoxTypeMap } from '@mui/material';
 import styles from '/styles/Home.module.scss';
 import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
-import { useEffect, useState } from 'react';
+import {
+	DetailedHTMLProps,
+	HTMLAttributes,
+	LegacyRef,
+	MutableRefObject,
+	useEffect,
+	useState
+} from 'react';
 import styles2 from '/styles/Intro.module.scss';
 import image from '../../public/jamala.png';
 import Image from 'next/image';
+import { OverridableComponent } from '@mui/material/OverridableComponent';
 
-const IntroSection = ({
+interface intersection_schema {
+	maxWidth900: boolean;
+	reference: any;
+	maxWidth600: boolean;
+	maxWidth1200: boolean;
+}
+
+const IntroSection: React.FC<intersection_schema> = ({
 	maxWidth900,
 	reference,
 	maxWidth600,
 	maxWidth1200
 }) => {
-	const topBoxColor = 'rgba(200, 200, 200, 1)';
-	const bottomBoxColor = 'rgb(144, 0, 255)';
+	const topBoxColor: string = 'rgba(200, 200, 200, 1)';
+	const bottomBoxColor: string = 'rgb(144, 0, 255)';
 	const topText = [
 		{ name: 'HELLO,', style: styles2.intro0, color: topBoxColor },
 		{ name: 'I', style: styles2.intro1, color: topBoxColor },
@@ -55,9 +70,9 @@ const IntroSection = ({
 		await loadFull(main);
 	};
 
-	const particlesLoaded = (container) => {
+	/*const particlesLoaded = (container) => {
 		console.log(container);
-	};
+	};*/
 
 	return (
 		<>
@@ -75,7 +90,7 @@ const IntroSection = ({
 						className={styles2.particles}
 						id='tsparticles'
 						init={particlesInit}
-						loaded={particlesLoaded}
+						//loaded={particlesLoaded}
 						width='100vw'
 						height='100%'
 						options={{

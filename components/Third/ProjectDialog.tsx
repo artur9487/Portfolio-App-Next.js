@@ -11,17 +11,33 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import styles2 from '/styles/Third.module.scss';
 import Slide from '@material-ui/core/Slide';
+import { TransitionProps } from '@mui/material/transitions';
+import { singleProject_schema } from '../../interfaceGlobalSchemas';
 
-const Transition = React.forwardRef(function Transition(props, ref) {
+const Transition = React.forwardRef(function Transition(
+	props: TransitionProps & {
+		children: React.ReactElement<any, any>;
+	},
+	ref: React.Ref<unknown>
+) {
 	return <Slide direction='up' ref={ref} {...props} />;
 });
 
-const ProjectDialog = ({
+interface projectDialog_schema extends singleProject_schema {
+	maxWidth1200: boolean;
+	maxWidth600: boolean;
+	open: boolean;
+	setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+	handleClose: () => void;
+}
+
+const ProjectDialog: React.FC<projectDialog_schema> = ({
 	singleProject,
 	maxWidth1200,
 	maxWidth600,
 	open,
-	setOpen
+	setOpen,
+	handleClose
 }) => {
 	const {
 		projLink,
@@ -34,21 +50,32 @@ const ProjectDialog = ({
 		description
 	} = singleProject.node;
 
-	const stackArray = stack.split(',');
-	const firstLetter = projectName.slice(0, 1);
-	const restLetters = projectName.slice(1);
+	const stackArray: string[] = stack.split(',');
+	const firstLetter: string = projectName.slice(0, 1);
+	const restLetters: string = projectName.slice(1);
 
-	const photos = [{ photo: photo0 }, { photo: photo1 }, { photo: photo2 }];
+	interface photos_schema {
+		photo: { url: string };
+	}
 
-	const buttonTextProperties = {
+	const photos: photos_schema[] = [
+		{ photo: photo0 },
+		{ photo: photo1 },
+		{ photo: photo2 }
+	];
+
+	interface buttonTextProperties_schema {
+		color: string;
+		fontSize: number;
+		letterSpacing: number;
+	}
+
+	const buttonTextProperties: buttonTextProperties_schema = {
 		color: 'white',
 		fontSize: !maxWidth600 ? 17 : 14,
 		letterSpacing: !maxWidth600 ? 2 : 1
 	};
 
-	const handleClose = () => {
-		setOpen(false);
-	};
 	return (
 		<Dialog
 			sx={{ zIndex: 9999 }}
@@ -71,7 +98,7 @@ const ProjectDialog = ({
 			<DialogContent>
 				<Stack direction={!maxWidth1200 ? 'row' : 'column'}>
 					<Stack
-						direction='column '
+						direction='column'
 						justifyContent='center'
 						sx={{
 							width: !maxWidth1200 ? '50%' : '100%',
