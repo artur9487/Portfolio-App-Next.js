@@ -216,7 +216,9 @@ const ProjectDialog: React.FC<projectDialog_schema> = ({
 									<Typography sx={buttonTextProperties}>Live Demo</Typography>
 								</a>
 							)}
-							<button onClick={handleClose} className={styles2.dialogButton}>
+							<button
+								onClick={() => setOpen(false)}
+								className={styles2.dialogButton}>
 								<Typography sx={buttonTextProperties}>Close Dialog</Typography>
 							</button>
 						</Stack>
