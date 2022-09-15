@@ -49,7 +49,7 @@ const FourthSection: React.FC<fourthSection_schema> = ({
 							maxWidth600={maxWidth600}
 							isVisible={isVisible}
 						/>
-						<SecondPart
+						{/*<SecondPart
 							maxWidth900={maxWidth900}
 							maxWidth600={maxWidth600}
 							isVisible={isVisible}
@@ -80,7 +80,7 @@ const FourthSection: React.FC<fourthSection_schema> = ({
 									Message sent
 								</Typography>
 							</Stack>
-						</Box>
+						</Box>*/}
 					</Stack>
 				</Stack>
 			</VisibilitySensor>

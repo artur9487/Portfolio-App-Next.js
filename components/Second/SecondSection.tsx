@@ -26,7 +26,7 @@ const SecondSection: React.FC<Props> = ({
 	maxWidth900,
 	maxWidth600
 }) => {
-	const [isVisible, setVisible] = useState(false); /*< boolean >*/
+	const [isVisible, setVisible] = useState<boolean>(false);
 
 	return (
 		<>

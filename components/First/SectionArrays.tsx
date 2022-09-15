@@ -10,16 +10,15 @@ interface text_schema {
 
 export const text: text_schema[] = [
 	{
-		text: `Hi! I am Artur. I am learning frontend technologies for about 2 years. I am looking for my firs Job as React, React-native or Next.js developer.`,
+		text: `Hi! I am Artur. I am learning frontend technologies for about 2 years. I am looking for a job as React, React-native or Next.js developer.`,
 		style: styles2.text1
 	},
 	{
-		text: `I took my entire knowledge from tutorials, documentations and developer articles. To strong my skills I made a few projects in which I mostly cover my knowledge. `,
+		text: `I am a self-learner and took my entire knowledge from tutorials, documentations, and developer articles. `,
 		style: styles2.text2
 	},
 	{
-		text: `I hope for the the oppurtunity to take the first steps and
-grow in the fronted software industry.`,
+		text: `I developed few projects as a utilization of my current knowledge `,
 		style: styles2.text3
 	}
 ];
