@@ -1,4 +1,3 @@
 <!-- @format -->
 
-Its a Next.js app. This app was made to present my overall skils and
-give a brief demonstration of my projects
+It's a Next.js app. This app was made to present my overall skills and give a brief demonstration of my projects.
