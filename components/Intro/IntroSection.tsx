@@ -31,7 +31,6 @@ const IntroSection: React.FC<intersection_schema> = ({
 		{ name: 'ARTUR', style: styles2.intro1, color: topBoxColor }
 	];
 	const [bottomText, setBottomText] = useState([
-		{ name: 'ASPIRING', style: styles2.intro2, color: bottomBoxColor },
 		{ name: 'REACT', style: styles2.intro3, color: bottomBoxColor },
 		{ name: 'DEVELOPER', style: styles2.intro3, color: bottomBoxColor }
 	]);
