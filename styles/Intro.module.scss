@@ -30,7 +30,7 @@
 }
 
 .intro3 {
-	@include intro_theme1(6s, introAnimation2);
+	@include intro_theme1(4s, introAnimation2);
 }
 
 @keyframes introAnimation {
